@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - StrongVision</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/gym-bg.css">
+</head>
+<body class="app-body">
+    <div id="dash-bg">
+        <div class="dbg-overlay"></div>
+    </div>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <button id="sidebarToggle" onclick="toggleSidebar()" aria-label="Abrir menú lateral" style="display:none;position:fixed;top:14px;left:14px;z-index:70;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;">
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+    </button>
+    <aside class="sidebar" id="sidebar">
+        <a href="../index.html" class="sb-logo" aria-label="Inicio StrongVision">
+            <img src="../images/SV_Fitness_white.png" alt="StrongVision" class="sb-logo-img">
+        </a>
+        <nav class="sb-nav" aria-label="Menú principal">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> Inicio</a>
+            <a href="rutina.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span> Rutina</a>
+            <a href="entrenamiento.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> Entrenar</a>
+            <a href="progreso.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Progreso</a>
+            <a href="biblioteca.html" class="nav-item active"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> Biblioteca</a>
+            <a href="admin.html" class="nav-item admin-only-link" style="display:none"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Admin</a>
+        </nav>
+        <div class="sb-footer">
+            <div class="user-row" onclick="window.location='mi-cuenta.html'" role="button" tabindex="0">
+                <div class="u-avatar"><span id="avatarLetter">U</span></div>
+                <div class="u-info">
+                    <div class="u-name" id="sidebarUserName">Usuario</div>
+                    <div class="u-role">Ver perfil</div>
+                </div>
+                <span class="u-chev" aria-hidden="true">▾</span>
+            </div>
+        </div>
+    </aside>
+    <div class="app-main">
+        <header class="app-topbar">
+            <div class="tb-left">
+                <h1 id="pageTitle">Biblioteca</h1>
+            </div>
+            <div class="tb-right">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+                    <span id="themeIcon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                    <span id="themeLabel">Modo claro</span>
+                </button>
+                <div class="notif-btn" aria-label="Notificaciones"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-dot" aria-hidden="true"></span></div>
+                <div class="user-menu">
+                    <div class="tb-avatar" id="userAvatar" aria-haspopup="true" aria-expanded="false" aria-label="Menú de usuario" style="cursor:pointer;">U</div>
+                    <div class="user-dropdown" id="userDropdown" role="menu">
+                        <a href="mi-cuenta.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mi perfil</a>
+                        <a href="logros.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg> Mis logros</a>
+                        <a href="ajustes.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Ajustes</a>
+                        <a href="admin.html" class="admin-only-link" style="display:none" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Panel Admin</a>
+                        <hr>
+                        <button class="danger" onclick="cerrarSesionApp()" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <main id="main-content" class="page-container">
+        <div class="page-header">
+            <h1>Biblioteca de Ejercicios</h1>
+            <p>Explora la base de conocimiento de StrongVision. Aprende técnica, errores comunes y variantes.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: var(--sp-lg);">
+            <div style="display: grid; grid-template-columns: 1fr repeat(auto-fit, minmax(160px, 200px)); gap: var(--sp-sm); align-items: end;">
+                <div class="form-group" style="margin: 0;">
+                    <label for="busqueda">Buscar ejercicio</label>
+                    <div class="search-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="busqueda" placeholder="Ej: press, sentadilla...">
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0;">
+                    <label for="filtroGrupo">Grupo muscular</label>
+                    <select id="filtroGrupo">
+                        <option value="">Todos</option>
+                        <option value="pecho">Pecho</option>
+                        <option value="espalda">Espalda</option>
+                        <option value="piernas">Piernas</option>
+                        <option value="hombro">Hombro</option>
+                        <option value="brazo">Brazo</option>
+                        <option value="core">Core</option>
+                        <option value="cardio">Cardio</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin: 0;">
+                    <label for="filtroEquipo">Equipo</label>
+                    <select id="filtroEquipo">
+                        <option value="">Cualquiera</option>
+                        <option value="ninguno">Sin equipo (peso corporal)</option>
+                        <option value="mancuerna">Mancuernas</option>
+                        <option value="barra">Barra olímpica</option>
+                        <option value="polea">Poleas</option>
+                        <option value="maquina">Máquinas</option>
+                    </select>
+                </div>
+            </div>
+            <p id="resultadoCount" style="margin-top: var(--sp-md); color: var(--color-text-muted); font-size: var(--fs-sm);">-</p>
+        </div>
+
+        <div id="resultadosGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-md);"></div>
+
+        <div id="sinResultados" class="card" style="display:none;">
+            <div class="empty-state">
+                <div class="icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                <h3>No se encontraron ejercicios</h3>
+                <p>Prueba con otros términos o quita los filtros aplicados.</p>
+                <button class="btn btn-secondary" onclick="limpiarFiltros()">Limpiar filtros</button>
+            </div>
+        </div>
+    </main>
+    </div><!-- /app-main -->
+
+    <!-- Modal: detalle ejercicio -->
+    <div id="detalleModal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-overlay" onclick="cerrarDetalle()"></div>
+        <div class="modal-content" role="document" style="max-width: 640px;">
+            <button class="modal-close" onclick="cerrarDetalle()" aria-label="Cerrar">×</button>
+            <h2 id="detalleNombre">-</h2>
+            <p class="modal-sub" id="detalleGrupo">-</p>
+            <div id="detalleTags" style="display: flex; gap: var(--sp-sm); flex-wrap: wrap; margin: var(--sp-md) 0;"></div>
+
+            <!-- Muscle Wiki enlace externo -->
+            <div id="muscleWikiContainer" style="margin-bottom: var(--sp-lg);">
+                <h3 style="font-size: var(--fs-md); margin:0 0 var(--sp-sm); display:flex; align-items:center; gap:6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Referencia visual</h3>
+                <div id="muscleWikiCard" style="background:var(--color-bg-deep); border:1px solid var(--color-border); border-radius:var(--radius-md); padding: var(--sp-lg); display:flex; flex-direction:column; align-items:center; gap: var(--sp-md); text-align:center;">
+                    <div id="muscleWikiIcon" style="width:56px;height:56px;border-radius:14px;background:rgba(255,214,10,.1);display:flex;align-items:center;justify-content:center;color:var(--y,#FFD60A);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="3" height="6" rx="1.5"/><rect x="5" y="7" width="2.5" height="10" rx="1"/><line x1="7.5" y1="12" x2="16.5" y2="12"/><rect x="16.5" y="7" width="2.5" height="10" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1.5"/></svg></div>
+                    <div>
+                        <p id="muscleWikiDesc" style="color:var(--color-text-muted); font-size:var(--fs-sm); margin:0 0 var(--sp-md);">
+                            Ver la animación 3D del movimiento muscular en MuscleWiki.
+                        </p>
+                        <a id="muscleWikiBtn" href="#" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary"
+                            style="display:inline-flex; align-items:center; gap:7px;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Ver animación en MuscleWiki
+                        </a>
+                    </div>
+                    <p style="font-size:var(--fs-xs); color:var(--color-text-muted); margin:0;">
+                        Se abrirá en una nueva pestaña
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="font-size: var(--fs-md); margin: var(--sp-md) 0 var(--sp-sm); display:flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Técnica de ejecución</h3>
+            <div id="detalleTecnica" style="line-height: 1.7; color: var(--color-text-muted);"></div>
+
+            <h3 style="font-size: var(--fs-md); margin: var(--sp-lg) 0 var(--sp-sm); display:flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Errores comunes</h3>
+            <ul id="detalleErrores" style="padding-left: 1.5rem; line-height: 1.7; color: var(--color-text-muted);"></ul>
+
+            <h3 style="font-size: var(--fs-md); margin: var(--sp-lg) 0 var(--sp-sm); display:flex; align-items:center; gap:7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg> Recomendaciones</h3>
+            <div id="detalleRecomendaciones" style="line-height: 1.7; color: var(--color-text-muted);"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../data/ejercicios-data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/nav-admin.js"></script>
+    <script src="../js/ia-engine.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/biblioteca.js"></script>
+    <script src="../js/user-ai-sidebar.js"></script>
+    <script src="../js/gym-bg.js"></script>
+<script src="../js/notificaciones.js"></script>
+<script src="../js/i18n.js"></script>
+</body>
+</html>

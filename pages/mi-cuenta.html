@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - StrongVision</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/gym-bg.css">
+</head>
+<body class="app-body">
+    <div id="dash-bg">
+        <div class="dbg-overlay"></div>
+    </div>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <button id="sidebarToggle" onclick="toggleSidebar()" aria-label="Abrir menú lateral" style="display:none;position:fixed;top:14px;left:14px;z-index:70;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;">
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+    </button>
+    <aside class="sidebar" id="sidebar">
+        <a href="../index.html" class="sb-logo" aria-label="Inicio StrongVision">
+            <img src="../images/SV_Fitness_white.png" alt="StrongVision" class="sb-logo-img">
+        </a>
+        <nav class="sb-nav" aria-label="Menú principal">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> Inicio</a>
+            <a href="rutina.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span> Rutina</a>
+            <a href="entrenamiento.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> Entrenar</a>
+            <a href="progreso.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Progreso</a>
+            <a href="biblioteca.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> Biblioteca</a>
+            <a href="admin.html" class="nav-item admin-only-link" style="display:none"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Admin</a>
+        </nav>
+        <div class="sb-footer">
+            <div class="user-row active-nav" onclick="window.location='mi-cuenta.html'" role="button" tabindex="0" aria-label="Mi cuenta">
+                <div class="u-avatar"><span id="avatarLetter">U</span></div>
+                <div class="u-info">
+                    <div class="u-name" id="sidebarUserName">Usuario</div>
+                    <div class="u-role">Mi cuenta</div>
+                </div>
+                <span class="u-chev" aria-hidden="true">▾</span>
+            </div>
+        </div>
+    </aside>
+
+    <div class="app-main">
+        <header class="app-topbar">
+            <div class="tb-left">
+                <h1>Mi Cuenta</h1>
+                <p>Datos personales, mensajes y opciones de tu plan.</p>
+            </div>
+            <div class="tb-right">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+                    <span id="themeIcon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                    <span id="themeLabel">Modo claro</span>
+                </button>
+                <div class="user-menu">
+                    <div class="tb-avatar" id="userAvatar" aria-haspopup="true" aria-expanded="false" aria-label="Menú de usuario" style="cursor:pointer;">U</div>
+                    <div class="user-dropdown" id="userDropdown" role="menu">
+                        <a href="mi-cuenta.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mi cuenta</a>
+                        <a href="logros.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg> Mis logros</a>
+                        <a href="ajustes.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Ajustes</a>
+                        <a href="admin.html" class="admin-only-link" style="display:none" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Panel Admin</a>
+                        <hr>
+                        <button class="danger" onclick="cerrarSesionApp()" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content" class="page-container">
+            <div class="page-header">
+                <h1>Mi Cuenta</h1>
+                <p>Administra tus datos personales, contacta al equipo y gestiona tu plan.</p>
+            </div>
+
+            <!-- ===== DATOS DE CUENTA ===== -->
+            <div class="card" style="margin-bottom: var(--sp-lg);">
+                <div class="card-header">
+                    <div>
+                        <h2>Datos de cuenta</h2>
+                        <p class="card-subtitle">Nombre, ciudad, dirección y contraseña</p>
+                    </div>
+                </div>
+                <form id="cuentaForm" autocomplete="off">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-md);">
+                        <div class="form-group">
+                            <label for="cNombre">Nombre completo</label>
+                            <input type="text" id="cNombre" placeholder="Tu nombre" maxlength="80" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="cCorreo">Correo electrónico</label>
+                            <input type="email" id="cCorreo" placeholder="—" readonly style="opacity:.55;cursor:not-allowed;">
+                            <small style="color:var(--color-text-muted);font-size:.72rem;">El correo no puede modificarse.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="cCiudad">Ciudad</label>
+                            <input type="text" id="cCiudad" placeholder="Tu ciudad" maxlength="60">
+                        </div>
+                        <div class="form-group">
+                            <label for="cDireccion">Dirección</label>
+                            <input type="text" id="cDireccion" placeholder="Tu dirección" maxlength="120">
+                        </div>
+                    </div>
+
+                    <div style="border-top:1px solid var(--color-border,rgba(255,255,255,.08)); margin-top:var(--sp-md); padding-top:var(--sp-md);">
+                        <p style="font-size:.8rem; font-weight:700; margin-bottom:var(--sp-sm); display:flex; align-items:center; gap:.4rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Cambiar contraseña
+                            <span style="font-size:.7rem; font-weight:400; color:var(--color-text-muted);">Deja en blanco para no cambiar.</span>
+                        </p>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--sp-md);">
+                            <div class="form-group">
+                                <label for="cPassActual">Contraseña actual</label>
+                                <input type="password" id="cPassActual" placeholder="••••••••" maxlength="60" autocomplete="current-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="cPassNueva">Nueva contraseña</label>
+                                <input type="password" id="cPassNueva" placeholder="••••••••" maxlength="60" autocomplete="new-password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cuentaFeedback" style="margin-bottom:var(--sp-sm);"></div>
+                    <div style="display:flex; gap:var(--sp-sm); flex-wrap:wrap; align-items:center;">
+                        <button type="submit" class="btn btn-primary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                            Guardar cambios
+                        </button>
+                        <a href="perfil.html" class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Editar perfil físico
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ===== SOPORTE / CHAT CON ADMIN ===== -->
+            <div class="card" style="margin-bottom: var(--sp-lg);">
+                <div class="card-header" style="flex-wrap:wrap;gap:8px;">
+                    <div>
+                        <h2>Soporte &amp; Mensajes</h2>
+                        <p class="card-subtitle">Envía consultas al administrador y revisa sus respuestas</p>
+                    </div>
+                    <span id="badgeRespuestas" style="display:none;background:var(--y);color:#000;border-radius:999px;font-size:0.65rem;font-weight:800;padding:2px 9px;align-self:center;"></span>
+                </div>
+
+                <!-- Nuevo mensaje -->
+                <details id="nuevoMsgDetails" style="margin-bottom:var(--sp-md);">
+                    <summary style="cursor:pointer;font-size:0.82rem;font-weight:700;color:var(--t2);padding:8px 0;user-select:none;list-style:none;display:flex;align-items:center;gap:6px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        Nuevo mensaje
+                    </summary>
+                    <form id="msgAdminForm" autocomplete="off" style="margin-top:10px;">
+                        <div class="form-group">
+                            <label for="msgAsunto">Asunto</label>
+                            <input type="text" id="msgAsunto" placeholder="Ej: Problema con mi rutina, Sugerencia…" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="msgTexto">Mensaje</label>
+                            <textarea id="msgTexto" rows="4" placeholder="Escribe aquí tu mensaje al administrador…" maxlength="1000" style="width:100%;resize:vertical;"></textarea>
+                        </div>
+                        <div id="msgAdminFeedback" style="margin-bottom:var(--sp-sm);"></div>
+                        <button type="submit" class="btn btn-primary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </details>
+
+                <!-- Historial de conversaciones -->
+                <div id="misConversaciones"></div>
+            </div>
+
+            <!-- ===== MI PLAN ===== -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2>Mi plan de entrenamiento</h2>
+                        <p class="card-subtitle">Accede o regenera tu rutina personalizada con IA</p>
+                    </div>
+                </div>
+                <div id="planResumen" style="margin-bottom:var(--sp-md);"></div>
+                <div style="display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
+                    <a href="rutina.html" class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                        Ver mi rutina
+                    </a>
+                    <button class="btn btn-primary" id="btnRegenerar" style="display:inline-flex;align-items:center;gap:.4rem;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        Regenerar rutina con IA
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../data/ejercicios-data.js"></script>
+    <script src="../data/filtros-data.js"></script>
+    <script src="../data/heuristicas-data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/nav-admin.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/user-ai-sidebar.js"></script>
+    <script>
+    (function() {
+        'use strict';
+        if (!SV_AUTH.requireAuth('../index.html')) return;
+        const usuario = SV_STORAGE.obtenerUsuarioActual();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Avatar
+            document.getElementById('avatarLetter').textContent = usuario.nombre.charAt(0).toUpperCase();
+            document.getElementById('userAvatar').textContent   = usuario.nombre.charAt(0).toUpperCase();
+            document.getElementById('sidebarUserName').textContent = usuario.nombre.split(' ')[0];
+
+            // Dropdown toggle
+            document.getElementById('userAvatar').addEventListener('click', () => {
+                document.getElementById('userDropdown').classList.toggle('open');
+            });
+            document.addEventListener('click', e => {
+                if (!e.target.closest('.user-menu')) document.getElementById('userDropdown')?.classList.remove('open');
+            });
+
+            cargarDatosCuenta();
+            cargarResumenPlan();
+
+            // ── Guardar datos de cuenta ──
+            document.getElementById('cuentaForm').addEventListener('submit', e => {
+                e.preventDefault();
+                const nombre = document.getElementById('cNombre').value.trim();
+                const ciudad = document.getElementById('cCiudad').value.trim();
+                const dir    = document.getElementById('cDireccion').value.trim();
+                const passActual = document.getElementById('cPassActual').value;
+                const passNueva  = document.getElementById('cPassNueva').value;
+                const fb = document.getElementById('cuentaFeedback');
+
+                if (!nombre) { showFb(fb, 'El nombre no puede estar vacío.', 'error'); return; }
+
+                const cambios = { nombre, ciudad, direccion: dir };
+
+                if (passNueva) {
+                    if (!passActual) { showFb(fb, 'Ingresa tu contraseña actual para cambiarla.', 'error'); return; }
+                    if (!SV_STORAGE.verificarPassword(passActual, usuario.password)) {
+                        showFb(fb, 'La contraseña actual no es correcta.', 'error'); return;
+                    }
+                    if (passNueva.length < 6) { showFb(fb, 'La nueva contraseña debe tener al menos 6 caracteres.', 'error'); return; }
+                    cambios.password = SV_STORAGE.hashSimple(passNueva);
+                }
+
+                SV_STORAGE.actualizarUsuario(usuario.id, cambios);
+                Object.assign(usuario, cambios);
+                document.getElementById('avatarLetter').textContent  = nombre.charAt(0).toUpperCase();
+                document.getElementById('userAvatar').textContent    = nombre.charAt(0).toUpperCase();
+                document.getElementById('sidebarUserName').textContent = nombre.split(' ')[0];
+                document.getElementById('cPassActual').value = '';
+                document.getElementById('cPassNueva').value  = '';
+                showFb(fb, '¡Datos actualizados correctamente!', 'success');
+                mostrarToast('Cuenta actualizada ✓', 'success');
+            });
+
+            // ── Enviar mensaje al admin ──
+            document.getElementById('msgAdminForm').addEventListener('submit', e => {
+                e.preventDefault();
+                const asunto  = document.getElementById('msgAsunto').value.trim();
+                const mensaje = document.getElementById('msgTexto').value.trim();
+                const fb = document.getElementById('msgAdminFeedback');
+
+                if (!asunto) { showFb(fb, 'Por favor escribe un asunto.', 'error'); return; }
+                if (!mensaje) { showFb(fb, 'Por favor escribe un mensaje.', 'error'); return; }
+
+                SV_STORAGE.guardarMensajeAdmin({
+                    usuarioId: usuario.id,
+                    nombre: usuario.nombre,
+                    correo: usuario.correo,
+                    asunto,
+                    mensaje
+                });
+                document.getElementById('msgAsunto').value = '';
+                document.getElementById('msgTexto').value  = '';
+                document.getElementById('nuevoMsgDetails').removeAttribute('open');
+                showFb(fb, '¡Mensaje enviado! El administrador lo recibirá pronto.', 'success');
+                mostrarToast('Mensaje enviado al administrador', 'success');
+                renderMisConversaciones();
+            });
+
+            // ── Conversaciones con el admin ──
+            function fmtFecha(iso) {
+                const d = new Date(iso);
+                return d.toLocaleDateString('es-CO', { day:'2-digit', month:'short', year:'numeric' }) +
+                       ' ' + d.toLocaleTimeString('es-CO', { hour:'2-digit', minute:'2-digit' });
+            }
+
+            function renderMisConversaciones() {
+                const threads = SV_STORAGE.obtenerMensajesUsuario(usuario.id);
+                const cont = document.getElementById('misConversaciones');
+                const badge = document.getElementById('badgeRespuestas');
+                if (!cont) return;
+
+                // Mostrar badge con conteo de respuestas nuevas antes de marcar como leídas
+                const nuevas = threads.filter(m => m.respuestaNoVista).length;
+                if (badge) {
+                    if (nuevas > 0) {
+                        badge.textContent = nuevas === 1 ? '1 nueva respuesta' : `${nuevas} nuevas respuestas`;
+                        badge.style.display = 'inline-block';
+                    } else {
+                        badge.style.display = 'none';
+                    }
+                }
+                // Marcar como leídas después de mostrar el conteo
+                SV_STORAGE.marcarRespuestasVistas(usuario.id);
+
+                if (threads.length === 0) {
+                    cont.innerHTML = '<p style="font-size:0.8rem;color:var(--t3);padding:8px 0;">Aún no has enviado ningún mensaje.</p>';
+                    if (badge) badge.style.display = 'none';
+                    return;
+                }
+
+                cont.innerHTML = threads.map(msg => {
+                    const respuestas = msg.respuestas || [];
+                    const totalMsgs = 1 + respuestas.length;
+                    const bubblesHtml = [];
+
+                    // Mensaje inicial
+                    bubblesHtml.push(`
+                        <div style="display:flex;gap:8px;align-items:flex-end;margin-bottom:8px;">
+                            <div style="width:28px;height:28px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:var(--t2);flex-shrink:0;">${escHtml(usuario.nombre.charAt(0).toUpperCase())}</div>
+                            <div style="max-width:82%;">
+                                <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px 12px 12px 2px;padding:8px 12px;font-size:0.79rem;line-height:1.55;color:var(--t2);white-space:pre-wrap;">${escHtml(msg.mensaje)}</div>
+                                <div style="font-size:0.63rem;color:var(--t3);margin-top:3px;">Tú · ${fmtFecha(msg.fecha)}</div>
+                            </div>
+                        </div>`);
+
+                    respuestas.forEach(r => {
+                        if (r.admin) {
+                            bubblesHtml.push(`
+                                <div style="display:flex;gap:8px;align-items:flex-end;justify-content:flex-end;margin-bottom:8px;">
+                                    <div style="max-width:82%;text-align:right;">
+                                        <div style="background:rgba(255,214,10,0.10);border:1px solid rgba(255,214,10,0.22);border-radius:12px 12px 2px 12px;padding:8px 12px;font-size:0.79rem;line-height:1.55;color:var(--t1);white-space:pre-wrap;text-align:left;">${escHtml(r.texto)}</div>
+                                        <div style="font-size:0.63rem;color:var(--t3);margin-top:3px;">Admin · ${fmtFecha(r.fecha)}</div>
+                                    </div>
+                                    <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,214,10,0.14);display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-weight:800;color:var(--y);flex-shrink:0;">SV</div>
+                                </div>`);
+                        } else {
+                            bubblesHtml.push(`
+                                <div style="display:flex;gap:8px;align-items:flex-end;margin-bottom:8px;">
+                                    <div style="width:28px;height:28px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:var(--t2);flex-shrink:0;">${escHtml(usuario.nombre.charAt(0).toUpperCase())}</div>
+                                    <div style="max-width:82%;">
+                                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px 12px 12px 2px;padding:8px 12px;font-size:0.79rem;line-height:1.55;color:var(--t2);white-space:pre-wrap;">${escHtml(r.texto)}</div>
+                                        <div style="font-size:0.63rem;color:var(--t3);margin-top:3px;">Tú · ${fmtFecha(r.fecha)}</div>
+                                    </div>
+                                </div>`);
+                        }
+                    });
+
+                    const tieneRespAdmin = respuestas.some(r => r.admin);
+                    return `
+                        <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:10px;">
+                            <div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;background:var(--surface);"
+                                onclick="(function(el){const b=el.nextElementSibling;const ch=el.querySelector('.th-chevron');const open=b.style.display==='none';b.style.display=open?'block':'none';ch.style.transform=open?'rotate(180deg)':'rotate(0deg)';})(this)">
+                                <div style="display:flex;align-items:center;gap:8px;min-width:0;">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--y);flex-shrink:0;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                    <span style="font-size:0.8rem;font-weight:700;color:var(--t1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHtml(msg.asunto)}</span>
+                                    ${tieneRespAdmin ? '<span style="background:rgba(255,214,10,0.15);color:var(--y);border-radius:999px;font-size:0.6rem;font-weight:700;padding:1px 7px;flex-shrink:0;">Respondido</span>' : ''}
+                                </div>
+                                <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+                                    <span style="font-size:0.65rem;color:var(--t3);">${totalMsgs} msg${totalMsgs>1?'s':''}</span>
+                                    <svg class="th-chevron" style="transition:transform .2s;color:var(--t3);" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                </div>
+                            </div>
+                            <div class="thread-body" data-msgid="${msg.id}" style="display:none;border-top:1px solid var(--border);" data-thread>
+                                <div style="padding:12px 14px;max-height:280px;overflow-y:auto;display:flex;flex-direction:column;">
+                                    ${bubblesHtml.join('')}
+                                </div>
+                                <div style="padding:8px 12px;border-top:1px solid var(--border);background:var(--bg);display:flex;gap:8px;align-items:flex-end;">
+                                    <textarea id="ureply-${msg.id}" rows="2" placeholder="Responder al administrador…" maxlength="500"
+                                        style="flex:1;resize:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 10px;font-size:0.78rem;color:var(--t1);font-family:inherit;line-height:1.5;outline:none;transition:border-color .18s;"
+                                        onkeydown="if(event.key==='Enter'&&(event.ctrlKey||event.metaKey)){event.preventDefault();enviarSeguimientoUsuario('${msg.id}')}"
+                                        onfocus="this.style.borderColor='var(--y)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+                                    <button class="btn btn-primary" style="font-size:0.74rem;padding:6px 12px;flex-shrink:0;" onclick="enviarSeguimientoUsuario('${msg.id}')">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>`;
+                }).join('');
+            }
+
+            window.enviarSeguimientoUsuario = function(msgId) {
+                const ta = document.getElementById('ureply-' + msgId);
+                if (!ta) return;
+                const texto = ta.value.trim();
+                if (!texto) { ta.focus(); return; }
+                SV_STORAGE.responderMensajeAdmin(msgId, texto, false);
+                renderMisConversaciones();
+                // Reabrir el hilo tras re-render
+                const body = document.querySelector(`.thread-body[data-msgid="${msgId}"]`);
+                if (body) {
+                    body.style.display = 'block';
+                    const chevron = body.previousElementSibling?.querySelector('.th-chevron');
+                    if (chevron) chevron.style.transform = 'rotate(180deg)';
+                }
+                mostrarToast('Mensaje enviado', 'success');
+            };
+
+            function escHtml(s) {
+                return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+            }
+
+            renderMisConversaciones();
+
+            // ── Regenerar rutina ──
+            document.getElementById('btnRegenerar').addEventListener('click', () => {
+                if (confirm('¿Regenerar tu rutina? Se creará un nuevo plan optimizado con el Algoritmo Genético.')) {
+                    window.location.href = 'rutina.html?generar=1';
+                }
+            });
+        });
+
+        function cargarDatosCuenta() {
+            document.getElementById('cNombre').value    = usuario.nombre    || '';
+            document.getElementById('cCorreo').value    = usuario.correo    || '';
+            document.getElementById('cCiudad').value    = usuario.ciudad    || '';
+            document.getElementById('cDireccion').value = usuario.direccion || '';
+        }
+
+        function cargarResumenPlan() {
+            const rutina = SV_STORAGE.obtenerRutina(usuario.id);
+            const cont = document.getElementById('planResumen');
+            if (!rutina) {
+                cont.innerHTML = '<p style="color:var(--color-text-muted);font-size:.84rem;">Aún no tienes rutina generada. Usa el botón de abajo para crear tu primer plan.</p>';
+                return;
+            }
+            const ag = rutina.algoritmo_genetico;
+            const total = rutina.sesiones?.reduce((a, s) => a + s.ejercicios.length, 0) || 0;
+            cont.innerHTML = `
+                <div style="display:flex;flex-wrap:wrap;gap:var(--sp-sm);margin-bottom:var(--sp-sm);">
+                    <span class="tag info">${capitalizar(rutina.objetivo || '')}</span>
+                    <span class="tag info">${capitalizar(rutina.nivel || '')}</span>
+                    <span class="tag info">${rutina.dias_por_semana} días/semana</span>
+                    <span class="tag info">${total} ejercicios</span>
+                    ${ag ? `<span class="tag success">Fitness AG: ${ag.fitness_final.toFixed(1)}%</span>` : ''}
+                </div>
+                <p style="font-size:.78rem;color:var(--color-text-muted);">Generada el ${formatFecha(rutina.timestamp)}</p>
+            `;
+        }
+
+        function showFb(el, msg, tipo) {
+            el.innerHTML = `<div class="alert ${tipo === 'success' ? 'success' : 'warning'}" style="padding:.5rem .75rem;"><small>${escHtml(msg)}</small></div>`;
+            setTimeout(() => { el.innerHTML = ''; }, 4000);
+        }
+
+        function capitalizar(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1).replace(/_/g,' ') : ''; }
+        function formatFecha(iso) {
+            if (!iso) return '—';
+            return new Date(iso).toLocaleDateString('es-CO', { day:'numeric', month:'short', year:'numeric' });
+        }
+        function escHtml(t) {
+            return String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+        }
+        function mostrarToast(msg, tipo) {
+            const t = document.getElementById('toast');
+            if (!t) return;
+            t.textContent = msg;
+            t.className = `toast show ${tipo}`;
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        window.cerrarSesionApp = function() {
+            SV_AUTH.cerrarSesion();
+            setTimeout(() => window.location.href = '../index.html', 300);
+        };
+    })();
+    </script>
+    <script src="../js/gym-bg.js"></script>
+<script src="../js/notificaciones.js"></script>
+<script src="../js/i18n.js"></script>
+</body>
+</html>

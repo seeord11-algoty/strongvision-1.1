@@ -1,0 +1,541 @@
+{
+  "version": "1.0",
+  "ejercicios": {
+    "pecho": [
+      {
+        "nombre": "Press de banca con barra",
+        "equipo": "barra",
+        "impacto": "alto",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Press inclinado con mancuerna",
+        "equipo": "mancuerna",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Press declinado con barra",
+        "equipo": "barra",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Aperturas con mancuerna",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Cruce de poleas",
+        "equipo": "polea",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Flexiones de pecho",
+        "equipo": "ninguno",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo",
+          "muñeca"
+        ]
+      },
+      {
+        "nombre": "Press en máquina Smith",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Pec deck (contractor)",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro"
+        ]
+      }
+    ],
+    "espalda": [
+      {
+        "nombre": "Peso muerto convencional",
+        "equipo": "barra",
+        "impacto": "alto",
+        "carga_axial": true,
+        "articulaciones": [
+          "lumbar",
+          "rodilla",
+          "cadera"
+        ]
+      },
+      {
+        "nombre": "Dominadas asistidas",
+        "equipo": "maquina",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Remo con barra",
+        "equipo": "barra",
+        "impacto": "medio",
+        "carga_axial": true,
+        "articulaciones": [
+          "lumbar",
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Remo con mancuerna a una mano",
+        "equipo": "mancuerna",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Jalón al pecho en polea",
+        "equipo": "polea",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Remo sentado en polea",
+        "equipo": "polea",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Hiperextensiones lumbares",
+        "equipo": "maquina",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "lumbar"
+        ]
+      },
+      {
+        "nombre": "Remo en máquina T-bar",
+        "equipo": "maquina",
+        "impacto": "medio",
+        "carga_axial": true,
+        "articulaciones": [
+          "lumbar",
+          "hombro"
+        ]
+      }
+    ],
+    "piernas": [
+      {
+        "nombre": "Sentadilla con barra",
+        "equipo": "barra",
+        "impacto": "alto",
+        "carga_axial": true,
+        "articulaciones": [
+          "lumbar",
+          "rodilla",
+          "cadera"
+        ]
+      },
+      {
+        "nombre": "Sentadilla goblet con mancuerna",
+        "equipo": "mancuerna",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "cadera"
+        ]
+      },
+      {
+        "nombre": "Prensa de piernas 45°",
+        "equipo": "maquina",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "cadera"
+        ]
+      },
+      {
+        "nombre": "Zancadas con mancuernas",
+        "equipo": "mancuerna",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "cadera"
+        ]
+      },
+      {
+        "nombre": "Extensión de cuádriceps en máquina",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla"
+        ]
+      },
+      {
+        "nombre": "Curl femoral acostado",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla"
+        ]
+      },
+      {
+        "nombre": "Elevación de gemelos de pie",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "tobillo"
+        ]
+      },
+      {
+        "nombre": "Peso muerto rumano",
+        "equipo": "barra",
+        "impacto": "medio",
+        "carga_axial": true,
+        "articulaciones": [
+          "lumbar",
+          "cadera"
+        ]
+      },
+      {
+        "nombre": "Hip thrust con barra",
+        "equipo": "barra",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "cadera"
+        ]
+      },
+      {
+        "nombre": "Sentadilla búlgara",
+        "equipo": "mancuerna",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "cadera"
+        ]
+      }
+    ],
+    "hombro": [
+      {
+        "nombre": "Press militar con barra",
+        "equipo": "barra",
+        "impacto": "alto",
+        "carga_axial": true,
+        "articulaciones": [
+          "hombro",
+          "codo",
+          "lumbar"
+        ]
+      },
+      {
+        "nombre": "Press de hombro con mancuerna sentado",
+        "equipo": "mancuerna",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Elevaciones laterales",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Elevaciones frontales",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Pájaros (rear delt fly)",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Face pull en polea",
+        "equipo": "polea",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Press Arnold",
+        "equipo": "mancuerna",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      }
+    ],
+    "brazo": [
+      {
+        "nombre": "Curl de bíceps con barra",
+        "equipo": "barra",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Curl alterno con mancuerna",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Curl martillo",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Extensión de tríceps en polea",
+        "equipo": "polea",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Press francés con barra Z",
+        "equipo": "barra",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Fondos en banco",
+        "equipo": "ninguno",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "codo"
+        ]
+      },
+      {
+        "nombre": "Patada de tríceps",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "codo"
+        ]
+      }
+    ],
+    "core": [
+      {
+        "nombre": "Plancha frontal",
+        "equipo": "ninguno",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "lumbar",
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Crunch abdominal",
+        "equipo": "ninguno",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "lumbar"
+        ]
+      },
+      {
+        "nombre": "Elevación de piernas colgado",
+        "equipo": "barra",
+        "impacto": "medio",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "lumbar"
+        ]
+      },
+      {
+        "nombre": "Russian twist",
+        "equipo": "mancuerna",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "lumbar"
+        ]
+      },
+      {
+        "nombre": "Abdominales en máquina",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "lumbar"
+        ]
+      },
+      {
+        "nombre": "Plancha lateral",
+        "equipo": "ninguno",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "lumbar",
+          "hombro"
+        ]
+      },
+      {
+        "nombre": "Bicicleta abdominal",
+        "equipo": "ninguno",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "lumbar"
+        ]
+      }
+    ],
+    "cardio": [
+      {
+        "nombre": "Caminata en cinta",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "tobillo"
+        ]
+      },
+      {
+        "nombre": "Trote en cinta",
+        "equipo": "maquina",
+        "impacto": "alto",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "tobillo"
+        ]
+      },
+      {
+        "nombre": "Bicicleta estática",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla"
+        ]
+      },
+      {
+        "nombre": "Elíptica",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "tobillo"
+        ]
+      },
+      {
+        "nombre": "Remo ergómetro",
+        "equipo": "maquina",
+        "impacto": "bajo",
+        "carga_axial": false,
+        "articulaciones": [
+          "hombro",
+          "rodilla"
+        ]
+      },
+      {
+        "nombre": "Saltos con cuerda",
+        "equipo": "ninguno",
+        "impacto": "alto",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "tobillo"
+        ]
+      },
+      {
+        "nombre": "Burpees",
+        "equipo": "ninguno",
+        "impacto": "alto",
+        "carga_axial": false,
+        "articulaciones": [
+          "rodilla",
+          "hombro"
+        ]
+      }
+    ]
+  }
+}

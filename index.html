@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StrongVision - Rutinas de gimnasio personalizadas con IA basadas en tu nivel, edad, género y condición física.">
+    <meta name="theme-color" content="#0D0D0D">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <title>StrongVision - Rutinas de Gym Personalizadas con IA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SKIP LINK (WCAG 2.1 — SC 2.4.1) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- PAGE LOADER -->
+    <div id="appLoader" style="
+      position:fixed; inset:0; background:#050505;
+      display:flex; align-items:center; justify-content:center;
+      z-index:99999; transition: opacity 0.4s ease;
+    " aria-hidden="true">
+      <div style="text-align:center;">
+        <div style="
+          width:48px; height:48px;
+          border: 3px solid rgba(255,214,10,0.15);
+          border-top-color: #FFD60A;
+          border-radius:50%;
+          animation: spin 0.7s linear infinite;
+          margin: 0 auto 16px;
+        "></div>
+        <span style="color:#666; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase;">Cargando...</span>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('load', () => {
+        const l = document.getElementById('appLoader');
+        if (l) { l.style.opacity = '0'; setTimeout(() => l.remove(), 400); }
+      });
+    </script>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="Inicio StrongVision">
+                <div class="logo-icon" aria-hidden="true">
+                    <img src="images/SV_Fitness_white.png" alt="Logo StrongVision" width="40" height="40" style="object-fit:contain;">
+                </div>
+                <span><strong>Strong</strong>Vision<small class="brand-fitness">fitness</small></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Características</a>
+                <a href="#how-it-works">Cómo funciona</a>
+                <button class="btn btn-secondary" onclick="abrirModal('loginModal')">Iniciar sesión</button>
+                <button class="btn btn-primary" onclick="abrirModal('registroModal')">Crear cuenta</button>
+            </div>
+            <button class="nav-theme-btn" onclick="if(window.SV_I18N)SV_I18N.toggleLang()" aria-label="Cambiar idioma" id="langToggleBtn" style="margin-right:4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span class="lang-toggle-label">EN</span>
+            </button>
+            <button class="nav-theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+                <span id="themeIcon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                <span id="themeLabel">Modo claro</span>
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+            <div class="hero-badge">⚡ Asistente con IA</div>
+            <h1>Rutinas de gimnasio <span class="gradient-text">100% personalizadas</span> con IA</h1>
+            <p class="hero-subtitle">
+                StrongVision crea rutinas adaptadas a tu nivel, edad, género y condición física.
+                Considera tus lesiones y patologías para que entrenes seguro y avances cada semana.
+            </p>
+            <div class="hero-cta">
+                <button class="btn btn-primary btn-lg" onclick="abrirModal('registroModal')">
+                    Comenzar gratis →
+                </button>
+                <button class="btn btn-ghost btn-lg" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">
+                    Ver cómo funciona
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div aria-label="Más de 540 rutinas base">
+                    <strong aria-hidden="true">540+</strong>
+                    <span>Rutinas base</span>
+                </div>
+                <div aria-label="Más de 582 reglas de seguridad">
+                    <strong aria-hidden="true">582+</strong>
+                    <span>Reglas de seguridad</span>
+                </div>
+                <div aria-label="Algoritmo Genético con 20 individuos y 30 generaciones">
+                    <strong aria-hidden="true">AG</strong>
+                    <span>20×30 generaciones</span>
+                </div>
+                <div aria-label="19 patologías soportadas">
+                    <strong aria-hidden="true">19</strong>
+                    <span>Patologías soportadas</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FEATURES -->
+    <section id="features" class="section" aria-labelledby="features-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="features-heading">Lo que hace única a StrongVision</h2>
+                <p>Combinamos heurísticas, algoritmo genético, dataset clínico y un asistente de IA para que cada rutina sea tuya.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-fadeInUp">
+                    <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/></svg></div>
+                    <h3>Asistente de IA</h3>
+                    <p>Resuelve dudas sobre técnica, nutrición y planificación. Aprende de tu progreso.</p>
+                </div>
+                <div class="feature-card animate-fadeInUp">
+                    <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><line x1="8" y1="9" x2="4" y2="9"/><line x1="20" y1="9" x2="16" y2="9"/></svg></div>
+                    <h3>Algoritmo Genético</h3>
+                    <p>Evalúa 600 combinaciones en 30 generaciones: balance muscular, seguridad, progresión y distribución semanal.</p>
+                </div>
+                <div class="feature-card animate-fadeInUp">
+                    <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <h3>Adaptación clínica</h3>
+                    <p>Considera lesiones, hernias, hipertensión, diabetes, embarazo, artritis y más.</p>
+                </div>
+                <div class="feature-card animate-fadeInUp">
+                    <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                    <h3>Seguimiento real</h3>
+                    <p>Gráficas semanales, RPE, adherencia y ajustes automáticos según tu desempeño.</p>
+                </div>
+                <div class="feature-card animate-fadeInUp">
+                    <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+                    <h3>Gamificación</h3>
+                    <p>Logros, rachas, niveles y XP que convierten cada sesión en un objetivo.</p>
+                </div>
+                <div class="feature-card animate-fadeInUp">
+                    <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                    <h3>Diseño accesible</h3>
+                    <p>UI/UX responsive, contraste WCAG AAA y navegación por teclado completa.</p>
+                </div>
+                <div class="feature-card animate-fadeInUp">
+                    <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Calidad ISO 25010</h3>
+                    <p>Software medido bajo normas ISO 25010, ISO 9001 y CMMI desde el día uno.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="section section-alt" aria-labelledby="how-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="how-heading">En 3 pasos, tu rutina está lista</h2>
+                <p>Sin complicaciones. En menos de 2 minutos tendrás un plan personalizado y seguro.</p>
+            </div>
+            <div class="steps-flow">
+                <div class="step">
+                    <div class="step-number" aria-hidden="true">01</div>
+                    <h3>Completa tu perfil</h3>
+                    <p>Edad, peso, altura, nivel y condiciones médicas. Todo en un formulario guiado.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number" aria-hidden="true">02</div>
+                    <h3>La IA optimiza tu rutina</h3>
+                    <p>Heurística voraz sobre 540 plantillas, 582 reglas clínicas y un Algoritmo Genético que evalúa 600 variantes para encontrar tu plan ideal.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number" aria-hidden="true">03</div>
+                    <h3>Entrena y evoluciona</h3>
+                    <p>Seguimiento, RPE y ajuste automático semana a semana según tu progreso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div>
+                <div class="nav-logo" aria-hidden="true">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke="currentColor" stroke-width="2"/></svg>
+                    </div>
+                    <span><strong>Strong</strong>Vision<small class="brand-fitness">fitness</small></span>
+                </div>
+                <p>Estudio Shonos · Proyecto académico StrongVision · Unicomfacauca · 2026</p>
+                <p style="margin-top:4px; font-size:0.7rem; color:var(--color-text-subtle);">ISO 25010 · WCAG 2.1 AAA · ISO 9001</p>
+            </div>
+            <div>
+                <h4>Producto</h4>
+                <a href="#features">Características</a>
+                <a href="#how-it-works">Cómo funciona</a>
+            </div>
+            <div>
+                <h4>Calidad</h4>
+                <a href="pages/admin.html">ISO 25010</a>
+                <a href="pages/admin.html">ISO 9001 / CMMI</a>
+            </div>
+            <div>
+                <h4>Equipo</h4>
+                <p>ArquiAlgorit</p>
+            </div>
+        </div>
+    </footer>
+
+    </main><!-- /#main-content -->
+
+    <!-- MODAL: REGISTRO -->
+    <div id="registroModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="registroTitle" aria-hidden="true">
+        <div class="modal-overlay" onclick="cerrarModal('registroModal')"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" onclick="cerrarModal('registroModal')" aria-label="Cerrar modal de registro">×</button>
+            <h2 id="registroTitle">Crear cuenta</h2>
+            <p class="modal-sub">Comienza gratis. Sin tarjeta de crédito.</p>
+            <form id="registroForm" novalidate>
+                <div class="form-group">
+                    <label for="reg-nombre">Nombre completo *</label>
+                    <input type="text" id="reg-nombre" required minlength="3" autocomplete="name" placeholder="Tu nombre completo">
+                    <span class="error-msg" id="err-reg-nombre" aria-live="polite"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reg-cedula">Cédula *</label>
+                        <input type="text" id="reg-cedula" required inputmode="numeric" pattern="[0-9]{6,10}" autocomplete="off" placeholder="Ej: 1023456789">
+                        <span class="error-msg" id="err-reg-cedula" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-correo">Correo electrónico *</label>
+                        <input type="email" id="reg-correo" required autocomplete="email" placeholder="correo@ejemplo.com">
+                        <span class="error-msg" id="err-reg-correo" aria-live="polite"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reg-ciudad">Ciudad *</label>
+                        <input type="text" id="reg-ciudad" required autocomplete="off" placeholder="Escribe tu ciudad...">
+                        <span class="error-msg" id="err-reg-ciudad" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-direccion">Dirección *</label>
+                        <input type="text" id="reg-direccion" required autocomplete="off" placeholder="Ej: Calle 5 #10-20">
+                        <span class="error-msg" id="err-reg-direccion" aria-live="polite"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Contraseña *</label>
+                    <div class="pass-input-wrap">
+                        <input type="password" id="reg-password" required minlength="8" autocomplete="new-password" placeholder="Mínimo 8 caracteres">
+                        <button type="button" class="pass-toggle" onclick="togglePass('reg-password',this)" aria-label="Mostrar u ocultar contraseña">
+                            <svg class="eye-icon eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-icon eye-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                        </button>
+                    </div>
+                    <span class="error-msg" id="err-reg-password" aria-live="polite"></span>
+                    <ul class="pass-rules" id="passRules" aria-label="Requisitos de contraseña">
+                        <li id="rule-len">Mínimo 8 caracteres</li>
+                        <li id="rule-upper">Al menos una mayúscula (A–Z)</li>
+                        <li id="rule-num">Al menos un número (0–9)</li>
+                        <li id="rule-sym">Al menos un símbolo (!@#$…)</li>
+                    </ul>
+                    <div class="password-strength" id="passStrength" aria-live="polite">
+                        <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                        <span class="strength-label" id="strengthLabel">Ingresa una contraseña</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password2">Confirmar contraseña *</label>
+                    <div class="pass-input-wrap">
+                        <input type="password" id="reg-password2" required autocomplete="new-password" placeholder="Repite tu contraseña">
+                        <button type="button" class="pass-toggle" onclick="togglePass('reg-password2',this)" aria-label="Mostrar u ocultar confirmación">
+                            <svg class="eye-icon eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-icon eye-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                        </button>
+                    </div>
+                    <span class="error-msg" id="err-reg-password2" aria-live="polite"></span>
+                    <span class="pass-match-hint" id="passMatchHint"></span>
+                </div>
+                <!-- ===== BLOQUE LEGAL UNIFICADO ===== -->
+                <div class="legal-consent-block" style="margin-top: var(--sp-md);">
+                    <nav class="legal-tabs-nav" role="tablist" aria-label="Documentos legales">
+                        <button type="button" class="legal-tab-btn active" role="tab" aria-selected="true"
+                            aria-controls="legal-tab-tc" id="ltab-tc" onclick="switchLegalTab('tc')">
+                            Términos de Uso
+                        </button>
+                        <button type="button" class="legal-tab-btn" role="tab" aria-selected="false"
+                            aria-controls="legal-tab-hd" id="ltab-hd" onclick="switchLegalTab('hd')">
+                            Habeas Data
+                        </button>
+                    </nav>
+                    <div class="legal-scroll-area">
+                        <div id="legal-tab-tc" class="legal-tab-panel" role="tabpanel" aria-labelledby="ltab-tc">
+                            <h4>Términos y Condiciones de Uso</h4>
+                            <p>StrongVision es una plataforma web educativa de entrenamiento físico personalizado. Al crear una cuenta, el usuario acepta utilizar la plataforma de forma responsable y reconoce que:</p>
+                            <ul>
+                                <li>Las rutinas generadas por la IA son orientativas y no reemplazan la supervisión de un profesional de la salud o entrenador certificado.</li>
+                                <li>El usuario es responsable de consultar a su médico antes de iniciar cualquier programa de ejercicio, especialmente si tiene condiciones médicas preexistentes.</li>
+                                <li>StrongVision no se hace responsable por lesiones derivadas del uso incorrecto de las rutinas generadas.</li>
+                                <li>La plataforma es de uso personal e intransferible.</li>
+                            </ul>
+                        </div>
+                        <div id="legal-tab-hd" class="legal-tab-panel" role="tabpanel" aria-labelledby="ltab-hd" hidden>
+                            <h4>Política de Habeas Data (Ley 1581 de 2012)</h4>
+                            <p>En cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013 (Colombia), StrongVision informa:</p>
+                            <p><strong>Responsable del tratamiento:</strong> Equipo StrongVision (proyecto académico)</p>
+                            <p class="legal-data-row">Datos recopilados:</p>
+                            <ul>
+                                <li><strong>Identificación:</strong> nombre completo, correo electrónico, ciudad y dirección.</li>
+                                <li><strong>Salud:</strong> edad, género, peso, estatura, nivel de condición física, objetivo de entrenamiento, patologías y lesiones declaradas.</li>
+                                <li><strong>Actividad:</strong> historial de entrenamientos, RPE registrado, molestias reportadas y progreso físico.</li>
+                            </ul>
+                            <p class="legal-data-row">Finalidad del tratamiento:</p>
+                            <p>Los datos se utilizan exclusivamente para generar rutinas de entrenamiento personalizadas y seguras dentro de la plataforma.</p>
+                            <p class="legal-data-row">Almacenamiento:</p>
+                            <p>Todos los datos se almacenan localmente en el navegador (localStorage). StrongVision <strong>NO</strong> transmite, vende ni comparte datos personales con terceros ni servidores externos.</p>
+                            <p class="legal-data-row">Derechos del titular:</p>
+                            <p>El usuario puede conocer, actualizar, rectificar y suprimir sus datos desde <strong>Ajustes → "Eliminar mi cuenta"</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="legal-checks">
+                        <label class="legal-check-row">
+                            <input type="checkbox" id="reg-terminos" required>
+                            <span class="check-custom" aria-hidden="true"></span>
+                            <span>He leído y acepto los <strong>Términos y Condiciones</strong> de uso *</span>
+                        </label>
+                        <span class="error-msg" id="err-reg-terminos" aria-live="polite"></span>
+                        <label class="legal-check-row">
+                            <input type="checkbox" id="reg-habeas" required>
+                            <span class="check-custom" aria-hidden="true"></span>
+                            <span>Autorizo el tratamiento de mis datos personales (<strong>Habeas Data</strong> · Ley 1581 de 2012) *</span>
+                        </label>
+                        <span class="error-msg" id="err-reg-habeas" aria-live="polite"></span>
+                    </div>
+                </div>
+                <div id="reg-feedback" class="form-feedback" role="alert"></div>
+                <button type="submit" class="btn btn-primary btn-block">Crear cuenta</button>
+                <p class="modal-footer-text">¿Ya tienes cuenta? <a href="#" onclick="cambiarModal('registroModal','loginModal');return false;">Inicia sesión</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: LOGIN -->
+    <div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
+        <div class="modal-overlay" onclick="cerrarModal('loginModal')"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" onclick="cerrarModal('loginModal')" aria-label="Cerrar modal de inicio de sesión">×</button>
+            <h2 id="loginTitle">Iniciar sesión</h2>
+            <p class="modal-sub">Bienvenido de vuelta a StrongVision.</p>
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label for="log-correo">Correo electrónico</label>
+                    <input type="email" id="log-correo" required autocomplete="email" placeholder="correo@ejemplo.com">
+                    <span class="error-msg" id="err-log-correo" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="log-password">Contraseña</label>
+                    <input type="password" id="log-password" required autocomplete="current-password" placeholder="Tu contraseña">
+                    <span class="error-msg" id="err-log-password" aria-live="polite"></span>
+                </div>
+                <div id="log-feedback" class="form-feedback" role="alert"></div>
+                <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                <p class="modal-footer-text">
+                    <a href="#" onclick="cambiarModal('loginModal','recoverModal');return false;">Olvidé mi contraseña</a>
+                </p>
+                <p class="modal-footer-text">¿No tienes cuenta? <a href="#" onclick="cambiarModal('loginModal','registroModal');return false;">Crear cuenta</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: RECUPERACIÓN (3 pasos) -->
+    <div id="recoverModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="recoverTitle" aria-hidden="true">
+        <div class="modal-overlay" onclick="cerrarModal('recoverModal')"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" onclick="cerrarModal('recoverModal')" aria-label="Cerrar modal de recuperación">×</button>
+
+            <div class="rec-steps" role="progressbar" aria-label="Progreso de recuperación">
+                <div class="rec-step-dot active" id="recDot1"></div>
+                <div class="rec-step-dot" id="recDot2"></div>
+                <div class="rec-step-dot" id="recDot3"></div>
+            </div>
+
+            <div id="recStep1">
+                <h2 id="recoverTitle">Recuperar contraseña</h2>
+                <p class="modal-sub">Ingresa tu correo y te enviaremos un código de 6 dígitos.</p>
+                <div class="form-group">
+                    <label for="rec-correo">Correo registrado</label>
+                    <input type="email" id="rec-correo" required autocomplete="email" placeholder="tucorreo@ejemplo.com">
+                    <span class="error-msg" id="err-rec-correo" aria-live="polite"></span>
+                </div>
+                <div id="rec-feedback-1" class="form-feedback" role="alert"></div>
+                <button class="btn btn-primary btn-block" id="btnEnviarCodigo">Enviar código →</button>
+                <p class="modal-footer-text">
+                    <a href="#" onclick="cambiarModal('recoverModal','loginModal');return false;">Volver a iniciar sesión</a>
+                </p>
+            </div>
+
+            <div id="recStep2" style="display:none;">
+                <h2>Verificar código</h2>
+                <p class="modal-sub">Ingresa el código de 6 dígitos enviado a <strong id="recCorreoMostrado">tu correo</strong>.</p>
+                <div class="form-group">
+                    <label for="rec-codigo">Código de verificación</label>
+                    <input type="text" id="rec-codigo" maxlength="6" placeholder="000000"
+                        style="font-size:1.5rem; letter-spacing:0.4em; text-align:center; font-weight:700;"
+                        autocomplete="one-time-code" inputmode="numeric">
+                </div>
+                <div id="rec-feedback-2" class="form-feedback" role="alert"></div>
+                <button class="btn btn-primary btn-block" id="btnVerificarCodigo">Verificar →</button>
+                <p class="modal-footer-text" style="display:flex; justify-content:space-between;">
+                    <a href="#" id="btnReenviarCodigo">Reenviar código</a>
+                    <a href="#" onclick="recReset();return false;">Cambiar correo</a>
+                </p>
+            </div>
+
+            <div id="recStep3" style="display:none;">
+                <h2>Nueva contraseña</h2>
+                <p class="modal-sub">Crea una contraseña segura para tu cuenta.</p>
+                <div class="form-group">
+                    <label for="rec-nueva-pass">Nueva contraseña</label>
+                    <input type="password" id="rec-nueva-pass" required minlength="8" autocomplete="new-password" placeholder="Mínimo 8 caracteres">
+                    <small class="hint">Mínimo 8 caracteres, mayúsculas, números y un símbolo.</small>
+                </div>
+                <div class="form-group">
+                    <label for="rec-confirmar-pass">Confirmar contraseña</label>
+                    <input type="password" id="rec-confirmar-pass" required autocomplete="new-password" placeholder="Repite la contraseña">
+                </div>
+                <div id="rec-feedback-3" class="form-feedback" role="alert"></div>
+                <button class="btn btn-primary btn-block" id="btnCambiarPass">Cambiar contraseña ✓</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER CONSENTIMIENTO localStorage -->
+    <div id="cookieBanner" style="display:none;" role="region" aria-label="Aviso de privacidad">
+        <p>StrongVision almacena tus datos de entrenamiento únicamente en tu navegador (localStorage). No usamos cookies de rastreo ni enviamos información a servidores externos. Al continuar aceptas nuestra <a href="#" onclick="abrirPolitica('terminos');return false;">Política de datos</a>.</p>
+        <div class="cookie-actions">
+            <button class="btn btn-primary btn-sm" id="btnConsentir">Entendido</button>
+        </div>
+    </div>
+
+    <!-- MODAL POLÍTICA DE PRIVACIDAD Y HABEAS DATA -->
+    <div id="politicaModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="politicaModalTitle" aria-hidden="true">
+        <div class="modal-overlay" onclick="cerrarModal('politicaModal')"></div>
+        <div class="modal-content" role="document" style="max-width:680px;">
+            <button class="modal-close" onclick="cerrarModal('politicaModal')" aria-label="Cerrar">×</button>
+            <h2 id="politicaModalTitle">Política de Privacidad y Habeas Data</h2>
+            <p class="modal-sub" style="margin-bottom:1.2rem;">StrongVision — Proyecto académico</p>
+            <div id="politicaScroll" style="max-height:65vh;overflow-y:auto;padding-right:0.5rem;">
+
+                <section id="sec-terminos" style="margin-bottom:2rem;">
+                    <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem;color:var(--color-primary);">1. Términos y Condiciones de Uso</h3>
+                    <p style="font-size:0.875rem;line-height:1.75;color:var(--color-text-muted);">StrongVision es una plataforma web educativa de entrenamiento físico personalizado. Al crear una cuenta, el usuario acepta utilizar la plataforma de forma responsable y reconoce que:</p>
+                    <ul style="font-size:0.875rem;line-height:1.9;color:var(--color-text-muted);padding-left:1.2rem;margin-top:0.5rem;">
+                        <li>Las rutinas generadas por la IA son orientativas y no reemplazan la supervisión de un profesional de la salud o entrenador certificado.</li>
+                        <li>El usuario es responsable de consultar a su médico antes de iniciar cualquier programa de ejercicio, especialmente si tiene condiciones médicas preexistentes.</li>
+                        <li>StrongVision no se hace responsable por lesiones derivadas del uso incorrecto de las rutinas generadas.</li>
+                        <li>La plataforma es de uso personal e intransferible.</li>
+                    </ul>
+                </section>
+
+                <section id="sec-habeas" style="margin-bottom:1.5rem;">
+                    <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem;color:var(--color-primary);">2. Política de Tratamiento de Datos Personales (Habeas Data)</h3>
+                    <p style="font-size:0.875rem;line-height:1.75;color:var(--color-text-muted);">En cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013 (Colombia), StrongVision informa:</p>
+                    <p style="font-size:0.875rem;line-height:1.75;color:var(--color-text-muted);margin-top:0.6rem;"><strong style="color:var(--color-text);">Responsable del tratamiento:</strong> Equipo StrongVision (proyecto académico)</p>
+
+                    <p style="font-size:0.875rem;font-weight:700;color:var(--color-text);margin:0.9rem 0 0.35rem;">Datos recopilados:</p>
+                    <ul style="font-size:0.875rem;line-height:1.9;color:var(--color-text-muted);padding-left:1.2rem;">
+                        <li><strong style="color:var(--color-text);">Identificación:</strong> nombre completo, correo electrónico, ciudad y dirección.</li>
+                        <li><strong style="color:var(--color-text);">Salud:</strong> edad, género, peso, estatura, nivel de condición física, objetivo de entrenamiento, patologías y lesiones declaradas.</li>
+                        <li><strong style="color:var(--color-text);">Actividad:</strong> historial de entrenamientos, RPE registrado, molestias reportadas y progreso físico.</li>
+                    </ul>
+
+                    <p style="font-size:0.875rem;font-weight:700;color:var(--color-text);margin:0.9rem 0 0.35rem;">Finalidad del tratamiento:</p>
+                    <p style="font-size:0.875rem;line-height:1.75;color:var(--color-text-muted);">Los datos se utilizan exclusivamente para generar rutinas de entrenamiento personalizadas y seguras, adaptar las recomendaciones de la IA al perfil del usuario y mejorar la experiencia dentro de la plataforma.</p>
+
+                    <p style="font-size:0.875rem;font-weight:700;color:var(--color-text);margin:0.9rem 0 0.35rem;">Almacenamiento:</p>
+                    <p style="font-size:0.875rem;line-height:1.75;color:var(--color-text-muted);">Todos los datos se almacenan localmente en el navegador del usuario mediante localStorage. StrongVision <strong style="color:var(--color-text);">NO</strong> transmite, vende ni comparte datos personales con terceros ni con servidores externos.</p>
+
+                    <p style="font-size:0.875rem;font-weight:700;color:var(--color-text);margin:0.9rem 0 0.35rem;">Derechos del titular:</p>
+                    <p style="font-size:0.875rem;line-height:1.75;color:var(--color-text-muted);">El usuario tiene derecho a conocer, actualizar, rectificar y suprimir sus datos en cualquier momento desde la sección <strong style="color:var(--color-text);">Ajustes → "Exportar mis datos"</strong> o <strong style="color:var(--color-text);">"Eliminar mi cuenta"</strong>.</p>
+
+                    <p style="font-size:0.875rem;font-weight:700;color:var(--color-text);margin:0.9rem 0 0.35rem;">Vigencia:</p>
+                    <p style="font-size:0.875rem;line-height:1.75;color:var(--color-text-muted);">Los datos permanecen almacenados hasta que el usuario elimine su cuenta o borre los datos del navegador.</p>
+                </section>
+            </div>
+            <div style="margin-top:1.25rem;text-align:right;">
+                <button class="btn btn-primary" onclick="cerrarModal('politicaModal')">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

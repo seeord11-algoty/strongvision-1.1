@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Logros - StrongVision</title>
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .logros-page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: var(--sp-md);
+            margin-top: var(--sp-lg);
+        }
+        .logro-card {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-lg) var(--sp-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--sp-sm);
+            text-align: center;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        .logro-card.unlocked {
+            background: rgba(176,238,0,0.06);
+            border-color: rgba(176,238,0,0.3);
+            box-shadow: 0 0 16px rgba(176,238,0,0.1);
+        }
+        .logro-card.locked {
+            opacity: 0.45;
+            filter: grayscale(1);
+        }
+        .logro-card:hover:not(.locked) {
+            transform: translateY(-3px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-glow-sm);
+        }
+        .logro-card .logro-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+        .logro-card .logro-nombre {
+            font-size: var(--fs-sm);
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        .logro-card .logro-desc {
+            font-size: var(--fs-xs);
+            color: var(--color-text-muted);
+            line-height: 1.4;
+        }
+        .logro-card.unlocked .logro-nombre {
+            color: var(--color-primary);
+        }
+        .logro-card.unlocked::after {
+            content: '✓';
+            position: absolute;
+            top: 8px; right: 10px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+        .nivel-banner {
+            background: linear-gradient(135deg, var(--color-bg-card) 0%, rgba(176,238,0,0.06) 100%);
+            border: 1px solid rgba(176,238,0,0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--sp-xl);
+            flex-wrap: wrap;
+            margin-bottom: var(--sp-xl);
+        }
+        .nivel-numero {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(176,238,0,0.4);
+        }
+        .nivel-info { flex: 1; min-width: 200px; }
+        .nivel-info h2 { margin-bottom: var(--sp-xs); }
+        .nivel-info p { color: var(--color-text-muted); font-size: var(--fs-sm); margin-bottom: var(--sp-md); }
+        .logros-stats {
+            display: flex;
+            gap: var(--sp-xl);
+            flex-wrap: wrap;
+            margin-bottom: var(--sp-lg);
+        }
+        .logros-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .logros-stat strong {
+            font-size: var(--fs-2xl);
+            font-weight: 900;
+            color: var(--color-primary);
+        }
+        .logros-stat span {
+            font-size: var(--fs-xs);
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .categoria-titulo {
+            font-size: var(--fs-xs);
+            font-weight: 700;
+            color: var(--color-text-subtle);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: var(--sp-xl) 0 var(--sp-sm);
+            padding-bottom: var(--sp-xs);
+            border-bottom: 1px solid var(--color-border);
+        }
+    </style>
+    <link rel="stylesheet" href="../css/gym-bg.css">
+</head>
+<body class="app-body">
+    <div id="dash-bg">
+        <div class="dbg-overlay"></div>
+    </div>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <button id="sidebarToggle" onclick="toggleSidebar()" aria-label="Abrir menú lateral" style="display:none;position:fixed;top:14px;left:14px;z-index:70;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;">
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+    </button>
+    <aside class="sidebar" id="sidebar">
+        <a href="../index.html" class="sb-logo" aria-label="Inicio StrongVision">
+            <img src="../images/SV_Fitness_white.png" alt="StrongVision" class="sb-logo-img">
+        </a>
+        <nav class="sb-nav" aria-label="Menú principal">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> Inicio</a>
+            <a href="rutina.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span> Rutina</a>
+            <a href="entrenamiento.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> Entrenar</a>
+            <a href="progreso.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Progreso</a>
+            <a href="biblioteca.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> Biblioteca</a>
+            <a href="admin.html" class="nav-item admin-only-link" style="display:none"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Admin</a>
+        </nav>
+        <div class="sb-footer">
+            <div class="user-row" onclick="window.location='mi-cuenta.html'" role="button" tabindex="0">
+                <div class="u-avatar"><span id="avatarLetter">U</span></div>
+                <div class="u-info">
+                    <div class="u-name" id="sidebarUserName">Usuario</div>
+                    <div class="u-role">Ver perfil</div>
+                </div>
+                <span class="u-chev" aria-hidden="true">▾</span>
+            </div>
+        </div>
+    </aside>
+    <div class="app-main">
+        <header class="app-topbar">
+            <div class="tb-left">
+                <h1 id="pageTitle">Mis Logros</h1>
+            </div>
+            <div class="tb-right">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+                    <span id="themeIcon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                    <span id="themeLabel">Modo claro</span>
+                </button>
+                <div class="notif-btn" aria-label="Notificaciones"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-dot" aria-hidden="true"></span></div>
+                <div class="user-menu">
+                    <div class="tb-avatar" id="userAvatar" aria-haspopup="true" aria-expanded="false" aria-label="Menú de usuario" style="cursor:pointer;">U</div>
+                    <div class="user-dropdown" id="userDropdown" role="menu">
+                        <a href="mi-cuenta.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mi perfil</a>
+                        <a href="logros.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg> Mis logros</a>
+                        <a href="ajustes.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Ajustes</a>
+                        <a href="admin.html" class="admin-only-link" style="display:none" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Panel Admin</a>
+                        <hr>
+                        <button class="danger" onclick="cerrarSesionApp()" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <main id="main-content" class="page-container" style="max-width: 900px;">
+
+        <div class="page-header">
+            <h1><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg> Mis logros</h1>
+            <p>Tu historial de hitos y recompensas en StrongVision.</p>
+        </div>
+
+        <!-- BANNER DE NIVEL -->
+        <div class="nivel-banner">
+            <div class="nivel-numero" id="nivelNumero">1</div>
+            <div class="nivel-info">
+                <h2 id="nivelTitulo">Nivel 1</h2>
+                <p><span id="gamiXP">0</span> / <span id="gamiXPNext">100</span> XP para el siguiente nivel</p>
+                <div class="gami-progress" aria-label="Progreso de nivel">
+                    <div class="gami-progress-fill" id="gamiBar" style="width: 0%"></div>
+                </div>
+            </div>
+            <div id="rachaDisplay" style="display:none; text-align:center;">
+                <div style="font-size:2.5rem; filter:drop-shadow(0 0 8px rgba(255,140,0,0.5));">🔥</div>
+                <strong style="font-size:1.5rem; color:var(--color-warning);" id="rachaNum">0</strong>
+                <span style="font-size:var(--fs-xs); color:var(--color-text-muted); display:block;">días de racha</span>
+            </div>
+        </div>
+
+        <!-- ESTADÍSTICAS DE LOGROS -->
+        <div class="logros-stats">
+            <div class="logros-stat">
+                <strong id="logrosDesbloqueados">0</strong>
+                <span>Desbloqueados</span>
+            </div>
+            <div class="logros-stat">
+                <strong id="logrosTotales">0</strong>
+                <span>Disponibles</span>
+            </div>
+            <div class="logros-stat">
+                <strong id="logrosPorcentaje">0%</strong>
+                <span>Completado</span>
+            </div>
+        </div>
+
+        <!-- CATEGORÍA: RACHA -->
+        <p class="categoria-titulo">🔥 Rachas</p>
+        <div class="logros-page-grid" id="logrosRacha"></div>
+
+        <!-- CATEGORÍA: SESIONES -->
+        <p class="categoria-titulo">💪 Sesiones</p>
+        <div class="logros-page-grid" id="logrosSesiones"></div>
+
+        <!-- CATEGORÍA: NIVELES -->
+        <p class="categoria-titulo">⭐ Niveles</p>
+        <div class="logros-page-grid" id="logrosNiveles"></div>
+
+    </main>
+    </div><!-- /app-main -->
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../data/ejercicios-data.js"></script>
+    <script src="../data/filtros-data.js"></script>
+    <script src="../data/heuristicas-data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/nav-admin.js"></script>
+    <script src="../js/ia-engine.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        if (!SV_AUTH.requireAuth('../index.html')) throw new Error('No auth');
+
+        const usuario = SV_STORAGE.obtenerUsuarioActual();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Avatar y menú de usuario
+            document.getElementById('avatarLetter').textContent = usuario.nombre.charAt(0).toUpperCase();
+            document.getElementById('userAvatar').addEventListener('click', () => {
+                document.getElementById('userDropdown').classList.toggle('open');
+            });
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.user-menu')) {
+                    document.getElementById('userDropdown')?.classList.remove('open');
+                }
+            });
+
+            renderLogros();
+        });
+
+        const TODOS_LOGROS = {
+            racha: [
+                { id: 'racha_3',  icon: '🔥', nombre: '3 días',  desc: 'Entrena 3 días seguidos', meta: 3 },
+                { id: 'racha_7',  icon: '⚡', nombre: '7 días',  desc: 'Entrena 7 días seguidos', meta: 7 },
+                { id: 'racha_14', icon: '💎', nombre: '14 días', desc: 'Entrena 14 días seguidos', meta: 14 },
+                { id: 'racha_30', icon: '👑', nombre: '30 días', desc: 'Entrena 30 días seguidos', meta: 30 }
+            ],
+            sesiones: [
+                { id: 'primer_paso', icon: '👣', nombre: '1ª sesión',    desc: 'Completa tu primer entrenamiento', meta: 1 },
+                { id: 'sesiones_5',  icon: '🌱', nombre: '5 sesiones',   desc: 'Completa 5 entrenamientos', meta: 5 },
+                { id: 'sesiones_10', icon: '💪', nombre: '10 sesiones',  desc: 'Completa 10 entrenamientos', meta: 10 },
+                { id: 'sesiones_25', icon: '🎯', nombre: '25 sesiones',  desc: 'Completa 25 entrenamientos', meta: 25 },
+                { id: 'sesiones_50', icon: '🏆', nombre: '50 sesiones',  desc: 'Completa 50 entrenamientos', meta: 50 },
+                { id: 'sesiones_100',icon: '🌟', nombre: '100 sesiones', desc: 'Completa 100 entrenamientos', meta: 100 }
+            ],
+            niveles: [
+                { id: 'nivel_2',  icon: '⭐',  nombre: 'Nivel 2',  desc: 'Alcanza el nivel 2',  meta: 2 },
+                { id: 'nivel_5',  icon: '🌠',  nombre: 'Nivel 5',  desc: 'Alcanza el nivel 5',  meta: 5 },
+                { id: 'nivel_10', icon: '💫',  nombre: 'Nivel 10', desc: 'Alcanza el nivel 10', meta: 10 },
+                { id: 'nivel_20', icon: '🚀',  nombre: 'Nivel 20', desc: 'Alcanza el nivel 20', meta: 20 }
+            ]
+        };
+
+        function renderLogros() {
+            const gami = SV_STORAGE.obtenerGami(usuario.id);
+            const xpParaSiguiente = gami.nivel * 100;
+            const progresoNivel = Math.min(100, (gami.xp / xpParaSiguiente) * 100);
+
+            // Banner de nivel
+            document.getElementById('nivelNumero').textContent = gami.nivel;
+            document.getElementById('nivelTitulo').textContent = 'Nivel ' + gami.nivel;
+            document.getElementById('gamiXP').textContent = gami.xp;
+            document.getElementById('gamiXPNext').textContent = xpParaSiguiente;
+            document.getElementById('gamiBar').style.width = progresoNivel + '%';
+
+            if (gami.racha > 0) {
+                document.getElementById('rachaDisplay').style.display = 'block';
+                document.getElementById('rachaNum').textContent = gami.racha;
+            }
+
+            // Estadísticas globales
+            const todos = [...TODOS_LOGROS.racha, ...TODOS_LOGROS.sesiones, ...TODOS_LOGROS.niveles];
+            const desbloqueados = todos.filter(l => gami.logros.includes(l.id)).length;
+            document.getElementById('logrosDesbloqueados').textContent = desbloqueados;
+            document.getElementById('logrosTotales').textContent = todos.length;
+            document.getElementById('logrosPorcentaje').textContent = Math.round((desbloqueados / todos.length) * 100) + '%';
+
+            // Renderizar por categoría
+            renderCategoria('logrosRacha', TODOS_LOGROS.racha, gami);
+            renderCategoria('logrosSesiones', TODOS_LOGROS.sesiones, gami);
+            renderCategoria('logrosNiveles', TODOS_LOGROS.niveles, gami);
+        }
+
+        function renderCategoria(containerId, lista, gami) {
+            const el = document.getElementById(containerId);
+            el.innerHTML = lista.map(l => {
+                const desbloqueado = gami.logros.includes(l.id);
+                return `
+                    <div class="logro-card ${desbloqueado ? 'unlocked' : 'locked'}" aria-label="${l.nombre}: ${l.desc}${desbloqueado ? ' — desbloqueado' : ' — bloqueado'}">
+                        <span class="logro-icon" aria-hidden="true">${l.icon}</span>
+                        <span class="logro-nombre">${l.nombre}</span>
+                        <span class="logro-desc">${l.desc}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function cerrarSesionApp() {
+            SV_AUTH.cerrarSesion();
+            window.location.href = '../index.html';
+        }
+    </script>
+    <script src="../js/user-ai-sidebar.js"></script>
+    <script src="../js/gym-bg.js"></script>
+<script src="../js/notificaciones.js"></script>
+<script src="../js/i18n.js"></script>
+</body>
+</html>

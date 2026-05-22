@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Progreso - StrongVision</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/gym-bg.css">
+</head>
+<body class="app-body">
+    <div id="dash-bg">
+        <div class="dbg-overlay"></div>
+    </div>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <button id="sidebarToggle" onclick="toggleSidebar()" aria-label="Abrir menú lateral" style="display:none;position:fixed;top:14px;left:14px;z-index:70;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;">
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+    </button>
+    <aside class="sidebar" id="sidebar">
+        <a href="../index.html" class="sb-logo" aria-label="Inicio StrongVision">
+            <img src="../images/SV_Fitness_white.png" alt="StrongVision" class="sb-logo-img">
+        </a>
+        <nav class="sb-nav" aria-label="Menú principal">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> Inicio</a>
+            <a href="rutina.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span> Rutina</a>
+            <a href="entrenamiento.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> Entrenar</a>
+            <a href="progreso.html" class="nav-item active"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Progreso</a>
+            <a href="biblioteca.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> Biblioteca</a>
+            <a href="admin.html" class="nav-item admin-only-link" style="display:none"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Admin</a>
+        </nav>
+        <div class="sb-footer">
+            <div class="user-row" onclick="window.location='mi-cuenta.html'" role="button" tabindex="0">
+                <div class="u-avatar"><span id="avatarLetter">U</span></div>
+                <div class="u-info">
+                    <div class="u-name" id="sidebarUserName">Usuario</div>
+                    <div class="u-role">Ver perfil</div>
+                </div>
+                <span class="u-chev" aria-hidden="true">▾</span>
+            </div>
+        </div>
+    </aside>
+    <div class="app-main">
+        <header class="app-topbar">
+            <div class="tb-left">
+                <h1 id="pageTitle">Mi Progreso</h1>
+            </div>
+            <div class="tb-right">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+                    <span id="themeIcon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                    <span id="themeLabel">Modo claro</span>
+                </button>
+                <div class="notif-btn" aria-label="Notificaciones"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-dot" aria-hidden="true"></span></div>
+                <div class="user-menu">
+                    <div class="tb-avatar" id="userAvatar" aria-haspopup="true" aria-expanded="false" aria-label="Menú de usuario" style="cursor:pointer;">U</div>
+                    <div class="user-dropdown" id="userDropdown" role="menu">
+                        <a href="mi-cuenta.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mi perfil</a>
+                        <a href="logros.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg> Mis logros</a>
+                        <a href="ajustes.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Ajustes</a>
+                        <a href="admin.html" class="admin-only-link" style="display:none" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Panel Admin</a>
+                        <hr>
+                        <button class="danger" onclick="cerrarSesionApp()" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <main id="main-content" class="page-container">
+        <div class="page-header" style="margin-bottom:1.75rem;">
+            <h1>Mi Progreso</h1>
+            <p>Visualiza tu evolución y mantén el rumbo hacia tus metas.</p>
+        </div>
+
+        <div id="sinDatos" class="card" style="display:none;">
+            <div class="empty-state">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                <h3>Aún no hay datos para mostrar</h3>
+                <p>Completa tu primera sesión de entrenamiento para empezar a ver tu progreso.</p>
+                <a href="entrenamiento.html" class="btn btn-primary">Empezar a entrenar</a>
+            </div>
+        </div>
+
+        <div id="conDatos" style="display:none;">
+            <div class="prog-kpi-grid">
+                <div class="prog-kpi-card" data-accent="#FFD60A">
+                    <div class="pkc-icon" style="background:rgba(255,214,10,.1);color:#FFD60A;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="pkc-body">
+                        <div class="pkc-label">Sesiones totales</div>
+                        <div class="pkc-value" id="kpiSesiones">0</div>
+                        <div class="pkc-sub">entrenamientos completados</div>
+                    </div>
+                    <div class="pkc-bar" style="background:rgba(255,214,10,.18);"></div>
+                </div>
+                <div class="prog-kpi-card" data-accent="#60a5fa">
+                    <div class="pkc-icon" style="background:rgba(96,165,250,.1);color:#60a5fa;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="pkc-body">
+                        <div class="pkc-label">Tiempo total</div>
+                        <div class="pkc-value" id="kpiTiempo">0<small style="font-size:.5em;font-weight:500;opacity:.7;">h</small></div>
+                        <div class="pkc-sub">horas de entrenamiento</div>
+                    </div>
+                    <div class="pkc-bar" style="background:rgba(96,165,250,.18);"></div>
+                </div>
+                <div class="prog-kpi-card" data-accent="#f97316">
+                    <div class="pkc-icon" style="background:rgba(249,115,22,.1);color:#f97316;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                    </div>
+                    <div class="pkc-body">
+                        <div class="pkc-label">Calorías quemadas</div>
+                        <div class="pkc-value" id="kpiCalorias">0</div>
+                        <div class="pkc-sub">kcal en total</div>
+                    </div>
+                    <div class="pkc-bar" style="background:rgba(249,115,22,.18);"></div>
+                </div>
+                <div class="prog-kpi-card" data-accent="#a78bfa">
+                    <div class="pkc-icon" style="background:rgba(167,139,250,.1);color:#a78bfa;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="pkc-body">
+                        <div class="pkc-label">RPE promedio</div>
+                        <div class="pkc-value" id="kpiRPE">–</div>
+                        <div class="pkc-sub">esfuerzo percibido / 10</div>
+                    </div>
+                    <div class="pkc-bar" style="background:rgba(167,139,250,.18);"></div>
+                </div>
+            </div>
+
+            <style>
+                .prog-kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem;}
+                .prog-kpi-card{position:relative;background:var(--surface,#1a1a2e);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:16px;padding:1.25rem 1.25rem 1rem;display:flex;align-items:flex-start;gap:.9rem;overflow:hidden;transition:transform .18s,box-shadow .18s;}
+                .prog-kpi-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.3);}
+                .pkc-bar{position:absolute;bottom:0;left:0;right:0;height:3px;}
+                .pkc-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+                .pkc-body{flex:1;min-width:0;}
+                .pkc-label{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t3,rgba(255,255,255,.4));margin-bottom:.25rem;}
+                .pkc-value{font-size:2rem;font-weight:800;line-height:1;color:var(--t1,#fff);margin-bottom:.25rem;}
+                .pkc-sub{font-size:.7rem;color:var(--t3,rgba(255,255,255,.35));}
+            </style>
+
+            <div class="chart-container">
+                <div class="card-header">
+                    <div>
+                        <h2>Sesiones por semana</h2>
+                        <p class="card-subtitle">Últimas 8 semanas</p>
+                    </div>
+                </div>
+                <div class="chart-bars" id="chartSemanal" style="margin-top: var(--sp-xl);"></div>
+            </div>
+
+            <div class="chart-container" style="margin-top: var(--sp-lg);">
+                <div class="card-header">
+                    <div>
+                        <h2>Volumen por grupo muscular</h2>
+                        <p class="card-subtitle">Series completadas (últimas 4 semanas)</p>
+                    </div>
+                </div>
+                <div class="chart-bars" id="chartGrupos" style="margin-top: var(--sp-xl);"></div>
+            </div>
+
+            <div class="card" style="margin-top: var(--sp-lg);">
+                <div class="card-header">
+                    <div>
+                        <h2>Historial de sesiones</h2>
+                        <p class="card-subtitle">Filtra y exporta tu actividad</p>
+                    </div>
+                    <button class="btn btn-secondary" id="btnExportar">📄 Exportar PDF</button>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--sp-sm); margin-bottom: var(--sp-md);">
+                    <div class="form-group" style="margin: 0;">
+                        <label for="filtroDesde">Desde</label>
+                        <input type="date" id="filtroDesde">
+                    </div>
+                    <div class="form-group" style="margin: 0;">
+                        <label for="filtroHasta">Hasta</label>
+                        <input type="date" id="filtroHasta">
+                    </div>
+                    <div class="form-group" style="margin: 0;">
+                        <label for="filtroGrupo">Grupo muscular</label>
+                        <select id="filtroGrupo">
+                            <option value="">Todos</option>
+                            <option value="pecho">Pecho</option>
+                            <option value="espalda">Espalda</option>
+                            <option value="piernas">Piernas</option>
+                            <option value="hombro">Hombro</option>
+                            <option value="brazo">Brazo</option>
+                            <option value="core">Core</option>
+                            <option value="cardio">Cardio</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin: 0; display: flex; align-items: flex-end;">
+                        <button class="btn btn-secondary" id="btnLimpiarFiltros" style="width: 100%;">Limpiar filtros</button>
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Día</th>
+                                <th>Enfoque</th>
+                                <th>Ejercicios</th>
+                                <th>Tiempo</th>
+                                <th>RPE</th>
+                                <th>Cal.</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historialTbody"></tbody>
+                    </table>
+                </div>
+                <div id="historialEmpty" style="text-align:center; padding: var(--sp-md); color: var(--color-text-muted); display:none;">
+                    No hay sesiones que coincidan con los filtros aplicados.
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--sp-lg);">
+                <div class="card-header">
+                    <h2>Molestias reportadas</h2>
+                </div>
+                <div id="molestiasContenido">
+                    <div class="empty-state" style="padding: var(--sp-md);">
+                        <p style="color: var(--color-text-muted);">No has reportado molestias. ¡Sigue así!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div><!-- /app-main -->
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/nav-admin.js"></script>
+    <script src="../js/ia-engine.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/progreso.js"></script>
+    <script src="../js/user-ai-sidebar.js"></script>
+    <script src="../js/gym-bg.js"></script>
+<script src="../js/notificaciones.js"></script>
+<script src="../js/i18n.js"></script>
+</body>
+</html>

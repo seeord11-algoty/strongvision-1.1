@@ -1,0 +1,9494 @@
+﻿window.SV_DATA_FILTROS = {
+  "version": "1.0",
+  "total": 582,
+  "filtros": [
+    {
+      "id": "FT-0001",
+      "tipo": "patologia_lesion",
+      "clave": "hernia_lumbar",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "movimientos_evitar": [
+        "carga_axial",
+        "flexion_lumbar_cargada"
+      ],
+      "razon_clinica": "Carga axial empeora hernias lumbares",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0002",
+      "tipo": "patologia_lesion",
+      "clave": "rodilla_derecha",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "flexion_profunda_rodilla"
+      ],
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0003",
+      "tipo": "patologia_lesion",
+      "clave": "rodilla_izquierda",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto"
+      ],
+      "razon_clinica": "Reducir impacto en articulación afectada",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0004",
+      "tipo": "patologia_lesion",
+      "clave": "hombro_izquierdo",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "movimientos_evitar": [
+        "press_overhead_pesado"
+      ],
+      "razon_clinica": "Reducir compresión sobre el hombro afectado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0005",
+      "tipo": "patologia_lesion",
+      "clave": "hombro_derecho",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "movimientos_evitar": [
+        "press_overhead_pesado"
+      ],
+      "razon_clinica": "Proteger manguito rotador del hombro afectado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0006",
+      "tipo": "patologia_lesion",
+      "clave": "codo_tendinitis",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "movimientos_evitar": [
+        "flexion_codo_repetitiva_pesada"
+      ],
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0007",
+      "tipo": "patologia_lesion",
+      "clave": "muñeca_lesion",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "movimientos_evitar": [
+        "soporte_carga_muñeca"
+      ],
+      "razon_clinica": "Proteger la articulación de la muñeca",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0008",
+      "tipo": "patologia_lesion",
+      "clave": "tobillo_esguince",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "salto"
+      ],
+      "razon_clinica": "Permitir cicatrización del esguince",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0009",
+      "tipo": "patologia_lesion",
+      "clave": "diabetes_tipo2",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "movimientos_evitar": [
+        "ayuno_prolongado"
+      ],
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes.",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0010",
+      "tipo": "patologia_lesion",
+      "clave": "hipertension",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "movimientos_evitar": [
+        "valsalva",
+        "isometricos_pesados",
+        "HIIT"
+      ],
+      "razon_clinica": "Evitar picos de presión arterial",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0011",
+      "tipo": "patologia_lesion",
+      "clave": "asma",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "movimientos_evitar": [
+        "esfuerzo_anaerobico_prolongado"
+      ],
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0012",
+      "tipo": "patologia_lesion",
+      "clave": "escoliosis",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "movimientos_evitar": [
+        "carga_axial_asimetrica"
+      ],
+      "razon_clinica": "Evitar compresión asimétrica de columna",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0013",
+      "tipo": "patologia_lesion",
+      "clave": "cervicales",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "movimientos_evitar": [
+        "hiperextension_cervical"
+      ],
+      "razon_clinica": "Proteger zona cervical de compresión",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0014",
+      "tipo": "patologia_lesion",
+      "clave": "cardiopatia_leve",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "movimientos_evitar": [
+        "HIIT",
+        "alta_intensidad"
+      ],
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0015",
+      "tipo": "patologia_lesion",
+      "clave": "obesidad",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto"
+      ],
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0016",
+      "tipo": "patologia_lesion",
+      "clave": "embarazo",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "movimientos_evitar": [
+        "supino_prolongado",
+        "alto_impacto",
+        "core_directo_pesado"
+      ],
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0017",
+      "tipo": "patologia_lesion",
+      "clave": "osteoporosis",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "flexion_columna_cargada"
+      ],
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0018",
+      "tipo": "patologia_lesion",
+      "clave": "artritis",
+      "regla": "exclusion_y_sustitucion",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "rangos_extremos"
+      ],
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0019",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0020",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0021",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0022",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0023",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0024",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0025",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0026",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0027",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0028",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0029",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0030",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0031",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0032",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0033",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0034",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0035",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0036",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Jóvenes 16-25: foco en técnica antes que carga, evitar sobreentrenamiento",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0037",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0038",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0039",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0040",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0041",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0042",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0043",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0044",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0045",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0046",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0047",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0048",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0049",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0050",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0051",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0052",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0053",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0054",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [],
+      "razon_clinica": "Adultos 26-40: balance entre carga, técnica y recuperación",
+      "severidad": "baja"
+    },
+    {
+      "id": "FT-0055",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0056",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0057",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0058",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0059",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0060",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0061",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0062",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0063",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0064",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0065",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0066",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0067",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0068",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0069",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0070",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0071",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0072",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [],
+      "movimientos_evitar": [
+        "HIIT_extremo"
+      ],
+      "razon_clinica": "Adultos 41-55: progresión gradual y trabajo de movilidad",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0073",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0074",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0075",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0076",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0077",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0078",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0079",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0080",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0081",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0082",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0083",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0084",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0085",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0086",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0087",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0088",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0089",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0090",
+      "tipo": "edad_nivel_objetivo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Burpees",
+        "Saltos con cuerda",
+        "Sentadilla con barra"
+      ],
+      "movimientos_evitar": [
+        "alto_impacto",
+        "carga_axial_pesada"
+      ],
+      "razon_clinica": "Mayores de 56 años: priorizar movilidad, equilibrio y rangos articulares seguros",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0091",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo hipertrofia en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0092",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo hipertrofia en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0093",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo hipertrofia en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0094",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo fuerza en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0095",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo fuerza en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0096",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo fuerza en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0097",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo definicion en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0098",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo definicion en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0099",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo definicion en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0100",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo resistencia en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0101",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo resistencia en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0102",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo resistencia en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0103",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo tonificacion en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0104",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo tonificacion en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0105",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo tonificacion en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0106",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo perdida_peso en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0107",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo perdida_peso en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0108",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "masculino",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para masculino con objetivo perdida_peso en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0109",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo hipertrofia en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0110",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo hipertrofia en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0111",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo hipertrofia en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0112",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo fuerza en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0113",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo fuerza en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0114",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo fuerza en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0115",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo definicion en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0116",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo definicion en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0117",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo definicion en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0118",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo resistencia en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0119",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo resistencia en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0120",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo resistencia en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0121",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo tonificacion en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0122",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo tonificacion en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0123",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo tonificacion en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0124",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo perdida_peso en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0125",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo perdida_peso en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0126",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "femenino",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para femenino con objetivo perdida_peso en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0127",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo hipertrofia en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0128",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo hipertrofia en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0129",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "8-12 reps",
+        "Descanso 60-90s",
+        "Sobrecarga progresiva semanal"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo hipertrofia en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0130",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo fuerza en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0131",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo fuerza en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0132",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "3-6 reps",
+        "Descanso 2-3 min",
+        "Cargas pesadas con técnica impecable"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo fuerza en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0133",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo definicion en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0134",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo definicion en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0135",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Volumen alto",
+        "Cardio HIIT moderado (si está sano)",
+        "Hidratación y proteína"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo definicion en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0136",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo resistencia en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0137",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo resistencia en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0138",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Trabajo aeróbico variado",
+        "Buena técnica respiratoria"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo resistencia en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0139",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo tonificacion en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0140",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo tonificacion en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0141",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Mayor volumen (12-15 reps)",
+        "Descansos cortos (45-60s)"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo tonificacion en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0142",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo perdida_peso en nivel principiante",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0143",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo perdida_peso en nivel intermedio",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0144",
+      "tipo": "genero_objetivo_nivel",
+      "genero": "otro",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "recomendaciones_metabolicas": [
+        "Combinar fuerza + cardio",
+        "Déficit calórico ligero",
+        "Sesiones de 45-60 min"
+      ],
+      "ejercicios_priorizar": [],
+      "razon_clinica": "Adaptación de volumen e intensidad para otro con objetivo perdida_peso en nivel avanzado",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0145",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hernia_lumbar",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Carga axial empeora hernias lumbares + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0146",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hernia_lumbar",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Carga axial empeora hernias lumbares + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0147",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hernia_lumbar",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Carga axial empeora hernias lumbares + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0148",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hernia_lumbar",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Carga axial empeora hernias lumbares + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0149",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_derecha",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0150",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_derecha",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0151",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_derecha",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0152",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_derecha",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0153",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_izquierda",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir impacto en articulación afectada + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0154",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_izquierda",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir impacto en articulación afectada + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0155",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_izquierda",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir impacto en articulación afectada + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0156",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "rodilla_izquierda",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir impacto en articulación afectada + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0157",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_izquierdo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0158",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_izquierdo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0159",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_izquierdo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0160",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_izquierdo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0161",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_derecho",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0162",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_derecho",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0163",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_derecho",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0164",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hombro_derecho",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0165",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "codo_tendinitis",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0166",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "codo_tendinitis",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0167",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "codo_tendinitis",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0168",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "codo_tendinitis",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0169",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "muñeca_lesion",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger la articulación de la muñeca + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0170",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "muñeca_lesion",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger la articulación de la muñeca + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0171",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "muñeca_lesion",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger la articulación de la muñeca + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0172",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "muñeca_lesion",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger la articulación de la muñeca + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0173",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "tobillo_esguince",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Permitir cicatrización del esguince + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0174",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "tobillo_esguince",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Permitir cicatrización del esguince + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0175",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "tobillo_esguince",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Permitir cicatrización del esguince + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0176",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "tobillo_esguince",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Permitir cicatrización del esguince + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0177",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "diabetes_tipo2",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0178",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "diabetes_tipo2",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0179",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "diabetes_tipo2",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0180",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "diabetes_tipo2",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0181",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hipertension",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar picos de presión arterial + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0182",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hipertension",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar picos de presión arterial + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0183",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hipertension",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar picos de presión arterial + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0184",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "hipertension",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar picos de presión arterial + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0185",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "asma",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0186",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "asma",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0187",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "asma",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0188",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "asma",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0189",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "escoliosis",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar compresión asimétrica de columna + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0190",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "escoliosis",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar compresión asimétrica de columna + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0191",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "escoliosis",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar compresión asimétrica de columna + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0192",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "escoliosis",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar compresión asimétrica de columna + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0193",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cervicales",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger zona cervical de compresión + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0194",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cervicales",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger zona cervical de compresión + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0195",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cervicales",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger zona cervical de compresión + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0196",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cervicales",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger zona cervical de compresión + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0197",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cardiopatia_leve",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0198",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cardiopatia_leve",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0199",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cardiopatia_leve",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0200",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "cardiopatia_leve",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0201",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "obesidad",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0202",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "obesidad",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0203",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "obesidad",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0204",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "obesidad",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0205",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "embarazo",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0206",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "embarazo",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0207",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "embarazo",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0208",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "embarazo",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0209",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "osteoporosis",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0210",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "osteoporosis",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0211",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "osteoporosis",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0212",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "osteoporosis",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0213",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "artritis",
+      "rango_edad": "joven",
+      "edad_min": 16,
+      "edad_max": 25,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones + ajuste por rango etario joven",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0214",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "artritis",
+      "rango_edad": "adulto",
+      "edad_min": 26,
+      "edad_max": 40,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_intensidad": "estandar",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones + ajuste por rango etario adulto",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0215",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "artritis",
+      "rango_edad": "adulto_mayor",
+      "edad_min": 41,
+      "edad_max": 55,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones + ajuste por rango etario adulto_mayor",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0216",
+      "tipo": "combinada_patologia_edad",
+      "clave_patologia": "artritis",
+      "rango_edad": "senior",
+      "edad_min": 56,
+      "edad_max": 75,
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_intensidad": "reducida",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones + ajuste por rango etario senior",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0217",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a masculino principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0218",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a masculino intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0219",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a masculino avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0220",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a femenino principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0221",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a femenino intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0222",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a femenino avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0223",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a otro principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0224",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a otro intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0225",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hernia_lumbar",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Peso muerto convencional",
+        "Sentadilla con barra",
+        "Press militar con barra",
+        "Remo con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado",
+        "Remo sentado en polea"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Carga axial empeora hernias lumbares ajustado a otro avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0226",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0227",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0228",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0229",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0230",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0231",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0232",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0233",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0234",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_derecha",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Sentadilla búlgara"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Caminata en cinta",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir impacto y rangos profundos hasta rehabilitar ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0235",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0236",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0237",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0238",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0239",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0240",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0241",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0242",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0243",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "rodilla_izquierda",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir impacto en articulación afectada ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0244",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0245",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0246",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0247",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0248",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0249",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0250",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0251",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0252",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_izquierdo",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra",
+        "Dominadas asistidas"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea",
+        "Elevaciones laterales (rango corto)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir compresión sobre el hombro afectado ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0253",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0254",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0255",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0256",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0257",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0258",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0259",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0260",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0261",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hombro_derecho",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Face pull en polea"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger manguito rotador del hombro afectado ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0262",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0263",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0264",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0265",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0266",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0267",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0268",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0269",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0270",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "codo_tendinitis",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Curl de bíceps con barra",
+        "Press francés con barra Z"
+      ],
+      "alternativas_recomendadas": [
+        "Curl martillo (carga ligera)",
+        "Extensión de tríceps en polea (carga ligera)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar estrés repetitivo sobre el tendón inflamado ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0271",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0272",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0273",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0274",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0275",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0276",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0277",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0278",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0279",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "muñeca_lesion",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Flexiones de pecho",
+        "Press de banca con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Pec deck (contractor)",
+        "Press en máquina Smith con muñequeras"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger la articulación de la muñeca ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0280",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0281",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0282",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0283",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0284",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0285",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0286",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0287",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0288",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "tobillo_esguince",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta",
+        "Zancadas con mancuernas"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Remo ergómetro",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Permitir cicatrización del esguince ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0289",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0290",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0291",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0292",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0293",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0294",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0295",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0296",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0297",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "diabetes_tipo2",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [],
+      "alternativas_recomendadas": [],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Hidratación y monitoreo de glucosa son críticos. Sesiones moderadas y constantes. ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0298",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0299",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0300",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0301",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0302",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0303",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0304",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0305",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0306",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "hipertension",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Press en máquina Smith"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar picos de presión arterial ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0307",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0308",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0309",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0310",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0311",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0312",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0313",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0314",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0315",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "asma",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Calentamiento progresivo y evitar disparadores broncoconstrictores ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0316",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0317",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0318",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0319",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0320",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0321",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0322",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0323",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0324",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "escoliosis",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Sentadilla con barra",
+        "Peso muerto convencional",
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Prensa de piernas 45°",
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar compresión asimétrica de columna ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0325",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0326",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0327",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0328",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0329",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0330",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0331",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0332",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0333",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cervicales",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Press militar con barra"
+      ],
+      "alternativas_recomendadas": [
+        "Press de hombro con mancuerna sentado"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger zona cervical de compresión ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0334",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a masculino principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0335",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a masculino intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0336",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a masculino avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0337",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a femenino principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0338",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a femenino intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0339",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a femenino avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0340",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a otro principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0341",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a otro intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0342",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "cardiopatia_leve",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Burpees",
+        "Saltos con cuerda",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Mantener FC bajo umbral seguro acordado con cardiólogo ajustado a otro avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0343",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0344",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0345",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0346",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0347",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0348",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0349",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0350",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0351",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "obesidad",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees",
+        "Trote en cinta"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Bicicleta estática",
+        "Elíptica"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Reducir carga sobre articulaciones de miembros inferiores ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0352",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a masculino principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0353",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a masculino intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0354",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a masculino avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0355",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a femenino principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0356",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a femenino intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0357",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a femenino avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0358",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a otro principiante",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0359",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a otro intermedio",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0360",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "embarazo",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Russian twist",
+        "Burpees",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Sentadilla goblet ligera",
+        "Plancha lateral suave"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Proteger al bebé y a la madre. Consultar siempre al médico ajustado a otro avanzado",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0361",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0362",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0363",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0364",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0365",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0366",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0367",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0368",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0369",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "osteoporosis",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Crunch abdominal",
+        "Saltos con cuerda",
+        "Peso muerto convencional"
+      ],
+      "alternativas_recomendadas": [
+        "Caminata en cinta",
+        "Prensa de piernas 45°",
+        "Plancha frontal"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Evitar fracturas por flexión vertebral o impacto ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0370",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "masculino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a masculino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0371",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "masculino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a masculino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0372",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "masculino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a masculino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0373",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "femenino",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a femenino principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0374",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "femenino",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a femenino intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0375",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "femenino",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a femenino avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0376",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "otro",
+      "nivel": "principiante",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "bajo",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a otro principiante",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0377",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "otro",
+      "nivel": "intermedio",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "medio",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a otro intermedio",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0378",
+      "tipo": "combinada_patologia_genero_nivel",
+      "clave_patologia": "artritis",
+      "genero": "otro",
+      "nivel": "avanzado",
+      "ejercicios_excluir": [
+        "Saltos con cuerda",
+        "Burpees"
+      ],
+      "alternativas_recomendadas": [
+        "Bicicleta estática",
+        "Elíptica",
+        "Pec deck (contractor)"
+      ],
+      "ajuste_volumen": "alto",
+      "razon_clinica": "Mantener movilidad sin agredir las articulaciones ajustado a otro avanzado",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0379",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0380",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0381",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0382",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0383",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0384",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0385",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0386",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0387",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0388",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0389",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0390",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0391",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0392",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0393",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0394",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0395",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0396",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 1,
+      "rpe_max": 4,
+      "accion": "incrementar_carga",
+      "ajuste_recomendado": "+5% peso o +1-2 reps",
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE bajo: estímulo insuficiente, progresar",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0397",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0398",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0399",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0400",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0401",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0402",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0403",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0404",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0405",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0406",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0407",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0408",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0409",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0410",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0411",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0412",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0413",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0414",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 5,
+      "rpe_max": 7,
+      "accion": "mantener",
+      "ajuste_recomendado": "Mantener carga actual",
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE óptimo: consolidar adaptaciones",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0415",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0416",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0417",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0418",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0419",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0420",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0421",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0422",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0423",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0424",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0425",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0426",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0427",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0428",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0429",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0430",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0431",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0432",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 8,
+      "rpe_max": 9,
+      "accion": "mantener_o_micro_reducir",
+      "ajuste_recomendado": "Mantener o -2% si fatiga acumulada",
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE alto: cerca del límite, atender recuperación",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0433",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "principiante",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0434",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "principiante",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0435",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "principiante",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0436",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "principiante",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0437",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "principiante",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0438",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "principiante",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0439",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "intermedio",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0440",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "intermedio",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0441",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "intermedio",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0442",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "intermedio",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0443",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "intermedio",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0444",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "intermedio",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0445",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "avanzado",
+      "objetivo": "hipertrofia",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0446",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "avanzado",
+      "objetivo": "fuerza",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0447",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "avanzado",
+      "objetivo": "definicion",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0448",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "avanzado",
+      "objetivo": "resistencia",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0449",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "avanzado",
+      "objetivo": "tonificacion",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0450",
+      "tipo": "progresion_adaptativa_rpe",
+      "rpe_min": 10,
+      "rpe_max": 10,
+      "accion": "reducir_carga",
+      "ajuste_recomendado": "-10% peso o -2 reps + descanso extra",
+      "nivel": "avanzado",
+      "objetivo": "perdida_peso",
+      "razon_clinica": "RPE máximo sostenido: riesgo de lesión y sobreentrenamiento",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0451",
+      "tipo": "molestia_recurrente",
+      "zona": "lumbar",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en lumbar en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0452",
+      "tipo": "molestia_recurrente",
+      "zona": "lumbar",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en lumbar en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0453",
+      "tipo": "molestia_recurrente",
+      "zona": "lumbar",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en lumbar en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0454",
+      "tipo": "molestia_recurrente",
+      "zona": "cervical",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en cervical en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0455",
+      "tipo": "molestia_recurrente",
+      "zona": "cervical",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en cervical en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0456",
+      "tipo": "molestia_recurrente",
+      "zona": "cervical",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en cervical en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0457",
+      "tipo": "molestia_recurrente",
+      "zona": "rodilla",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en rodilla en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0458",
+      "tipo": "molestia_recurrente",
+      "zona": "rodilla",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en rodilla en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0459",
+      "tipo": "molestia_recurrente",
+      "zona": "rodilla",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en rodilla en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0460",
+      "tipo": "molestia_recurrente",
+      "zona": "hombro",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en hombro en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0461",
+      "tipo": "molestia_recurrente",
+      "zona": "hombro",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en hombro en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0462",
+      "tipo": "molestia_recurrente",
+      "zona": "hombro",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en hombro en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0463",
+      "tipo": "molestia_recurrente",
+      "zona": "codo",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en codo en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0464",
+      "tipo": "molestia_recurrente",
+      "zona": "codo",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en codo en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0465",
+      "tipo": "molestia_recurrente",
+      "zona": "codo",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en codo en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0466",
+      "tipo": "molestia_recurrente",
+      "zona": "muñeca",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en muñeca en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0467",
+      "tipo": "molestia_recurrente",
+      "zona": "muñeca",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en muñeca en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0468",
+      "tipo": "molestia_recurrente",
+      "zona": "muñeca",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en muñeca en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0469",
+      "tipo": "molestia_recurrente",
+      "zona": "tobillo",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en tobillo en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0470",
+      "tipo": "molestia_recurrente",
+      "zona": "tobillo",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en tobillo en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0471",
+      "tipo": "molestia_recurrente",
+      "zona": "tobillo",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en tobillo en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0472",
+      "tipo": "molestia_recurrente",
+      "zona": "cadera",
+      "sesiones_consecutivas": 1,
+      "accion": "advertir",
+      "ajuste_recomendado": "Mostrar advertencia y recomendar descanso activo",
+      "razon_clinica": "Molestia recurrente en cadera en 1 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "media"
+    },
+    {
+      "id": "FT-0473",
+      "tipo": "molestia_recurrente",
+      "zona": "cadera",
+      "sesiones_consecutivas": 2,
+      "accion": "reducir_volumen",
+      "ajuste_recomendado": "Reducir volumen 30% y sustituir ejercicios que comprometan la zona",
+      "razon_clinica": "Molestia recurrente en cadera en 2 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0474",
+      "tipo": "molestia_recurrente",
+      "zona": "cadera",
+      "sesiones_consecutivas": 3,
+      "accion": "pausar_y_derivar",
+      "ajuste_recomendado": "Detener entrenamiento de la zona y sugerir consulta médica/fisioterapéutica",
+      "razon_clinica": "Molestia recurrente en cadera en 3 sesión(es) seguida(s) requiere acción protectora",
+      "severidad": "alta"
+    },
+    {
+      "id": "FT-0475",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0476",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0477",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0478",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0479",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0480",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0481",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0482",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0483",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0484",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0485",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0486",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0487",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0488",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0489",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0490",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0491",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0492",
+      "tipo": "equipo_disponible",
+      "equipo": "ninguno",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Flexiones de pecho",
+        "Plancha frontal",
+        "Burpees",
+        "Saltos con cuerda",
+        "Bicicleta abdominal"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: ninguno",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0493",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0494",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0495",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0496",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0497",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0498",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0499",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0500",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0501",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0502",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0503",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0504",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0505",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0506",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0507",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0508",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0509",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0510",
+      "tipo": "equipo_disponible",
+      "equipo": "mancuerna",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Curl alterno con mancuerna",
+        "Press de hombro con mancuerna sentado",
+        "Sentadilla goblet con mancuerna"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: mancuerna",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0511",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0512",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0513",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0514",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0515",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0516",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0517",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0518",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0519",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0520",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0521",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0522",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0523",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0524",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0525",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0526",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0527",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0528",
+      "tipo": "equipo_disponible",
+      "equipo": "barra",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Sentadilla con barra",
+        "Peso muerto convencional"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: barra",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0529",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0530",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0531",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0532",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0533",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0534",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0535",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0536",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0537",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0538",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0539",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0540",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0541",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0542",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0543",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0544",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0545",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0546",
+      "tipo": "equipo_disponible",
+      "equipo": "polea",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Jalón al pecho en polea",
+        "Remo sentado en polea",
+        "Cruce de poleas"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: polea",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0547",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0548",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0549",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0550",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0551",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0552",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0553",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0554",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0555",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0556",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0557",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0558",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0559",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0560",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0561",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0562",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0563",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0564",
+      "tipo": "equipo_disponible",
+      "equipo": "maquina",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Prensa de piernas 45°",
+        "Pec deck (contractor)",
+        "Extensión de cuádriceps en máquina"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: maquina",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0565",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "hipertrofia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0566",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "hipertrofia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0567",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "hipertrofia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0568",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "fuerza",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0569",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "fuerza",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0570",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "fuerza",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0571",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "definicion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0572",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "definicion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0573",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "definicion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0574",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "resistencia",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0575",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "resistencia",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0576",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "resistencia",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0577",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "tonificacion",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0578",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "tonificacion",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0579",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "tonificacion",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0580",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "perdida_peso",
+      "nivel": "principiante",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0581",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "perdida_peso",
+      "nivel": "intermedio",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    },
+    {
+      "id": "FT-0582",
+      "tipo": "equipo_disponible",
+      "equipo": "completo",
+      "objetivo": "perdida_peso",
+      "nivel": "avanzado",
+      "ejercicios_priorizar": [
+        "Press de banca con barra",
+        "Prensa de piernas 45°",
+        "Jalón al pecho en polea"
+      ],
+      "razon_clinica": "Adaptación de rutina al equipo disponible: completo",
+      "severidad": "informativa"
+    }
+  ]
+};

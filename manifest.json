@@ -1,0 +1,16 @@
+{
+  "name": "StrongVision",
+  "short_name": "StrongVision",
+  "description": "Rutinas de gimnasio personalizadas con IA — Unicomfacauca",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0B0F14",
+  "theme_color": "#FFD60A",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "images/logo.jpeg", "sizes": "192x192", "type": "image/jpeg" },
+    { "src": "images/logo.jpeg", "sizes": "512x512", "type": "image/jpeg" }
+  ],
+  "categories": ["health", "fitness", "sports"],
+  "lang": "es"
+}

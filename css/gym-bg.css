@@ -1,0 +1,213 @@
+/* =============================================
+   GYM BACKGROUND SLIDESHOW — Shared styles
+   Applies to all app pages except entrenamiento
+   ============================================= */
+
+#dash-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.dbg-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    transform: scale(1.06);
+}
+.dbg-slide.active {
+    opacity: 1;
+    animation: dbgZoom 28s ease-in-out forwards;
+}
+@keyframes dbgZoom {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1.0); }
+}
+.dbg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(4,4,12,0.55) 0%,
+        rgba(4,4,12,0.68) 40%,
+        rgba(4,4,12,0.88) 100%
+    );
+}
+
+/* ===== GLASS LAYER ===== */
+body.app-body { background: transparent; }
+
+/* Content panel — subtle translucent panel over the gym background */
+.app-main {
+    position: relative;
+    z-index: 10;
+    background: rgba(4,4,14,0.32) !important;
+    border-left: 1px solid rgba(255,255,255,0.04);
+}
+#main-content { background: transparent !important; }
+
+/* Sidebar — stronger glass so it reads clearly over the panel */
+.sidebar {
+    background: rgba(4,4,12,0.78) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-right: 1px solid rgba(255,255,255,0.07) !important;
+    z-index: 60;
+}
+
+/* Topbar inside content panel */
+.app-topbar {
+    background: rgba(4,4,12,0.55) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Cards — glass effect on top of the panel */
+.card, .stat-card, .gami-compact, .gami-card,
+.panel, .rutina-panel, .chart-container, .alert {
+    background: rgba(8,8,22,0.62) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-color: rgba(255,255,255,0.08) !important;
+}
+.card:hover      { border-color: rgba(255,255,255,0.14) !important; }
+.stat-card:hover { background: rgba(12,12,30,0.78) !important; border-color: rgba(255,214,10,0.32) !important; }
+.alert.warning   { background: rgba(255,193,7,0.12) !important; }
+.alert.info      { background: rgba(59,130,246,0.12) !important; }
+.alert.success   { background: rgba(255,214,10,0.10) !important; }
+
+/* Dropdown */
+.user-dropdown {
+    background: rgba(6,6,18,0.94) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-color: rgba(255,255,255,0.09) !important;
+}
+
+/* AI sidebar panel */
+.uas-panel {
+    background: rgba(6,6,20,0.40) !important;
+    border-top-color: rgba(255,255,255,0.07) !important;
+}
+
+/* =============================================
+   MODO CLARO — Gym-bg overrides
+   (Usa !important para ganar a las reglas de arriba)
+   ============================================= */
+
+/* Overlay muy suave — blanco cálido, deja ver gym muy levemente */
+[data-theme="light"] .dbg-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(250,250,248,0.91) 0%,
+        rgba(245,245,243,0.95) 50%,
+        rgba(245,245,243,0.98) 100%
+    ) !important;
+}
+
+/* Entrenamiento — overlay más transparente para que el cristal tenga fondo visible */
+[data-theme="light"] body.workout-page .dbg-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(245,243,238,0.72) 0%,
+        rgba(240,238,233,0.80) 50%,
+        rgba(238,236,231,0.86) 100%
+    ) !important;
+}
+
+[data-theme="light"] body.app-body { background: #fafaf8; }
+
+[data-theme="light"] .app-main {
+    background: rgba(250,250,248,0.55) !important;
+    border-left: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+[data-theme="light"] .sidebar {
+    background: rgba(250,250,248,0.97) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-right: 1px solid rgba(0,0,0,0.09) !important;
+}
+
+[data-theme="light"] .app-topbar {
+    background: rgba(250,250,248,0.95) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] .card,
+[data-theme="light"] .panel,
+[data-theme="light"] .rutina-panel,
+[data-theme="light"] .chart-container {
+    background: rgba(255,255,255,0.72) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+[data-theme="light"] .gami-card,
+[data-theme="light"] .gami-compact {
+    background: rgba(255,251,240,0.80) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-color: rgba(245,200,0,0.20) !important;
+    box-shadow: 0 2px 8px rgba(245,200,0,0.08) !important;
+}
+
+[data-theme="light"] .stat-card {
+    background: rgba(255,255,255,0.60) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+}
+
+[data-theme="light"] .card:hover {
+    background: rgba(255,255,255,0.88) !important;
+    border-color: rgba(245,200,0,0.35) !important;
+    box-shadow: 0 8px 28px rgba(245,200,0,0.14), 0 2px 8px rgba(0,0,0,0.07) !important;
+    transform: translateY(-2px);
+}
+[data-theme="light"] .stat-card:hover {
+    background: rgba(255,255,255,0.88) !important;
+    border-color: rgba(245,200,0,0.30) !important;
+    box-shadow: 0 6px 16px rgba(245,200,0,0.12) !important;
+}
+
+[data-theme="light"] .alert {
+    backdrop-filter: blur(10px) !important;
+}
+[data-theme="light"] .alert.warning {
+    background: rgba(245,200,0,0.10) !important;
+    border-color: rgba(245,200,0,0.30) !important;
+}
+[data-theme="light"] .alert.info {
+    background: rgba(0,0,0,0.04) !important;
+    border-color: rgba(0,0,0,0.10) !important;
+}
+[data-theme="light"] .alert.success {
+    background: rgba(245,200,0,0.10) !important;
+    border-color: rgba(245,200,0,0.30) !important;
+}
+[data-theme="light"] .alert.danger {
+    background: rgba(220,38,38,0.08) !important;
+    border-color: rgba(220,38,38,0.25) !important;
+}
+
+[data-theme="light"] .user-dropdown {
+    background: rgba(255,255,255,0.98) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-color: rgba(0,0,0,0.12) !important;
+}
+
+[data-theme="light"] .uas-panel {
+    background: rgba(255,255,255,0.30) !important;
+    border-top-color: rgba(0,0,0,0.08) !important;
+}

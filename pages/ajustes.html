@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes - StrongVision</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/gym-bg.css">
+    <style>
+        /* ===== AJUSTES PAGE ===== */
+        .aj-page { max-width: none; }
+        .aj-card { margin-bottom: 0; }
+        .aj-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.2rem; align-items: start; margin-bottom: 1.2rem; }
+        .aj-bottom { margin-bottom: 1.2rem; }
+        @media (max-width: 900px) {
+            .aj-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Footer */
+        .aj-footer {
+            padding: 1rem 1.5rem;
+            background: rgba(6,6,18,0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .aj-ft-brand { display: flex; align-items: center; gap: 0.7rem; }
+        .aj-ft-brand img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+        .aj-ft-name { font-size: 0.9rem; font-weight: 800; color: var(--t1); margin: 0 0 2px; }
+        .aj-ft-ver  { font-size: 0.67rem; font-weight: 700; color: var(--t3); text-transform: uppercase; letter-spacing: 0.07em; }
+        .aj-ft-mid  { text-align: center; font-size: 0.79rem; color: var(--t2); line-height: 1.6; }
+        .aj-ft-mid a { color: var(--y); text-decoration: none; font-weight: 600; font-size: 0.73rem; }
+        .aj-ft-right { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; }
+        @media (max-width: 700px) {
+            .aj-footer { flex-direction: column; align-items: flex-start; }
+            .aj-ft-right { justify-content: flex-start; }
+            .aj-ft-mid  { text-align: left; }
+        }
+
+        /* Section header */
+        .aj-hdr { display: flex; align-items: flex-start; gap: 0.85rem; padding-bottom: 1.1rem; margin-bottom: 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .aj-ico { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,214,10,0.09); border: 1px solid rgba(255,214,10,0.18); display: flex; align-items: center; justify-content: center; color: var(--y); flex-shrink: 0; }
+        .aj-hdr-text h2 { font-size: 1rem; font-weight: 800; color: var(--t1); margin: 0 0 2px; }
+        .aj-hdr-text p  { font-size: 0.78rem; color: var(--t2); margin: 0; }
+
+        /* Form elements */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+        .form-group { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.9rem; }
+        .form-group label:not(.checkbox-pill) { font-size: 0.77rem; font-weight: 600; color: var(--t2); text-transform: uppercase; letter-spacing: 0.04em; }
+        .hint  { font-size: 0.72rem; color: var(--t3); line-height: 1.4; }
+        .error-msg { font-size: 0.72rem; color: #f87171; display: none; }
+        .error-msg.visible { display: block; }
+
+        /* Password sub-header */
+        .aj-subhdr { display: flex; align-items: center; gap: 0.5rem; padding: 1rem 0 0.6rem; margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        .aj-subhdr svg { color: var(--t3); flex-shrink: 0; }
+        .aj-subhdr h3 { font-size: 0.88rem; font-weight: 700; color: var(--t1); margin: 0; flex: 1; }
+
+        /* Toggle rows */
+        .aj-toggle-list { display: flex; flex-direction: column; gap: 0; }
+        .aj-toggle-row  { display: flex; align-items: center; gap: 0.6rem; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); cursor: pointer; }
+        .aj-toggle-row:last-child { border-bottom: none; }
+        .aj-toggle-row input[type="checkbox"] { width: 15px; height: 15px; accent-color: var(--y); cursor: pointer; flex-shrink: 0; }
+        .aj-toggle-row span { font-size: 0.85rem; color: var(--t1); font-weight: 500; }
+
+        /* Day pills */
+        .day-pills { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+        .day-pills label { cursor: pointer; }
+        .day-pills input { display: none; }
+        .day-pills input + span { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; font-weight: 700; color: var(--t2); transition: all 0.18s; }
+        .day-pills input:checked + span { background: rgba(255,214,10,0.15); border-color: rgba(255,214,10,0.45); color: var(--y); }
+
+        /* Actions row */
+        .aj-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; padding-top: 1rem; margin-top: 0.4rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        /* Data action buttons */
+        .aj-data-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+
+        /* Danger zone */
+        .aj-danger-zone { margin-top: 1.2rem; padding: 1.1rem; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.18); border-radius: 12px; }
+        .aj-danger-zone h3 { font-size: 0.88rem; font-weight: 700; color: #fca5a5; margin: 0 0 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
+        .aj-danger-zone p  { font-size: 0.8rem; color: var(--t2); margin: 0 0 0.9rem; }
+
+        /* About card */
+        .aj-about { text-align: center; padding: 2rem 1.5rem; }
+        .aj-about img { width: 52px; height: 52px; object-fit: contain; margin: 0 auto 0.85rem; display: block; }
+        .aj-about-ver  { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--t3); margin-bottom: 0.35rem; }
+        .aj-about-team { font-size: 0.82rem; color: var(--t2); line-height: 1.65; margin-bottom: 0.8rem; }
+        .aj-badges { display: flex; gap: 0.4rem; justify-content: center; flex-wrap: wrap; }
+        .aj-badge  { font-size: 0.65rem; font-weight: 700; padding: 2px 9px; border-radius: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--t3); text-transform: uppercase; letter-spacing: 0.04em; }
+
+        /* ===== LIGHT MODE ===== */
+        /* Footer */
+        [data-theme="light"] .aj-footer {
+            background: rgba(255,255,255,0.78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-color: rgba(0,0,0,0.07);
+            box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+        }
+        [data-theme="light"] .aj-badge {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.10);
+            color: rgba(0,0,0,0.45);
+        }
+
+        /* Separadores y bordes de sección */
+        [data-theme="light"] .aj-hdr    { border-bottom-color: rgba(0,0,0,0.07); }
+        [data-theme="light"] .aj-subhdr { border-top-color: rgba(0,0,0,0.06); }
+        [data-theme="light"] .aj-actions { border-top-color: rgba(0,0,0,0.06); }
+        [data-theme="light"] .aj-toggle-row { border-bottom-color: rgba(0,0,0,0.05); }
+
+        /* Day pills */
+        [data-theme="light"] .day-pills input + span {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.12);
+            color: rgba(0,0,0,0.55);
+        }
+        [data-theme="light"] .day-pills input:checked + span {
+            background: rgba(245,200,0,0.16);
+            border-color: rgba(245,200,0,0.45);
+            color: #7a5c00;
+        }
+
+        /* Zona peligrosa */
+        [data-theme="light"] .aj-danger-zone {
+            background: rgba(239,68,68,0.05);
+            border-color: rgba(220,38,38,0.18);
+        }
+        [data-theme="light"] .aj-danger-zone h3 { color: #b91c1c; }
+        [data-theme="light"] .aj-danger-zone p  { color: rgba(0,0,0,0.60); }
+    </style>
+</head>
+<body class="app-body">
+    <div id="dash-bg">
+        <div class="dbg-overlay"></div>
+    </div>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <button id="sidebarToggle" onclick="toggleSidebar()" aria-label="Abrir menú lateral" style="display:none;position:fixed;top:14px;left:14px;z-index:70;width:40px;height:40px;background:var(--surface);border:1px solid var(--border);border-radius:10px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;">
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+        <span style="width:18px;height:2px;background:var(--t1);border-radius:1px;display:block;"></span>
+    </button>
+    <aside class="sidebar" id="sidebar">
+        <a href="../index.html" class="sb-logo" aria-label="Inicio StrongVision">
+            <img src="../images/SV_Fitness_white.png" alt="StrongVision" class="sb-logo-img">
+        </a>
+        <nav class="sb-nav" aria-label="Menú principal">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span> Inicio</a>
+            <a href="rutina.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></span> Rutina</a>
+            <a href="entrenamiento.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> Entrenar</a>
+            <a href="progreso.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Progreso</a>
+            <a href="biblioteca.html" class="nav-item"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> Biblioteca</a>
+            <a href="admin.html" class="nav-item admin-only-link" style="display:none"><span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Admin</a>
+        </nav>
+        <div class="sb-footer">
+            <div class="user-row" onclick="window.location='mi-cuenta.html'" role="button" tabindex="0">
+                <div class="u-avatar"><span id="avatarLetter">U</span></div>
+                <div class="u-info">
+                    <div class="u-name" id="sidebarUserName">Usuario</div>
+                    <div class="u-role">Ver perfil</div>
+                </div>
+                <span class="u-chev" aria-hidden="true">▾</span>
+            </div>
+        </div>
+    </aside>
+    <div class="app-main">
+        <header class="app-topbar">
+            <div class="tb-left">
+                <h1 id="pageTitle">Ajustes</h1>
+            </div>
+            <div class="tb-right">
+                <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+                    <span id="themeIcon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                    <span id="themeLabel">Modo claro</span>
+                </button>
+                <div class="notif-btn" aria-label="Notificaciones"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-dot" aria-hidden="true"></span></div>
+                <div class="user-menu">
+                    <div class="tb-avatar" id="userAvatar" aria-haspopup="true" aria-expanded="false" aria-label="Menú de usuario" style="cursor:pointer;">U</div>
+                    <div class="user-dropdown" id="userDropdown" role="menu">
+                        <a href="mi-cuenta.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Mi perfil</a>
+                        <a href="logros.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg> Mis logros</a>
+                        <a href="ajustes.html" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Ajustes</a>
+                        <a href="admin.html" class="admin-only-link" style="display:none" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Panel Admin</a>
+                        <hr>
+                        <button class="danger" onclick="cerrarSesionApp()" role="menuitem"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <main id="main-content" class="page-container aj-page">
+
+        <!-- ── Notificaciones | Preferencias ── -->
+        <div class="aj-grid">
+
+            <!-- Notificaciones -->
+            <div class="card aj-card">
+                <div class="aj-hdr">
+                    <span class="aj-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <div class="aj-hdr-text">
+                        <h2>Notificaciones</h2>
+                        <p>Recordatorios y alertas</p>
+                    </div>
+                </div>
+
+                <div class="aj-toggle-list">
+                    <label class="aj-toggle-row">
+                        <input type="checkbox" id="optRecordatorios">
+                        <span>Recordatorios de entrenamiento</span>
+                    </label>
+                    <label class="aj-toggle-row">
+                        <input type="checkbox" id="optNotifSesionOmitida">
+                        <span>Avisar si omití una sesión</span>
+                    </label>
+                    <label class="aj-toggle-row">
+                        <input type="checkbox" id="optNotifLogros">
+                        <span>Notificar logros desbloqueados</span>
+                    </label>
+                </div>
+
+                <div class="form-row" style="margin-top: 1rem;">
+                    <div class="form-group">
+                        <label for="recHora">Hora preferida</label>
+                        <input type="time" id="recHora" value="07:00">
+                    </div>
+                    <div class="form-group">
+                        <label>Días activos</label>
+                        <div class="day-pills">
+                            <label><input type="checkbox" name="dia-rec" value="lunes"><span>L</span></label>
+                            <label><input type="checkbox" name="dia-rec" value="martes"><span>M</span></label>
+                            <label><input type="checkbox" name="dia-rec" value="miercoles"><span>X</span></label>
+                            <label><input type="checkbox" name="dia-rec" value="jueves"><span>J</span></label>
+                            <label><input type="checkbox" name="dia-rec" value="viernes"><span>V</span></label>
+                            <label><input type="checkbox" name="dia-rec" value="sabado"><span>S</span></label>
+                            <label><input type="checkbox" name="dia-rec" value="domingo"><span>D</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aj-actions">
+                    <button type="button" id="btnGuardarAjustes" class="btn btn-primary">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Guardar preferencias
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preferencias -->
+            <div class="card aj-card">
+                <div class="aj-hdr">
+                    <span class="aj-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+                    </span>
+                    <div class="aj-hdr-text">
+                        <h2>Preferencias</h2>
+                        <p>Unidades y accesibilidad</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="optUnidad">Unidad de peso</label>
+                    <select id="optUnidad">
+                        <option value="kg">Kilogramos (kg)</option>
+                        <option value="lb">Libras (lb)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="optIdioma">Idioma</label>
+                    <select id="optIdioma">
+                        <option value="es-CO">Español (Colombia)</option>
+                        <option value="es-ES">Español (España)</option>
+                        <option value="en-US">English (US)</option>
+                    </select>
+                </div>
+
+                <div class="aj-toggle-list" style="margin-top: 0.5rem;">
+                    <label class="aj-toggle-row">
+                        <input type="checkbox" id="optReducirAnim">
+                        <span>Reducir animaciones (accesibilidad)</span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ── Privacidad y datos (ancho completo) ── -->
+        <div class="aj-bottom">
+            <div class="card aj-card">
+                <div class="aj-hdr">
+                    <span class="aj-ico">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </span>
+                    <div class="aj-hdr-text">
+                        <h2>Privacidad y datos</h2>
+                        <p>Tus datos se guardan solo en tu navegador (localStorage)</p>
+                    </div>
+                </div>
+
+                <p style="font-size:0.8rem;color:var(--color-text-muted);margin-bottom:0.9rem;">
+                    <a href="../index.html#politica" onclick="window.open('../index.html#politica','_blank');return false;" style="color:var(--color-primary);text-decoration:underline;">
+                        Ver Política de Privacidad y Habeas Data
+                    </a>
+                </p>
+                <div class="aj-data-actions">
+                    <button class="btn btn-secondary" id="btnExportarDatos">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Exportar datos (JSON)
+                    </button>
+                    <button class="btn btn-secondary" id="btnLimpiarHistorial">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                        Limpiar historial de chat
+                    </button>
+                </div>
+
+                <div class="aj-danger-zone">
+                    <h3>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        Zona peligrosa
+                    </h3>
+                    <p>Eliminar tu cuenta es <strong>permanente</strong>. Se borrarán todos tus datos sin posibilidad de recuperación.</p>
+                    <button class="btn btn-danger" id="btnEliminarCuenta">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+                        Eliminar mi cuenta
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Pie de página ── -->
+        <footer class="aj-footer">
+            <div class="aj-ft-brand">
+                <img src="../images/SV_Fitness_white.png" alt="StrongVision">
+                <div>
+                    <p class="aj-ft-name">StrongVision<small class="brand-fitness">fitness</small></p>
+                    <p class="aj-ft-ver">Versión 1.0.0</p>
+                </div>
+            </div>
+            <div class="aj-ft-mid">
+                ArquiAlgorit<br>
+                <a href="../docs/README.md">Ver documentación →</a>
+            </div>
+            <div class="aj-ft-right">
+                <span class="aj-badge">ISO 25010</span>
+                <span class="aj-badge">ISO 9001</span>
+                <span class="aj-badge">CMMI</span>
+                <span class="aj-badge">Proyecto académico</span>
+            </div>
+        </footer>
+
+    </main>
+    </div><!-- /app-main -->
+
+    <div id="confirmModal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-overlay" onclick="cerrarConfirm()"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" onclick="cerrarConfirm()">×</button>
+            <h2 id="confirmTitle">¿Estás seguro?</h2>
+            <p class="modal-sub" id="confirmText">Esta acción no se puede deshacer.</p>
+            <div class="form-group" id="confirmInputGroup" style="display:none;">
+                <label for="confirmInput">Escribe ELIMINAR para confirmar</label>
+                <input type="text" id="confirmInput" autocomplete="off">
+            </div>
+            <div style="display: flex; gap: var(--sp-sm); margin-top: var(--sp-md);">
+                <button class="btn btn-danger" id="confirmAccept">Confirmar</button>
+                <button class="btn btn-secondary" onclick="cerrarConfirm()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/nav-admin.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/ajustes.js"></script>
+    <script src="../js/ia-engine.js"></script>
+    <script src="../js/user-ai-sidebar.js"></script>
+    <script src="../js/gym-bg.js"></script>
+<script src="../js/notificaciones.js"></script>
+<script src="../js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,2107 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>try{var t=localStorage.getItem('sv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - StrongVision</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <meta name="theme-color" content="#0D0D0D">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        /* ===== BACKGROUND SLIDESHOW ===== */
+        .wz-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .wz-bg-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2.8s ease-in-out;
+            transform: scale(1.06);
+            animation: none;
+        }
+        .wz-bg-slide.active {
+            opacity: 1;
+            animation: slowZoom 16s ease-in-out forwards;
+        }
+        @keyframes slowZoom {
+            from { transform: scale(1.06); }
+            to   { transform: scale(1.0); }
+        }
+        .wz-bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(5,5,15,0.60) 0%,
+                rgba(5,5,15,0.75) 40%,
+                rgba(5,5,15,0.88) 100%
+            );
+        }
+
+        /* ===== WIZARD LAYOUT ===== */
+        body.perfil-wizard-body {
+            min-height: 100vh;
+            background: #08080f;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .wz-topbar {
+            height: 60px;
+            background: rgba(8,8,20,0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            flex-shrink: 0;
+        }
+        .wz-logo { height: 34px; width: auto; object-fit: contain; }
+        .wz-topbar-right { display: flex; align-items: center; gap: 0.75rem; }
+
+        .wz-outer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.5rem 4rem;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== BANNERS ===== */
+        .wz-banners {
+            width: 100%;
+            max-width: 640px;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        /* Override global .alert.info — dark glass instead of light-blue opaque */
+        .wz-banners .alert {
+            background: rgba(255,255,255,0.04) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            border-radius: 12px !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.82) !important;
+            padding: 0.85rem 1.1rem !important;
+            box-shadow: none !important;
+        }
+        .wz-banners .alert strong { color: #fff !important; font-weight: 700; }
+        .wz-banners .alert small  { color: rgba(255,255,255,0.5) !important; }
+        .wz-banners .alert .icon  { color: #60a5fa; flex-shrink: 0; }
+        .wz-banners .alert.info   { border-left: 3px solid rgba(96,165,250,0.5) !important; }
+
+        /* Lock notice — glass with subtle left accent */
+        .perfil-lock-notice {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-left: 3px solid rgba(255,214,10,0.55);
+            border-radius: 12px; padding: 0.85rem 1.1rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            font-size: 0.84rem; line-height: 1.55; color: rgba(255,255,255,0.72);
+        }
+        .perfil-lock-notice strong {
+            display: block; margin-bottom: 0.18rem;
+            color: #fff; font-size: 0.88rem; font-weight: 700;
+        }
+
+        /* ===== STEP TRACKER ===== */
+        .wz-tracker {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 640px;
+            margin-bottom: 1.75rem;
+        }
+        .wz-track-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.45rem;
+            flex-shrink: 0;
+        }
+        .wz-track-dot {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            border: 2px solid rgba(255,255,255,0.12);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.82rem; font-weight: 800;
+            color: rgba(255,255,255,0.3);
+            transition: background 0.35s, border-color 0.35s, color 0.35s, box-shadow 0.35s;
+        }
+        .wz-track-dot svg { width: 16px; height: 16px; }
+        .wz-track-item.active .wz-track-dot {
+            background: var(--y); border-color: var(--y); color: #000;
+            box-shadow: 0 0 20px rgba(255,214,10,0.5);
+        }
+        .wz-track-item.done .wz-track-dot {
+            background: rgba(34,197,94,0.15); border-color: #22c55e; color: #22c55e;
+        }
+        .wz-track-label {
+            font-size: 0.67rem; font-weight: 600; color: rgba(255,255,255,0.35);
+            white-space: nowrap;
+        }
+        .wz-track-item.active .wz-track-label { color: var(--y); }
+        .wz-track-item.done  .wz-track-label { color: #22c55e; }
+        .wz-track-line {
+            flex: 1;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            margin-top: 20px;
+            transition: background 0.5s;
+        }
+        .wz-track-line.done { background: #22c55e; }
+
+        /* ===== WIZARD CARD ===== */
+        .wz-card {
+            width: 100%;
+            max-width: 640px;
+            background: rgba(16,16,28,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 2rem 2rem 1.75rem;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04) inset;
+        }
+
+        /* Step header */
+        .wz-step-head {
+            display: flex; align-items: center; gap: 1rem;
+            margin-bottom: 1.75rem; padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .wz-step-icon {
+            width: 50px; height: 50px; border-radius: 14px;
+            background: rgba(255,214,10,0.08);
+            border: 1px solid rgba(255,214,10,0.18);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,214,10,0.85); flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(255,214,10,0.08);
+        }
+        .wz-step-icon svg { width: 22px; height: 22px; }
+        .wz-step-head h2 {
+            font-size: 1.15rem; font-weight: 800; color: #fff;
+            margin: 0 0 0.22rem; letter-spacing: -0.01em;
+        }
+        .wz-step-head p  { font-size: 0.77rem; color: rgba(255,255,255,0.35); margin: 0; letter-spacing: 0.01em; }
+
+        /* Nav */
+        .wz-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 1.8rem; padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            gap: 0.75rem;
+        }
+        .wz-nav-spacer { flex: 1; }
+
+        /* Animations */
+        @keyframes wzSlideIn  { from { opacity:0; transform:translateX(22px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes wzSlideBack{ from { opacity:0; transform:translateX(-22px);} to { opacity:1; transform:translateX(0); } }
+        .wz-anim-in   { animation: wzSlideIn   0.24s cubic-bezier(.22,.68,0,1.2); }
+        .wz-anim-back { animation: wzSlideBack 0.24s cubic-bezier(.22,.68,0,1.2); }
+
+        /* ===== FORM ELEMENTS (dark override for glass card) ===== */
+        .wz-card input:not([type=radio]):not([type=checkbox]):not([type=hidden]):not([type=range]),
+        .wz-card select,
+        .wz-card textarea {
+            background: rgba(255,255,255,0.05) !important;
+            border-color: rgba(255,255,255,0.1) !important;
+            color: #fff !important;
+        }
+        .wz-card input:not([type=range]):focus, .wz-card select:focus, .wz-card textarea:focus {
+            border-color: var(--y) !important;
+            box-shadow: 0 0 0 3px rgba(255,214,10,0.12) !important;
+        }
+        .wz-card select option { background: #1a1a2e; color: #fff; }
+        .wz-card label { color: rgba(255,255,255,0.75); font-size: 0.85rem; font-weight: 600; }
+
+        /* Custom select edad */
+        .cs-wrapper { position: relative; }
+        .cs-btn {
+            width: 100%; display: flex; align-items: center; justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #fff; font-size: inherit; font-family: inherit;
+            cursor: pointer; min-height: 44px; transition: border-color 0.18s, box-shadow 0.18s;
+            text-align: left;
+        }
+        .cs-btn:hover, .cs-btn:focus { outline: none; border-color: var(--y); box-shadow: 0 0 0 3px rgba(255,214,10,0.12); }
+        .cs-btn svg { flex-shrink: 0; transition: transform 0.2s; color: rgba(255,255,255,0.4); }
+        .cs-wrapper.open .cs-btn { border-color: var(--y); box-shadow: 0 0 0 3px rgba(255,214,10,0.12); }
+        .cs-wrapper.open .cs-btn svg { transform: rotate(180deg); }
+        .cs-placeholder { color: rgba(255,255,255,0.3); }
+        .cs-list {
+            position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 200;
+            background: #1a1a2e; border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px; max-height: 220px; overflow-y: auto;
+            display: none; box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+        }
+        .cs-wrapper.open .cs-list { display: block; animation: csSlide 0.15s ease; }
+        @keyframes csSlide { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+        .cs-item { padding: 0.65rem 1rem; cursor: pointer; font-size: 0.9rem; color: #e0e0e0; transition: background 0.12s; }
+        .cs-item:hover { background: rgba(255,214,10,0.08); }
+        .cs-item.selected { background: rgba(255,214,10,0.12); color: var(--y); font-weight: 600; }
+        .cs-wrapper.invalid .cs-btn { border-color: var(--red) !important; box-shadow: 0 0 0 3px rgba(248,113,113,0.15) !important; }
+
+        /* Radio / checkbox pills inside wizard card — dark glass override */
+        .wz-card .radio-pill span,
+        .wz-card .checkbox-pill span {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.65);
+            font-size: 0.81rem;
+        }
+        .wz-card .radio-pill:hover span,
+        .wz-card .checkbox-pill:hover span {
+            border-color: rgba(255,214,10,0.4);
+            color: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.08);
+        }
+        .wz-card .radio-pill input:checked ~ span,
+        .wz-card .checkbox-pill input:checked ~ span {
+            background: rgba(255,214,10,0.1);
+            border-color: rgba(255,214,10,0.55);
+            color: #ffe566;
+            font-weight: 700;
+            box-shadow: 0 0 12px rgba(255,214,10,0.08);
+        }
+
+        /* Radio pills icons */
+        .radio-pill span {
+            display: flex; align-items: center; gap: 6px;
+        }
+        .radio-pill span svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+        /* Salud toggle — mantener por compatibilidad con perfil.js */
+        .salud-toggle-btn { display: none; }
+
+        /* ===== SALUD SECTION — rediseño ===== */
+        .salud-toggle-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.55rem;
+        }
+        .salud-toggle-card {
+            display: flex; align-items: center; gap: 0.7rem;
+            padding: 0.85rem 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1.5px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            text-align: left; cursor: pointer;
+            font-family: inherit; width: 100%;
+            transition: all 0.18s;
+        }
+        .salud-toggle-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.14);
+        }
+        .salud-toggle-card.active {
+            background: rgba(34,197,94,0.07);
+            border-color: rgba(34,197,94,0.42);
+        }
+        .salud-toggle-card.warn-card.active {
+            background: rgba(251,191,36,0.07);
+            border-color: rgba(251,191,36,0.42);
+        }
+        .stc-icon {
+            width: 36px; height: 36px; flex-shrink: 0;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.25);
+            transition: all 0.18s;
+        }
+        .stc-icon svg { width: 16px; height: 16px; }
+        .stc-icon.stc-warn { color: rgba(251,191,36,0.45); }
+        .salud-toggle-card.active .stc-icon {
+            background: rgba(34,197,94,0.1);
+            border-color: rgba(34,197,94,0.3);
+            color: rgba(34,197,94,0.85);
+        }
+        .salud-toggle-card.warn-card.active .stc-icon {
+            background: rgba(251,191,36,0.1);
+            border-color: rgba(251,191,36,0.3);
+            color: rgba(251,191,36,0.85);
+        }
+        .stc-text { display: flex; flex-direction: column; gap: 2px; }
+        .stc-text strong { font-size: 0.79rem; font-weight: 700; color: rgba(255,255,255,0.65); }
+        .stc-text span   { font-size: 0.66rem; color: rgba(255,255,255,0.28); }
+        .salud-toggle-card.active .stc-text strong { color: rgba(34,197,94,0.92); }
+        .salud-toggle-card.warn-card.active .stc-text strong { color: rgba(251,191,36,0.92); }
+
+        /* Salud secciones internas */
+        .salud-detalle-panel {
+            overflow: hidden; max-height: 0;
+            transition: max-height 0.45s ease, opacity 0.3s ease, margin-top 0.3s ease;
+            opacity: 0; margin-top: 0;
+        }
+        .salud-detalle-panel.open { max-height: 1400px; opacity: 1; margin-top: 0.75rem; }
+
+        .salud-seccion {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 11px;
+            padding: 0.85rem 0.9rem;
+            margin-bottom: 0.55rem;
+        }
+        .salud-seccion:last-child { margin-bottom: 0; }
+        .salud-seccion-title {
+            display: flex; align-items: center; gap: 0.45rem;
+            font-size: 0.69rem; font-weight: 700;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase; letter-spacing: 0.06em;
+            margin-bottom: 0.65rem;
+        }
+        .salud-seccion-title svg { width: 12px; height: 12px; }
+        .salud-seccion-hint {
+            margin-left: auto;
+            font-size: 0.64rem; font-weight: 500;
+            color: rgba(255,255,255,0.22);
+            text-transform: none; letter-spacing: 0;
+        }
+        .salud-seccion select,
+        .salud-seccion textarea { margin-bottom: 0; }
+        .salud-seccion textarea {
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        /* Patología card grid */
+        .patologia-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.4rem;
+        }
+        .pat-card { display: block; cursor: pointer; position: relative; }
+        .pat-card input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+        .pat-card-body {
+            padding: 0.5rem 0.45rem;
+            background: rgba(255,255,255,0.04);
+            border: 1.5px solid rgba(255,255,255,0.07);
+            border-radius: 8px;
+            font-size: 0.74rem;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            line-height: 1.3;
+            transition: all 0.15s;
+            min-height: 44px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .pat-card:hover .pat-card-body {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.82);
+        }
+        .pat-card input:checked ~ .pat-card-body {
+            background: rgba(255,214,10,0.08);
+            border-color: rgba(255,214,10,0.45);
+            color: rgba(255,214,10,0.92);
+            font-weight: 700;
+        }
+        /* "Sin patología" card spans full width */
+        .pat-card-full { grid-column: span 3; }
+        .pat-card-full .pat-card-body { min-height: 36px; font-size: 0.76rem; }
+        .pat-card-full input:checked ~ .pat-card-body {
+            background: rgba(34,197,94,0.07);
+            border-color: rgba(34,197,94,0.4);
+            color: rgba(34,197,94,0.9);
+        }
+
+        /* Lesiones por zona */
+        .lesion-zone-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        .lesion-zone {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 9px;
+            padding: 0.6rem 0.7rem;
+        }
+        .lesion-zone-title {
+            display: flex; align-items: center; gap: 0.35rem;
+            font-size: 0.63rem; font-weight: 700;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase; letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.38rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .lesion-zone-title svg { width: 10px; height: 10px; }
+        .lesion-zone .checkbox-group { flex-direction: column; gap: 0.35rem; }
+        .lesion-zone .checkbox-pill { width: 100%; }
+        .lesion-zone .checkbox-pill span {
+            width: 100%; display: block;
+            border-radius: 7px !important;
+            font-size: 0.75rem;
+            padding: 0.38rem 0.65rem;
+            background: rgba(255,255,255,0.04) !important;
+            border-color: rgba(255,255,255,0.08) !important;
+            color: rgba(255,255,255,0.55);
+        }
+        .lesion-zone .checkbox-pill:hover span {
+            background: rgba(255,255,255,0.07) !important;
+            border-color: rgba(248,113,113,0.25) !important;
+            color: rgba(255,255,255,0.8);
+        }
+        .lesion-zone .checkbox-pill input:checked ~ span {
+            background: rgba(248,113,113,0.09) !important;
+            border-color: rgba(248,113,113,0.42) !important;
+            color: rgba(248,113,113,0.9) !important;
+            font-weight: 600;
+        }
+
+        @keyframes slideDownRec { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+
+        .perfil-locked .btn-cancel-perfil { display: none !important; }
+
+        /* Image indicator dots — fixed 3 */
+        .wz-bg-dots {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .wz-bg-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.22);
+            transition: background 0.6s ease, transform 0.6s ease, width 0.6s ease;
+        }
+        .wz-bg-dot.active {
+            background: var(--y);
+            transform: scale(1.3);
+            width: 16px;
+            border-radius: 3px;
+        }
+
+        /* Minor aviso */
+        #menorAviso {
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            margin-top: 0.5rem; padding: 0.65rem 0.9rem;
+            background: rgba(251,191,36,0.07);
+            border: 1px solid rgba(251,191,36,0.22);
+            border-left: 3px solid rgba(251,191,36,0.5);
+            border-radius: 8px; font-size: 0.79rem; color: rgba(255,255,255,0.65); line-height: 1.55;
+        }
+        #menorAviso svg { flex-shrink:0; margin-top:1px; color: #fbbf24; }
+        #menorAviso strong { color: rgba(255,255,255,0.85); }
+
+        /* Recomposicion panel */
+        #panelRecomposicion {
+            margin-top: 0.75rem;
+            background: rgba(255,214,10,0.06);
+            border-left: 3px solid var(--y);
+            border-radius: 8px; padding: 1rem;
+            animation: slideDownRec 0.25s ease;
+            font-size: 0.78rem; color: rgba(255,255,255,0.65);
+        }
+        #panelRecomposicion strong { color: var(--y); font-size: 0.82rem; }
+        #panelRecomposicion ul { margin: 0.3rem 0 0; padding-left: 1.1rem; line-height: 1.9; }
+
+        /* Alert inside wizard card */
+        .wz-card .alert {
+            background: rgba(251,191,36,0.07);
+            border: 1px solid rgba(251,191,36,0.2);
+            border-left: 3px solid rgba(251,191,36,0.5);
+            border-radius: 10px;
+        }
+        .wz-card .alert strong { color: rgba(255,255,255,0.9); }
+        .wz-card .alert small  { color: rgba(255,255,255,0.55); }
+        .wz-card .alert .icon  { color: rgba(251,191,36,0.85); }
+
+        /* ===== OPTION CARDS (nivel & objetivo) ===== */
+        .option-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.55rem;
+        }
+        .option-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.55rem;
+        }
+        .option-card-wrap {
+            position: relative;
+        }
+        .option-card-label {
+            display: block;
+            cursor: pointer;
+        }
+        .option-card-label input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .option-card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.38rem;
+            padding: 1.05rem 0.75rem 0.9rem;
+            background: rgba(255,255,255,0.04);
+            border: 1.5px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            text-align: center;
+            transition: background 0.18s, border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+            user-select: none;
+            min-height: 86px;
+        }
+        .option-card-body:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,214,10,0.2);
+            transform: translateY(-1px);
+        }
+        .option-card-label input:checked ~ .option-card-body {
+            background: rgba(255,214,10,0.07);
+            border-color: rgba(255,214,10,0.48);
+            box-shadow: 0 0 0 1px rgba(255,214,10,0.12), 0 6px 20px rgba(255,214,10,0.06);
+        }
+        .option-card-icon {
+            width: 38px; height: 38px;
+            border-radius: 11px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 0.1rem;
+            transition: all 0.18s;
+            flex-shrink: 0;
+        }
+        .option-card-icon svg { width: 17px; height: 17px; }
+        .option-card-label input:checked ~ .option-card-body .option-card-icon {
+            background: rgba(255,214,10,0.1);
+            border-color: rgba(255,214,10,0.3);
+            color: rgba(255,214,10,0.92);
+        }
+        .option-card-name {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.68);
+            line-height: 1.25;
+        }
+        .option-card-label input:checked ~ .option-card-body .option-card-name {
+            color: rgba(255,214,10,0.95);
+        }
+        .option-card-sub {
+            font-size: 0.63rem;
+            color: rgba(255,255,255,0.28);
+            line-height: 1.3;
+        }
+        /* Dot indicator when selected */
+        .option-card-label input:checked ~ .option-card-body::after {
+            content: '';
+            display: block;
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: rgba(255,214,10,0.75);
+            margin-top: 2px;
+            box-shadow: 0 0 6px rgba(255,214,10,0.5);
+        }
+        /* Info btn in top-right corner of card */
+        .option-card-info {
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            z-index: 2;
+        }
+        /* Full-width span (recomposición) */
+        .option-span-2 {
+            grid-column: span 2;
+        }
+        .option-span-2 .option-card-body {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 0.85rem;
+            padding: 0.85rem 1.1rem;
+            text-align: left;
+            min-height: auto;
+        }
+        .option-span-2 .option-card-body::after { display: none !important; }
+        .option-span-2 .option-card-name { font-size: 0.8rem; }
+        .option-span-2 .option-card-sub  { margin-top: 2px; }
+
+        /* ===== PILL INFO BUTTON & TOOLTIP ===== */
+        .pill-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .pill-info-btn {
+            width: 17px; height: 17px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.35);
+            display: inline-flex; align-items: center; justify-content: center;
+            cursor: pointer; flex-shrink: 0; padding: 0;
+            transition: all 0.15s;
+            line-height: 1;
+        }
+        .pill-info-btn svg { width: 9px; height: 9px; pointer-events: none; }
+        .pill-info-btn:hover,
+        .pill-info-btn.active {
+            background: rgba(255,214,10,0.14);
+            border-color: rgba(255,214,10,0.45);
+            color: rgba(255,214,10,0.9);
+        }
+
+        /* Floating tooltip popup */
+        #pillTooltip {
+            position: fixed;
+            z-index: 9999;
+            width: 230px;
+            background: rgba(10,10,22,0.97);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 13px;
+            padding: 0.85rem 1rem;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: 0 20px 56px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.04) inset;
+            display: none;
+            pointer-events: none;
+        }
+        #pillTooltip.visible {
+            display: block;
+            animation: tipIn 0.18s cubic-bezier(.22,.68,0,1.2);
+        }
+        @keyframes tipIn {
+            from { opacity:0; transform:translateY(7px) scale(0.94); }
+            to   { opacity:1; transform:translateY(0) scale(1); }
+        }
+        .tip-tag {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 2px 8px; border-radius: 20px;
+            background: rgba(255,214,10,0.1);
+            border: 1px solid rgba(255,214,10,0.25);
+            color: rgba(255,214,10,0.8);
+            margin-bottom: 0.45rem;
+        }
+        .tip-tag svg { width: 9px; height: 9px; }
+        #pillTooltip strong {
+            display: block; font-size: 0.86rem; font-weight: 800;
+            color: #fff; margin-bottom: 0.3rem; line-height: 1.3;
+        }
+        #pillTooltip p {
+            font-size: 0.76rem; color: rgba(255,255,255,0.55);
+            margin: 0; line-height: 1.6;
+        }
+        .tip-stats {
+            display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.55rem;
+        }
+        .tip-stat {
+            font-size: 0.68rem; padding: 2px 7px; border-radius: 6px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.09);
+            color: rgba(255,255,255,0.45);
+            display: flex; align-items: center; gap: 3px;
+        }
+        .tip-stat svg { width: 9px; height: 9px; }
+        /* Arrow indicator */
+        #pillTooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: var(--arrow-left, 50%);
+            transform: translateX(-50%) rotate(45deg);
+            width: 8px; height: 8px;
+            background: rgba(10,10,22,0.97);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        #pillTooltip.tip-below::after {
+            bottom: auto; top: -5px;
+            border-right: none; border-bottom: none;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ===== LIGHT MODE OVERRIDES ===== */
+        [data-theme="light"] body.perfil-wizard-body {
+            background: #f2f2f2;
+        }
+        [data-theme="light"] .wz-bg-overlay {
+            background: linear-gradient(
+                to bottom,
+                rgba(242,242,242,0.72) 0%,
+                rgba(242,242,242,0.84) 40%,
+                rgba(242,242,242,0.94) 100%
+            );
+        }
+        /* Topbar */
+        [data-theme="light"] .wz-topbar {
+            background: rgba(255,255,255,0.88);
+            border-bottom-color: rgba(0,0,0,0.08);
+        }
+        /* Step tracker */
+        [data-theme="light"] .wz-track-dot {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.14);
+            color: rgba(0,0,0,0.30);
+        }
+        [data-theme="light"] .wz-track-item.active .wz-track-dot {
+            background: #f5c800;
+            border-color: #f5c800;
+            color: #000;
+            box-shadow: 0 0 16px rgba(245,200,0,0.40);
+        }
+        [data-theme="light"] .wz-track-item.done .wz-track-dot {
+            background: rgba(245,200,0,0.12);
+            border-color: #b8920a;
+            color: #b8920a;
+        }
+        [data-theme="light"] .wz-track-label { color: rgba(0,0,0,0.35); }
+        [data-theme="light"] .wz-track-item.active .wz-track-label { color: #b8920a; }
+        [data-theme="light"] .wz-track-item.done  .wz-track-label { color: #b8920a; }
+        [data-theme="light"] .wz-track-line { background: rgba(0,0,0,0.10); }
+        [data-theme="light"] .wz-track-line.done { background: #b8920a; }
+        /* Wizard card */
+        [data-theme="light"] .wz-card {
+            background: #ffffff;
+            border-color: rgba(0,0,0,0.09);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+        }
+        [data-theme="light"] .wz-step-head {
+            border-bottom-color: rgba(0,0,0,0.07);
+        }
+        [data-theme="light"] .wz-step-icon {
+            background: rgba(245,200,0,0.10);
+            border-color: rgba(245,200,0,0.28);
+            color: #b8920a;
+            box-shadow: none;
+        }
+        [data-theme="light"] .wz-step-head h2 { color: #111111; }
+        [data-theme="light"] .wz-step-head p  { color: rgba(0,0,0,0.42); }
+        [data-theme="light"] .wz-nav { border-top-color: rgba(0,0,0,0.07); }
+        /* Form inputs inside card */
+        [data-theme="light"] .wz-card input:not([type=radio]):not([type=checkbox]):not([type=hidden]):not([type=range]),
+        [data-theme="light"] .wz-card select,
+        [data-theme="light"] .wz-card textarea {
+            background: #f8f8f8 !important;
+            border-color: rgba(0,0,0,0.16) !important;
+            color: #111111 !important;
+        }
+        [data-theme="light"] .wz-card input:focus,
+        [data-theme="light"] .wz-card select:focus,
+        [data-theme="light"] .wz-card textarea:focus {
+            border-color: rgba(0,0,0,0.42) !important;
+            box-shadow: 0 0 0 3px rgba(245,200,0,0.15) !important;
+        }
+        [data-theme="light"] .wz-card select option { background: #ffffff; color: #111111; }
+        [data-theme="light"] .wz-card label { color: rgba(0,0,0,0.70); }
+        /* Custom select edad */
+        [data-theme="light"] .cs-btn {
+            background: #f8f8f8;
+            border-color: rgba(0,0,0,0.16);
+            color: #111111;
+        }
+        [data-theme="light"] .cs-btn:hover,
+        [data-theme="light"] .cs-btn:focus,
+        [data-theme="light"] .cs-wrapper.open .cs-btn {
+            border-color: rgba(0,0,0,0.42);
+            box-shadow: 0 0 0 3px rgba(245,200,0,0.15);
+        }
+        [data-theme="light"] .cs-btn svg { color: rgba(0,0,0,0.35); }
+        [data-theme="light"] .cs-placeholder { color: rgba(0,0,0,0.32); }
+        [data-theme="light"] .cs-list {
+            background: #ffffff;
+            border-color: rgba(0,0,0,0.12);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        [data-theme="light"] .cs-item { color: #333333; }
+        [data-theme="light"] .cs-item:hover { background: rgba(0,0,0,0.04); }
+        [data-theme="light"] .cs-item.selected { background: rgba(245,200,0,0.10); color: #b8920a; }
+        /* Radio/checkbox pills */
+        [data-theme="light"] .wz-card .radio-pill span,
+        [data-theme="light"] .wz-card .checkbox-pill span {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.12);
+            color: rgba(0,0,0,0.62);
+        }
+        [data-theme="light"] .wz-card .radio-pill:hover span,
+        [data-theme="light"] .wz-card .checkbox-pill:hover span {
+            border-color: rgba(245,200,0,0.45);
+            color: rgba(0,0,0,0.85);
+            background: rgba(0,0,0,0.05);
+        }
+        [data-theme="light"] .wz-card .radio-pill input:checked ~ span,
+        [data-theme="light"] .wz-card .checkbox-pill input:checked ~ span {
+            background: rgba(245,200,0,0.10);
+            border-color: rgba(245,200,0,0.55);
+            color: #b8920a;
+            box-shadow: none;
+        }
+        /* Salud toggle cards */
+        [data-theme="light"] .salud-toggle-card {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.09);
+        }
+        [data-theme="light"] .salud-toggle-card:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.15);
+        }
+        [data-theme="light"] .salud-toggle-card.active {
+            background: rgba(245,200,0,0.08);
+            border-color: rgba(245,200,0,0.42);
+        }
+        [data-theme="light"] .salud-toggle-card.warn-card.active {
+            background: rgba(245,200,0,0.08);
+            border-color: rgba(245,200,0,0.42);
+        }
+        [data-theme="light"] .stc-icon {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.10);
+            color: rgba(0,0,0,0.25);
+        }
+        [data-theme="light"] .stc-icon.stc-warn { color: rgba(184,146,10,0.55); }
+        [data-theme="light"] .salud-toggle-card.active .stc-icon,
+        [data-theme="light"] .salud-toggle-card.warn-card.active .stc-icon {
+            background: rgba(245,200,0,0.10);
+            border-color: rgba(245,200,0,0.35);
+            color: #b8920a;
+        }
+        [data-theme="light"] .stc-text strong { color: rgba(0,0,0,0.62); }
+        [data-theme="light"] .stc-text span   { color: rgba(0,0,0,0.35); }
+        [data-theme="light"] .salud-toggle-card.active .stc-text strong,
+        [data-theme="light"] .salud-toggle-card.warn-card.active .stc-text strong { color: #b8920a; }
+        /* Salud secciones */
+        [data-theme="light"] .salud-seccion {
+            background: rgba(0,0,0,0.02);
+            border-color: rgba(0,0,0,0.07);
+        }
+        [data-theme="light"] .salud-seccion-title { color: rgba(0,0,0,0.40); }
+        [data-theme="light"] .salud-seccion-hint  { color: rgba(0,0,0,0.28); }
+        /* Lesion zones */
+        [data-theme="light"] .lesion-zone {
+            background: rgba(0,0,0,0.02);
+            border-color: rgba(0,0,0,0.07);
+        }
+        [data-theme="light"] .lesion-zone-title {
+            color: rgba(0,0,0,0.35);
+            border-bottom-color: rgba(0,0,0,0.06);
+        }
+        [data-theme="light"] .lesion-zone .checkbox-pill span {
+            background: rgba(0,0,0,0.03) !important;
+            border-color: rgba(0,0,0,0.10) !important;
+            color: rgba(0,0,0,0.55);
+        }
+        [data-theme="light"] .lesion-zone .checkbox-pill:hover span {
+            background: rgba(0,0,0,0.05) !important;
+            border-color: rgba(220,38,38,0.25) !important;
+            color: rgba(0,0,0,0.80);
+        }
+        [data-theme="light"] .lesion-zone .checkbox-pill input:checked ~ span {
+            background: rgba(220,38,38,0.07) !important;
+            border-color: rgba(220,38,38,0.38) !important;
+            color: rgba(185,28,28,0.90) !important;
+        }
+        /* Patología cards */
+        [data-theme="light"] .pat-card-body {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.09);
+            color: rgba(0,0,0,0.50);
+        }
+        [data-theme="light"] .pat-card:hover .pat-card-body {
+            background: rgba(0,0,0,0.06);
+            border-color: rgba(0,0,0,0.14);
+            color: rgba(0,0,0,0.80);
+        }
+        [data-theme="light"] .pat-card input:checked ~ .pat-card-body {
+            background: rgba(245,200,0,0.08);
+            border-color: rgba(245,200,0,0.45);
+            color: #b8920a;
+        }
+        [data-theme="light"] .pat-card-full input:checked ~ .pat-card-body {
+            background: rgba(245,200,0,0.08);
+            border-color: rgba(245,200,0,0.42);
+            color: #b8920a;
+        }
+        /* Option cards (nivel & objetivo) */
+        [data-theme="light"] .option-card-body {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.09);
+        }
+        [data-theme="light"] .option-card-body:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(245,200,0,0.30);
+        }
+        [data-theme="light"] .option-card-label input:checked ~ .option-card-body {
+            background: rgba(245,200,0,0.08);
+            border-color: rgba(245,200,0,0.48);
+            box-shadow: 0 0 0 1px rgba(245,200,0,0.14);
+        }
+        [data-theme="light"] .option-card-icon {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.10);
+            color: rgba(0,0,0,0.35);
+        }
+        [data-theme="light"] .option-card-label input:checked ~ .option-card-body .option-card-icon {
+            background: rgba(245,200,0,0.10);
+            border-color: rgba(245,200,0,0.35);
+            color: #b8920a;
+        }
+        [data-theme="light"] .option-card-name { color: rgba(0,0,0,0.65); }
+        [data-theme="light"] .option-card-label input:checked ~ .option-card-body .option-card-name { color: #b8920a; }
+        [data-theme="light"] .option-card-sub { color: rgba(0,0,0,0.38); }
+        /* Pill info btn */
+        [data-theme="light"] .pill-info-btn {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.14);
+            color: rgba(0,0,0,0.35);
+        }
+        [data-theme="light"] .pill-info-btn:hover,
+        [data-theme="light"] .pill-info-btn.active {
+            background: rgba(245,200,0,0.12);
+            border-color: rgba(245,200,0,0.45);
+            color: #b8920a;
+        }
+        /* Tooltip */
+        [data-theme="light"] #pillTooltip {
+            background: #ffffff;
+            border-color: rgba(0,0,0,0.10);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+        }
+        [data-theme="light"] #pillTooltip strong { color: #111111; }
+        [data-theme="light"] #pillTooltip p { color: rgba(0,0,0,0.52); }
+        [data-theme="light"] .tip-stat {
+            background: rgba(0,0,0,0.04);
+            border-color: rgba(0,0,0,0.09);
+            color: rgba(0,0,0,0.45);
+        }
+        [data-theme="light"] #pillTooltip::after {
+            background: #ffffff;
+            border-color: rgba(0,0,0,0.10);
+        }
+        /* Banners */
+        [data-theme="light"] .wz-banners .alert {
+            background: rgba(0,0,0,0.03) !important;
+            border: 1px solid rgba(0,0,0,0.09) !important;
+            color: rgba(0,0,0,0.70) !important;
+        }
+        [data-theme="light"] .wz-banners .alert strong { color: #111111 !important; }
+        [data-theme="light"] .wz-banners .alert small  { color: rgba(0,0,0,0.45) !important; }
+        [data-theme="light"] .wz-banners .alert .icon  { color: #b8920a; }
+        [data-theme="light"] .wz-banners .alert.info   { border-left: 3px solid rgba(184,146,10,0.50) !important; }
+        /* Lock notice */
+        [data-theme="light"] .perfil-lock-notice {
+            background: rgba(0,0,0,0.03);
+            border-color: rgba(0,0,0,0.09);
+            border-left-color: rgba(245,200,0,0.55);
+            color: rgba(0,0,0,0.60);
+        }
+        [data-theme="light"] .perfil-lock-notice strong { color: #111111; }
+        /* Minor aviso */
+        [data-theme="light"] #menorAviso {
+            background: rgba(245,200,0,0.07);
+            border-color: rgba(245,200,0,0.22);
+            border-left-color: rgba(245,200,0,0.50);
+            color: rgba(0,0,0,0.60);
+        }
+        [data-theme="light"] #menorAviso strong { color: #111111; }
+        /* Panel recomposicion */
+        [data-theme="light"] #panelRecomposicion {
+            background: rgba(245,200,0,0.07);
+            color: rgba(0,0,0,0.60);
+        }
+        [data-theme="light"] #panelRecomposicion strong { color: #b8920a; }
+        /* Alert inside wz-card */
+        [data-theme="light"] .wz-card .alert {
+            background: rgba(245,200,0,0.07);
+            border-color: rgba(245,200,0,0.22);
+            border-left-color: rgba(245,200,0,0.50);
+        }
+        [data-theme="light"] .wz-card .alert strong { color: #111111; }
+        [data-theme="light"] .wz-card .alert small  { color: rgba(0,0,0,0.50); }
+        [data-theme="light"] .wz-card .alert .icon  { color: #b8920a; }
+        /* Background dots */
+        [data-theme="light"] .wz-bg-dot { background: rgba(0,0,0,0.18); }
+        [data-theme="light"] .wz-bg-dot.active { background: #b8920a; }
+
+        /* ===== FIELD HINT (rango sugerido por nivel) ===== */
+        .field-hint {
+            display: block;
+            font-size: 0.73rem;
+            color: rgba(255,255,255,0.32);
+            margin-top: 0.3rem;
+            line-height: 1.4;
+            transition: color 0.25s;
+        }
+        .field-hint.nivel-activo {
+            color: rgba(255,214,10,0.65);
+        }
+        [data-theme="light"] .field-hint { color: rgba(0,0,0,0.38); }
+        [data-theme="light"] .field-hint.nivel-activo { color: rgba(184,146,10,0.80); }
+
+        /* ===== RANGE SLIDERS (peso & altura) ===== */
+        .sv-slider-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 0.55rem;
+        }
+        .sv-slider-header label { margin-bottom: 0; }
+        .sv-slider-val {
+            font-size: 1.35rem; font-weight: 800;
+            color: var(--y); letter-spacing: -0.02em; line-height: 1;
+        }
+        input[type="range"].sv-range {
+            -webkit-appearance: none; appearance: none;
+            width: 100%; height: 6px; border-radius: 100px;
+            background: rgba(255,255,255,0.08);
+            background-image: linear-gradient(var(--y), var(--y));
+            background-size: var(--pct, 45%) 100%;
+            background-repeat: no-repeat;
+            outline: none; cursor: pointer;
+            border: none !important; box-shadow: none !important; padding: 0 !important;
+            transition: background-size 0.04s;
+        }
+        input[type="range"].sv-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px; height: 24px; border-radius: 50%;
+            background: #fff; border: 2px solid var(--y); cursor: grab;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.42), 0 0 0 3px rgba(255,214,10,0.28);
+            transition: box-shadow 0.14s, transform 0.12s;
+        }
+        input[type="range"].sv-range::-moz-range-thumb {
+            width: 24px; height: 24px; border-radius: 50%;
+            background: #fff; border: 2px solid var(--y); cursor: grab;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.42), 0 0 0 3px rgba(255,214,10,0.28);
+        }
+        input[type="range"].sv-range:hover::-webkit-slider-thumb {
+            box-shadow: 0 2px 14px rgba(0,0,0,0.5), 0 0 0 5px rgba(255,214,10,0.22);
+            transform: scale(1.1);
+        }
+        input[type="range"].sv-range:active::-webkit-slider-thumb {
+            cursor: grabbing;
+            transform: scale(1.16);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.55), 0 0 0 6px rgba(255,214,10,0.18);
+        }
+        .sv-slider-limits {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-top: 0.42rem; font-size: 0.69rem;
+            color: rgba(255,255,255,0.28); gap: 0.5rem;
+        }
+        .sv-slider-limits .field-hint {
+            flex: 1; text-align: center; margin: 0; font-size: 0.69rem;
+        }
+        /* Light mode */
+        [data-theme="light"] input[type="range"].sv-range {
+            background: rgba(0,0,0,0.10);
+            background-image: linear-gradient(#b8920a, #b8920a);
+            background-size: var(--pct, 45%) 100%;
+            background-repeat: no-repeat;
+        }
+        [data-theme="light"] input[type="range"].sv-range::-webkit-slider-thumb {
+            background: #fff; border-color: #b8920a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 0 0 3px rgba(184,146,10,0.26);
+        }
+        [data-theme="light"] input[type="range"].sv-range::-moz-range-thumb {
+            background: #fff; border-color: #b8920a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 0 0 3px rgba(184,146,10,0.26);
+        }
+        [data-theme="light"] .sv-slider-val { color: #b8920a; }
+        [data-theme="light"] .sv-slider-limits { color: rgba(0,0,0,0.32); }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .wz-card { padding: 1.5rem 1.25rem; border-radius: 16px; }
+            .wz-outer { padding: 1.5rem 1rem 3rem; }
+            .wz-track-label { font-size: 0.6rem; }
+            .wz-topbar { padding: 0 1rem; }
+            .option-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+            .option-card-body { padding: 0.8rem 0.45rem 0.7rem; min-height: 74px; }
+            .option-card-name { font-size: 0.7rem; }
+            .option-card-sub  { font-size: 0.59rem; }
+            .option-card-icon { width: 32px; height: 32px; border-radius: 9px; }
+            .option-card-icon svg { width: 14px; height: 14px; }
+        }
+        @media (max-width: 380px) {
+            .option-grid-2 { grid-template-columns: 1fr; }
+            .option-span-2 { grid-column: span 1; }
+            .option-span-2 .option-card-body { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body class="perfil-wizard-body">
+
+    <!-- ===== BACKGROUND SLIDESHOW ===== -->
+    <div class="wz-bg" id="wzBg">
+        <div class="wz-bg-overlay"></div>
+    </div>
+
+    <!-- Image indicator dots -->
+    <div class="wz-bg-dots" id="wzDots"></div>
+
+    <!-- Hidden elements for perfil.js compatibility -->
+    <span id="avatarLetter" style="display:none">U</span>
+    <div id="userAvatar" style="display:none"></div>
+    <div id="userDropdown" style="display:none"></div>
+
+    <!-- ===== TOP BAR ===== -->
+    <header class="wz-topbar">
+        <a href="../index.html">
+            <img src="../images/SV_Fitness_white.png" alt="StrongVision" class="wz-logo">
+        </a>
+        <div class="wz-topbar-right">
+            <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+                <span id="themeIcon"><i data-lucide="moon"></i></span>
+                <span id="themeLabel">Modo claro</span>
+            </button>
+            <a href="dashboard.html" class="btn-cancel-perfil" style="
+                display:inline-flex;align-items:center;gap:5px;
+                padding:0.35rem 0.9rem;font-size:0.8rem;min-height:34px;
+                border-radius:8px;text-decoration:none;font-weight:600;
+                background:rgba(255,255,255,0.07);
+                border:1px solid rgba(255,255,255,0.12);
+                color:rgba(255,255,255,0.55);
+                transition:all 0.18s;
+            " onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.25)'"
+               onmouseout="this.style.color='rgba(255,255,255,0.55)';this.style.borderColor='rgba(255,255,255,0.12)'">
+                Saltar <i data-lucide="chevron-right" style="width:14px;height:14px;"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== WIZARD OUTER ===== -->
+    <div class="wz-outer">
+
+        <!-- Banners -->
+        <div class="wz-banners">
+            <div id="onboardingBanner" class="alert info" style="display:none;">
+                <span class="icon"><i data-lucide="hand-wave" style="width:18px;height:18px;"></i></span>
+                <div class="alert-content">
+                    <strong>¡Bienvenido a StrongVision!</strong>
+                    <small>Completa tu perfil para que la IA pueda crear tu primera rutina personalizada.</small>
+                </div>
+            </div>
+            <div id="lockNotice" class="perfil-lock-notice" style="display:none;">
+                <i data-lucide="lock" style="width:20px;height:20px;color:var(--y);flex-shrink:0;margin-top:1px;"></i>
+                <div>
+                    <strong>Completa tu perfil para continuar</strong>
+                    Necesitamos algunos datos para personalizar tu experiencia. Solo tomará un minuto.
+                </div>
+            </div>
+        </div>
+
+        <!-- Step tracker -->
+        <div class="wz-tracker" id="wzTracker">
+            <div class="wz-track-item active" id="track-0">
+                <div class="wz-track-dot">1</div>
+                <span class="wz-track-label">Datos</span>
+            </div>
+            <div class="wz-track-line" id="line-0"></div>
+            <div class="wz-track-item" id="track-1">
+                <div class="wz-track-dot">2</div>
+                <span class="wz-track-label">Objetivo</span>
+            </div>
+            <div class="wz-track-line" id="line-1"></div>
+            <div class="wz-track-item" id="track-2">
+                <div class="wz-track-dot">3</div>
+                <span class="wz-track-label">Salud</span>
+            </div>
+        </div>
+
+        <!-- Wizard card -->
+        <div class="wz-card">
+            <form id="perfilForm" novalidate>
+
+                <!-- ══════════════ STEP 1: Datos personales ══════════════ -->
+                <div class="wz-step" data-step="0">
+                    <div class="wz-step-head">
+                        <div class="wz-step-icon">
+                            <i data-lucide="user-round"></i>
+                        </div>
+                        <div>
+                            <h2>Datos personales</h2>
+                            <p>Tu información física básica · Paso 1 de 3</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Edad *</label>
+                        <div class="cs-wrapper" id="edadWrapper">
+                            <button type="button" class="cs-btn" id="edadBtn" aria-haspopup="listbox" aria-expanded="false">
+                                <span id="edadDisplay" class="cs-placeholder">Selecciona tu edad...</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                            <div class="cs-list" id="edadList" role="listbox" aria-label="Edad"></div>
+                        </div>
+                        <input type="hidden" id="edad">
+                        <span class="error-msg" id="err-edad"></span>
+                        <div id="menorAviso" style="display:none;">
+                            <i data-lucide="triangle-alert" style="width:15px;height:15px;"></i>
+                            <span>Si eres menor de 18 años, necesitas <strong>autorización de un padre o tutor</strong> para usar StrongVision.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genero">Género *</label>
+                        <select id="genero" required>
+                            <option value="">Selecciona...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro / Prefiero no decir</option>
+                        </select>
+                        <span class="error-msg" id="err-genero"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="sv-slider-header">
+                            <label>Peso (kg) *</label>
+                            <span class="sv-slider-val" id="pesoVal">75 kg</span>
+                        </div>
+                        <input type="range" class="sv-range" id="pesoRange" min="30" max="250" step="0.5" value="75">
+                        <div class="sv-slider-limits">
+                            <span>30 kg</span>
+                            <span id="pesoHint" class="field-hint">Desliza para elegir tu peso</span>
+                            <span>250 kg</span>
+                        </div>
+                        <input type="hidden" id="peso" value="75">
+                        <span class="error-msg" id="err-peso"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="sv-slider-header">
+                            <label>Estatura (cm) *</label>
+                            <span class="sv-slider-val" id="alturaVal">170 cm</span>
+                        </div>
+                        <input type="range" class="sv-range" id="alturaRange" min="120" max="230" step="1" value="170">
+                        <div class="sv-slider-limits">
+                            <span>120 cm</span>
+                            <span id="alturaHint" class="field-hint">Desliza para elegir tu estatura</span>
+                            <span>230 cm</span>
+                        </div>
+                        <input type="hidden" id="altura" value="170">
+                        <span class="error-msg" id="err-altura"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dias">Días por semana que puedes entrenar *</label>
+                        <select id="dias" required>
+                            <option value="">Selecciona...</option>
+                            <option value="2">2 días / semana</option>
+                            <option value="3">3 días / semana</option>
+                            <option value="4">4 días / semana</option>
+                            <option value="5">5 días / semana</option>
+                            <option value="6">6 días / semana</option>
+                        </select>
+                        <small class="field-hint" id="diasHint">Selecciona cuántos días puedes entrenar por semana</small>
+                        <span class="error-msg" id="err-dias"></span>
+                    </div>
+
+                    <div class="wz-nav">
+                        <div class="wz-nav-spacer"></div>
+                        <button type="button" class="btn btn-primary" onclick="wizardNext()">
+                            Siguiente <i data-lucide="chevron-right" style="width:15px;height:15px;"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ══════════════ STEP 2: Experiencia y objetivo ══════════════ -->
+                <div class="wz-step" data-step="1" style="display:none;">
+                    <div class="wz-step-head">
+                        <div class="wz-step-icon">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <div>
+                            <h2>Experiencia y objetivo</h2>
+                            <p>Tu nivel y metas de entrenamiento · Paso 2 de 3</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nivel de experiencia *</label>
+                        <div class="option-grid-3">
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="nivel" value="principiante" required>
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="sprout"></i></div>
+                                        <div class="option-card-name">Principiante</div>
+                                        <div class="option-card-sub">&lt; 6 meses</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="principiante" aria-label="Más info sobre principiante"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="nivel" value="intermedio">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="dumbbell"></i></div>
+                                        <div class="option-card-name">Intermedio</div>
+                                        <div class="option-card-sub">6 meses – 2 años</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="intermedio" aria-label="Más info sobre intermedio"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="nivel" value="avanzado">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="flame"></i></div>
+                                        <div class="option-card-name">Avanzado</div>
+                                        <div class="option-card-sub">2+ años</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="avanzado" aria-label="Más info sobre avanzado"><i data-lucide="info"></i></button>
+                            </div>
+                        </div>
+                        <span class="error-msg" id="err-nivel"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Objetivo principal *</label>
+                        <div class="option-grid-2">
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="objetivo" value="hipertrofia" required>
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="dumbbell"></i></div>
+                                        <div class="option-card-name">Hipertrofia</div>
+                                        <div class="option-card-sub">Volumen muscular</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="hipertrofia" aria-label="Más info"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="objetivo" value="fuerza">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="trending-up"></i></div>
+                                        <div class="option-card-name">Fuerza</div>
+                                        <div class="option-card-sub">Fuerza máxima</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="fuerza" aria-label="Más info"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="objetivo" value="definicion">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="flame"></i></div>
+                                        <div class="option-card-name">Definición</div>
+                                        <div class="option-card-sub">Reducir grasa</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="definicion" aria-label="Más info"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="objetivo" value="resistencia">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="activity"></i></div>
+                                        <div class="option-card-name">Resistencia</div>
+                                        <div class="option-card-sub">Cardio y circuitos</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="resistencia" aria-label="Más info"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="objetivo" value="tonificacion">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="star"></i></div>
+                                        <div class="option-card-name">Tonificación</div>
+                                        <div class="option-card-sub">Firmeza corporal</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="tonificacion" aria-label="Más info"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap">
+                                <label class="option-card-label">
+                                    <input type="radio" name="objetivo" value="perdida_peso">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="scale"></i></div>
+                                        <div class="option-card-name">Pérdida de peso</div>
+                                        <div class="option-card-sub">Bajar el peso total</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="perdida_peso" aria-label="Más info"><i data-lucide="info"></i></button>
+                            </div>
+                            <div class="option-card-wrap option-span-2">
+                                <label class="option-card-label">
+                                    <input type="radio" name="objetivo" value="recomposicion_corporal">
+                                    <div class="option-card-body">
+                                        <div class="option-card-icon"><i data-lucide="refresh-cw"></i></div>
+                                        <div>
+                                            <div class="option-card-name">Recomposición corporal</div>
+                                            <div class="option-card-sub">Ganar músculo y perder grasa al mismo tiempo</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <button type="button" class="pill-info-btn option-card-info" data-tip="recomposicion_corporal" aria-label="Más info"><i data-lucide="info"></i></button>
+                            </div>
+                        </div>
+                        <div id="panelRecomposicion" style="display:none;">
+                            <strong>Recomposición Corporal</strong>
+                            <p style="margin:0.4rem 0 0.5rem;font-size:0.76rem;">Ganar músculo y perder grasa simultáneamente. Más lento pero muy sostenible.</p>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;font-size:0.75rem;">
+                                <ul>
+                                    <li>Fuerza 3-4 veces/semana</li>
+                                    <li>Déficit leve: 200-300 kcal</li>
+                                    <li>Proteína: 1.8-2.4g/kg</li>
+                                </ul>
+                                <ul>
+                                    <li>Ideal para principiantes</li>
+                                    <li>Quienes retoman el entrenamiento</li>
+                                    <li>Grasa corporal elevada</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="error-msg" id="err-objetivo"></span>
+                    </div>
+
+                    <div class="wz-nav">
+                        <button type="button" class="btn btn-secondary" onclick="wizardPrev()">
+                            <i data-lucide="chevron-left" style="width:15px;height:15px;"></i> Anterior
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="wizardNext()">
+                            Siguiente <i data-lucide="chevron-right" style="width:15px;height:15px;"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ══════════════ STEP 3: Salud y seguridad ══════════════ -->
+                <div class="wz-step" data-step="2" style="display:none;">
+                    <div class="wz-step-head">
+                        <div class="wz-step-icon">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <div>
+                            <h2>Salud y seguridad</h2>
+                            <p>Adaptamos tu rutina según tus condiciones · Paso 3 de 3</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta sí / no -->
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label style="margin-bottom:0.6rem;display:block;">¿Tienes alguna patología, lesión o condición médica activa?</label>
+                        <div class="salud-toggle-cards">
+                            <button type="button" id="btnNoCondicion" class="salud-toggle-card active" onclick="toggleSalud(false)">
+                                <div class="stc-icon"><i data-lucide="shield-check"></i></div>
+                                <div class="stc-text">
+                                    <strong>No, estoy bien</strong>
+                                    <span>Sin restricciones activas</span>
+                                </div>
+                            </button>
+                            <button type="button" id="btnSiCondicion" class="salud-toggle-card warn-card" onclick="toggleSalud(true)">
+                                <div class="stc-icon stc-warn"><i data-lucide="alert-circle"></i></div>
+                                <div class="stc-text">
+                                    <strong>Sí, tengo condiciones</strong>
+                                    <span>Lesiones o patologías</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Detalle condiciones (oculto por defecto) -->
+                    <div id="saludDetalle" class="salud-detalle-panel">
+
+                        <!-- Patología médica -->
+                        <div class="salud-seccion">
+                            <div class="salud-seccion-title">
+                                <i data-lucide="stethoscope"></i>
+                                Condición médica principal
+                            </div>
+                            <!-- Select oculto para compatibilidad con perfil.js -->
+                            <select id="patologia" style="display:none">
+                                <option value="ninguna">Ninguna / No aplica</option>
+                                <option value="hernia_lumbar">Hernia lumbar</option>
+                                <option value="hipertension">Hipertensión arterial</option>
+                                <option value="diabetes_tipo2">Diabetes tipo 2</option>
+                                <option value="asma">Asma</option>
+                                <option value="escoliosis">Escoliosis</option>
+                                <option value="cervicales">Problemas cervicales</option>
+                                <option value="cardiopatia_leve">Cardiopatía leve</option>
+                                <option value="obesidad">Obesidad</option>
+                                <option value="embarazo">Embarazo</option>
+                                <option value="osteoporosis">Osteoporosis</option>
+                                <option value="artritis">Artritis</option>
+                            </select>
+
+                            <!-- Tarjetas visuales -->
+                            <div class="patologia-grid">
+                                <label class="pat-card pat-card-full">
+                                    <input type="radio" name="patologia_v" value="ninguna" checked>
+                                    <div class="pat-card-body"><i data-lucide="shield-check" style="width:13px;height:13px;margin-right:5px;"></i> Sin patología / No aplica</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="hernia_lumbar">
+                                    <div class="pat-card-body">Hernia lumbar</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="hipertension">
+                                    <div class="pat-card-body">Hipertensión</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="diabetes_tipo2">
+                                    <div class="pat-card-body">Diabetes tipo 2</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="asma">
+                                    <div class="pat-card-body">Asma</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="escoliosis">
+                                    <div class="pat-card-body">Escoliosis</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="cervicales">
+                                    <div class="pat-card-body">Prob. cervicales</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="cardiopatia_leve">
+                                    <div class="pat-card-body">Cardiopatía leve</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="obesidad">
+                                    <div class="pat-card-body">Obesidad</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="embarazo">
+                                    <div class="pat-card-body">Embarazo</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="osteoporosis">
+                                    <div class="pat-card-body">Osteoporosis</div>
+                                </label>
+                                <label class="pat-card">
+                                    <input type="radio" name="patologia_v" value="artritis">
+                                    <div class="pat-card-body">Artritis</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Lesiones por zona -->
+                        <div class="salud-seccion">
+                            <div class="salud-seccion-title">
+                                <i data-lucide="scan-line"></i>
+                                Lesiones activas
+                                <span class="salud-seccion-hint">Puedes marcar varias</span>
+                            </div>
+                            <div class="lesion-zone-wrap" id="lesionesGroup">
+                                <div class="lesion-zone">
+                                    <div class="lesion-zone-title">
+                                        <i data-lucide="arrow-up-from-line"></i> Tren superior
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-pill"><input type="checkbox" name="lesion" value="hombro_derecho"><span>Hombro derecho</span></label>
+                                        <label class="checkbox-pill"><input type="checkbox" name="lesion" value="hombro_izquierdo"><span>Hombro izquierdo</span></label>
+                                        <label class="checkbox-pill"><input type="checkbox" name="lesion" value="codo_tendinitis"><span>Codo / Tendinitis</span></label>
+                                        <label class="checkbox-pill"><input type="checkbox" name="lesion" value="muñeca_lesion"><span>Muñeca</span></label>
+                                    </div>
+                                </div>
+                                <div class="lesion-zone">
+                                    <div class="lesion-zone-title">
+                                        <i data-lucide="arrow-down-to-line"></i> Tren inferior
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-pill"><input type="checkbox" name="lesion" value="rodilla_derecha"><span>Rodilla derecha</span></label>
+                                        <label class="checkbox-pill"><input type="checkbox" name="lesion" value="rodilla_izquierda"><span>Rodilla izquierda</span></label>
+                                        <label class="checkbox-pill"><input type="checkbox" name="lesion" value="tobillo_esguince"><span>Tobillo / Esguince</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notas -->
+                        <div class="salud-seccion">
+                            <div class="salud-seccion-title">
+                                <i data-lucide="notebook-pen"></i>
+                                Notas adicionales
+                                <span class="salud-seccion-hint">Opcional</span>
+                            </div>
+                            <textarea id="notas" rows="5" placeholder="Ej: tengo equipo en casa, no puedo correr, me duele la espalda al agacharme..." style="resize:vertical;min-height:110px;width:100%;box-sizing:border-box;"></textarea>
+                        </div>
+
+                    </div><!-- /saludDetalle -->
+
+                    <!-- Aviso médico -->
+                    <div class="alert warning" style="margin-top:var(--sp-md);">
+                        <span class="icon"><i data-lucide="triangle-alert" style="width:16px;height:16px;"></i></span>
+                        <div class="alert-content">
+                            <strong>StrongVision no reemplaza supervisión médica</strong>
+                            <small>Consulta a tu médico antes de iniciar cualquier programa de entrenamiento.</small>
+                        </div>
+                    </div>
+
+                    <div id="perfil-feedback" class="form-feedback" role="alert" style="margin-top:var(--sp-sm);"></div>
+
+                    <div class="wz-nav">
+                        <button type="button" class="btn btn-secondary" onclick="wizardPrev()">
+                            <i data-lucide="chevron-left" style="width:15px;height:15px;"></i> Anterior
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i data-lucide="check-circle-2" style="width:15px;height:15px;"></i> Guardar perfil
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div><!-- /wz-card -->
+
+
+    </div><!-- /wz-outer -->
+
+    <!-- Floating tooltip popup -->
+    <div id="pillTooltip" role="tooltip" aria-live="polite"></div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/perfil.js"></script>
+
+    <script>
+        /* ===== LUCIDE ICONS ===== */
+        lucide.createIcons();
+
+        /* ===== RANGE SLIDER INIT ===== */
+        function svSliderInit(rangeId, hiddenId, valId, unit, decimals) {
+            const range  = document.getElementById(rangeId);
+            const hidden = document.getElementById(hiddenId);
+            const valEl  = document.getElementById(valId);
+            if (!range || !hidden || !valEl) return;
+
+            function update() {
+                const v = parseFloat(range.value);
+                valEl.textContent = (decimals ? v.toFixed(1) : v) + ' ' + unit;
+                hidden.value = v;
+                const pct = ((v - +range.min) / (+range.max - +range.min) * 100).toFixed(2);
+                range.style.setProperty('--pct', pct + '%');
+            }
+
+            range.addEventListener('input', update);
+            update();
+        }
+
+        svSliderInit('pesoRange',   'peso',   'pesoVal',   'kg', true);
+        svSliderInit('alturaRange', 'altura', 'alturaVal', 'cm', false);
+
+        /* ===== HINTS DINÁMICOS POR NIVEL ===== */
+        const NIVEL_HINTS = {
+            principiante: {
+                peso:   'Rango típico principiante: 40 – 120 kg',
+                altura: 'Rango válido: 120 – 230 cm',
+                dias:   'Recomendado para principiante: 2 – 3 días / semana'
+            },
+            intermedio: {
+                peso:   'Rango típico intermedio: 50 – 150 kg',
+                altura: 'Rango válido: 120 – 230 cm',
+                dias:   'Recomendado para intermedio: 3 – 4 días / semana'
+            },
+            avanzado: {
+                peso:   'Rango típico avanzado: 55 – 200 kg (incluye masa muscular)',
+                altura: 'Rango válido: 120 – 230 cm',
+                dias:   'Recomendado para avanzado: 4 – 6 días / semana'
+            }
+        };
+
+        function actualizarHints(nivel) {
+            const hints = NIVEL_HINTS[nivel];
+            ['peso', 'altura', 'dias'].forEach(id => {
+                const el = document.getElementById(id + 'Hint');
+                if (!el) return;
+                if (hints) {
+                    el.textContent = hints[id];
+                    el.classList.add('nivel-activo');
+                } else {
+                    el.classList.remove('nivel-activo');
+                    if (id === 'peso')   el.textContent = 'Rango válido: 30 – 250 kg';
+                    if (id === 'altura') el.textContent = 'Rango válido: 120 – 230 cm';
+                    if (id === 'dias')   el.textContent = 'Selecciona cuántos días puedes entrenar por semana';
+                }
+            });
+        }
+
+        document.querySelectorAll('input[name="nivel"]').forEach(radio => {
+            radio.addEventListener('change', () => actualizarHints(radio.value));
+        });
+
+        // Inicializar si el nivel ya estaba seleccionado (perfil existente)
+        const nivelPreseleccionado = document.querySelector('input[name="nivel"]:checked');
+        if (nivelPreseleccionado) actualizarHints(nivelPreseleccionado.value);
+
+        /* ===== BACKGROUND SLIDESHOW ===== */
+        (function () {
+            const INTERVAL = 12000;
+            const POOL = [
+                'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80', // gym interior
+                'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80', // weights rack
+                'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&q=80', // weightlifting
+                'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1920&q=80', // dumbbells
+                'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1920&q=80', // gym floor
+                'https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=1920&q=80', // pull-ups
+                'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1920&q=80', // gym training
+                'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1920&q=80', // dumbbell press
+                'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1920&q=80', // gym equipment
+                'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1920&q=80', // barbell
+                'https://images.unsplash.com/photo-1576678927469-b2e70c46e2c8?w=1920&q=80', // gym session
+                'https://images.unsplash.com/photo-1485727218651-d214de782a46?w=1920&q=80', // fitness workout
+                'https://images.unsplash.com/photo-1605296867424-35fc25c9212a?w=1920&q=80', // gym training
+                'https://images.unsplash.com/photo-1598971639058-fab3c3109a17?w=1920&q=80', // lifting session
+                'https://images.unsplash.com/photo-1616279969096-54b228d03fcd?w=1920&q=80', // gym
+                'https://images.unsplash.com/photo-1541534401786-2a4f7da32c45?w=1920&q=80', // machines
+                'https://images.unsplash.com/photo-1526401281036-25e82fc8d36a?w=1920&q=80', // weight plates
+                'https://images.unsplash.com/photo-1604652716260-08b4a6c5e4d5?w=1920&q=80', // bench press
+                'https://images.unsplash.com/photo-1607962837559-97f46a0ce2b0?w=1920&q=80', // deadlift
+                'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=1920&q=80', // dumbbell rack
+                'https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=1920&q=80', // barbell squat
+                'https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=1920&q=80', // gym session
+                'https://images.unsplash.com/photo-1594737626072-90dc274bc2bd?w=1920&q=80', // cable machine
+                'https://images.unsplash.com/photo-1507398941214-572c25a4f1f8?w=1920&q=80', // barbell row
+                'https://images.unsplash.com/photo-1577221084712-45b0445d2b00?w=1920&q=80', // gym floor wide
+                'https://images.unsplash.com/photo-1623874228601-f4193c7b1818?w=1920&q=80', // kettlebell
+                'https://images.unsplash.com/photo-1627483262769-04d0a1401487?w=1920&q=80', // weights training
+                'https://images.unsplash.com/photo-1651423705612-ed03b9a2fe3c?w=1920&q=80', // gym equipment row
+            ];
+
+            // Fisher-Yates shuffle
+            function shuffle(arr) {
+                const a = arr.slice();
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            // Inject slides in random order
+            const container = document.getElementById('wzBg');
+            const overlay   = container.querySelector('.wz-bg-overlay');
+            const images    = shuffle(POOL);
+            images.forEach((url, i) => {
+                const div = document.createElement('div');
+                div.className = 'wz-bg-slide' + (i === 0 ? ' active' : '');
+                div.style.backgroundImage = "url('" + url + "')";
+                container.insertBefore(div, overlay);
+            });
+
+            const slides = container.querySelectorAll('.wz-bg-slide');
+            const dotsEl = document.getElementById('wzDots');
+            let cur = 0;
+            let timer;
+
+            // Create exactly 3 fixed indicator dots
+            for (let i = 0; i < 3; i++) {
+                const d = document.createElement('span');
+                d.className = 'wz-bg-dot' + (i === 0 ? ' active' : '');
+                dotsEl.appendChild(d);
+            }
+
+            function goTo(n) {
+                slides[cur].classList.remove('active');
+                cur = n;
+                slides[cur].classList.add('active');
+                // Cycle active dot among the 3
+                Array.from(dotsEl.children).forEach((d, i) => {
+                    d.classList.toggle('active', i === cur % 3);
+                });
+                clearInterval(timer);
+                timer = setInterval(advance, INTERVAL);
+            }
+
+            function advance() {
+                goTo((cur + 1) % slides.length);
+            }
+
+            goTo(0);
+            timer = setInterval(advance, INTERVAL);
+        })();
+
+        /* ===== WIZARD NAVIGATION ===== */
+        var _isEN = (localStorage.getItem('sv_lang') || 'es-CO') === 'en-US';
+        let _wzPaso = 0;
+        let _wzDir  = 1;
+
+        function wizardNext() {
+            if (!_wzValidar(_wzPaso)) return;
+            _wzDir = 1;
+            _wzPaso++;
+            _wzActualizar();
+        }
+
+        function wizardPrev() {
+            _wzDir = -1;
+            _wzPaso--;
+            _wzActualizar();
+        }
+
+        function _wzActualizar() {
+            document.querySelectorAll('.wz-step').forEach((s, i) => {
+                if (i === _wzPaso) {
+                    s.style.display = '';
+                    s.classList.remove('wz-anim-in', 'wz-anim-back');
+                    void s.offsetWidth;
+                    s.classList.add(_wzDir > 0 ? 'wz-anim-in' : 'wz-anim-back');
+                } else {
+                    s.style.display = 'none';
+                }
+            });
+
+            // Update tracker
+            for (let i = 0; i < 3; i++) {
+                const dot = document.getElementById('track-' + i);
+                if (!dot) continue;
+                dot.classList.toggle('active', i === _wzPaso);
+                dot.classList.toggle('done',   i < _wzPaso);
+                const dotEl = dot.querySelector('.wz-track-dot');
+                if (i < _wzPaso) {
+                    dotEl.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+                } else {
+                    dotEl.textContent = i + 1;
+                }
+            }
+            for (let i = 0; i < 2; i++) {
+                const line = document.getElementById('line-' + i);
+                if (line) line.classList.toggle('done', i < _wzPaso);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function _wzValidar(paso) {
+            let ok = true;
+
+            if (paso === 0) {
+                const edad   = document.getElementById('edad').value;
+                const genero = document.getElementById('genero').value;
+                const peso   = document.getElementById('peso').value;
+                const altura = document.getElementById('altura').value;
+                const dias   = document.getElementById('dias').value;
+
+                document.getElementById('edadWrapper').classList.toggle('invalid', !edad);
+                document.getElementById('err-edad').textContent = !edad ? (_isEN ? 'Select your age' : 'Selecciona tu edad') : '';
+
+                [['genero', genero], ['peso', peso], ['altura', altura], ['dias', dias]].forEach(([id, val]) => {
+                    const el  = document.getElementById(id);
+                    const err = document.getElementById('err-' + id);
+                    if (err) err.textContent = val ? '' : (_isEN ? 'Required field' : 'Campo obligatorio');
+                    if (el)  el.style.outline = val ? '' : '2px solid var(--red)';
+                });
+
+                ok = !!(edad && genero && peso && altura && dias);
+            }
+
+            if (paso === 1) {
+                const nivel    = document.querySelector('input[name="nivel"]:checked');
+                const objetivo = document.querySelector('input[name="objetivo"]:checked');
+                document.getElementById('err-nivel').textContent    = nivel    ? '' : (_isEN ? 'Select your level' : 'Selecciona tu nivel');
+                document.getElementById('err-objetivo').textContent = objetivo ? '' : (_isEN ? 'Select a goal' : 'Selecciona tu objetivo');
+                ok = !!(nivel && objetivo);
+            }
+
+            return ok;
+        }
+
+        /* ===== PATOLOGÍA CARDS ↔ SELECT SYNC ===== */
+        (function() {
+            const sel = document.getElementById('patologia');
+
+            // Radio → select (usuario hace click)
+            document.querySelectorAll('input[name="patologia_v"]').forEach(r => {
+                r.addEventListener('change', () => { sel.value = r.value; });
+            });
+
+            // Select → radio (perfil.js pre-rellena el perfil guardado)
+            function syncCardsFromSelect() {
+                const val = sel.value || 'ninguna';
+                const r = document.querySelector(`input[name="patologia_v"][value="${val}"]`);
+                if (r) r.checked = true;
+            }
+
+            // Se ejecuta después de que perfil.js cargue el perfil en DOMContentLoaded
+            document.addEventListener('DOMContentLoaded', syncCardsFromSelect);
+        })();
+
+        /* ===== PILL INFO TOOLTIPS ===== */
+        const TIPS = {
+            principiante: {
+                tag: 'Nivel 1 · Inicio',
+                titulo: 'Principiante',
+                desc: 'Menos de 6 meses entrenando. El cuerpo responde muy bien a cualquier estímulo. Enfoque en técnica correcta y construir el hábito.',
+                stats: [['repeticiones', '10–15'], ['series', '2–3'], ['descanso', '60–90 s']]
+            },
+            intermedio: {
+                tag: 'Nivel 2 · Progresión',
+                titulo: 'Intermedio',
+                desc: 'Entre 6 meses y 2 años. Ya dominas los movimientos básicos. Mayor énfasis en progresión de cargas y volumen de trabajo semanal.',
+                stats: [['repeticiones', '8–12'], ['series', '3–4'], ['descanso', '90–120 s']]
+            },
+            avanzado: {
+                tag: 'Nivel 3 · Elite',
+                titulo: 'Avanzado',
+                desc: 'Más de 2 años de entrenamiento consistente. Rutinas con periodización, técnicas avanzadas (drop sets, RPE, etc.) y control fino de variables.',
+                stats: [['repeticiones', '4–10'], ['series', '4–5'], ['descanso', '2–4 min']]
+            },
+            hipertrofia: {
+                tag: 'Objetivo',
+                titulo: 'Hipertrofia',
+                desc: 'Es el crecimiento del músculo. Tu rutina se enfoca en ejercicios con peso moderado y varias repeticiones para que el músculo crezca y se haga más grande.',
+                stats: [['reps', '8–15'], ['series', '3–5'], ['enfoque', 'Volumen']]
+            },
+            fuerza: {
+                tag: 'Objetivo',
+                titulo: 'Fuerza',
+                desc: 'Es la capacidad de mover cargas pesadas. Tu rutina usará mucho peso y pocas repeticiones para que tu cuerpo se vuelva más potente.',
+                stats: [['reps', '3–6'], ['carga', 'Muy alta'], ['descanso', '3–5 min']]
+            },
+            definicion: {
+                tag: 'Objetivo',
+                titulo: 'Definición',
+                desc: 'Es reducir la grasa que cubre el músculo para que se vea marcado. Se combina ejercicio con un buen control de la alimentación.',
+                stats: [['reps', '10–15'], ['cardio', 'Moderado'], ['dieta', 'Déficit leve']]
+            },
+            resistencia: {
+                tag: 'Objetivo',
+                titulo: 'Resistencia',
+                desc: 'Es la capacidad de ejercitarte por más tiempo sin agotarte. Tu rutina tendrá ejercicios continuos que fortalecen el corazón y los pulmones.',
+                stats: [['reps', '15–20+'], ['cardio', 'Alto'], ['descanso', 'Corto']]
+            },
+            tonificacion: {
+                tag: 'Objetivo',
+                titulo: 'Tonificación',
+                desc: 'Es darle firmeza al músculo sin que crezca demasiado. Ideal si quieres verte bien y sentirte activo sin ganar mucho volumen.',
+                stats: [['reps', '12–15'], ['cardio', 'Leve'], ['dieta', 'Equilibrada']]
+            },
+            perdida_peso: {
+                tag: 'Objetivo',
+                titulo: 'Pérdida de peso',
+                desc: 'Es bajar el peso corporal quemando más calorías de las que consumes. Tu rutina combinará cardio y ejercicios para acelerar ese proceso.',
+                stats: [['cardio', 'Alto'], ['pesas', '2–3×/sem'], ['dieta', 'Déficit']]
+            },
+            recomposicion_corporal: {
+                tag: 'Objetivo',
+                titulo: 'Recomposición',
+                desc: 'Es cambiar tu cuerpo al mismo tiempo: perder grasa y ganar músculo. Es el proceso más completo pero también el que más paciencia requiere.',
+                stats: [['proteína', '1.8–2.4g/kg'], ['kcal', '≈ mantenimiento'], ['plazo', 'Largo']]
+            }
+        };
+
+        (function() {
+            const popup = document.getElementById('pillTooltip');
+            let hideTimer;
+
+            function buildTip(key) {
+                const d = TIPS[key];
+                if (!d) return '';
+                const tr = (s) => (window.SV_I18N ? window.SV_I18N.t(s) : s);
+                const statsHTML = (d.stats || []).map(([k, v]) =>
+                    `<span class="tip-stat">${tr(k)}: <strong style="color:rgba(255,255,255,0.75);margin-left:3px;">${tr(v)}</strong></span>`
+                ).join('');
+                return `<span class="tip-tag">${tr(d.tag)}</span><strong>${tr(d.titulo)}</strong><p>${tr(d.desc)}</p>${statsHTML ? `<div class="tip-stats">${statsHTML}</div>` : ''}`;
+            }
+
+            function place(btn) {
+                const popW = 230;
+                const rect = btn.getBoundingClientRect();
+                let left = rect.left + rect.width / 2 - popW / 2;
+                left = Math.max(10, Math.min(left, window.innerWidth - popW - 10));
+
+                // Measure height after content inserted
+                popup.style.visibility = 'hidden';
+                popup.style.display = 'block';
+                const popH = popup.offsetHeight;
+                popup.style.display = '';
+                popup.style.visibility = '';
+
+                const spaceAbove = rect.top;
+                const above = spaceAbove > popH + 16;
+                const top = above ? rect.top - popH - 8 : rect.bottom + 8;
+
+                popup.classList.toggle('tip-below', !above);
+                // Move arrow left offset
+                const arrowLeft = rect.left + rect.width / 2 - left;
+                popup.style.setProperty('--arrow-left', arrowLeft + 'px');
+                popup.style.left = left + 'px';
+                popup.style.top  = top  + 'px';
+            }
+
+            function show(btn) {
+                clearTimeout(hideTimer);
+                const key = btn.dataset.tip;
+                popup.innerHTML = buildTip(key);
+                place(btn);
+                popup.classList.add('visible');
+                document.querySelectorAll('.pill-info-btn.active').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+
+            function hide() {
+                popup.classList.remove('visible');
+                document.querySelectorAll('.pill-info-btn.active').forEach(b => b.classList.remove('active'));
+            }
+
+            // Click: toggle
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest('.pill-info-btn');
+                if (btn) {
+                    e.preventDefault(); e.stopPropagation();
+                    btn.classList.contains('active') ? hide() : show(btn);
+                } else if (!e.target.closest('#pillTooltip')) {
+                    hide();
+                }
+            });
+
+            // Hover (desktop)
+            document.addEventListener('mouseover', function(e) {
+                const btn = e.target.closest('.pill-info-btn');
+                if (btn) { clearTimeout(hideTimer); show(btn); }
+            });
+            document.addEventListener('mouseout', function(e) {
+                if (e.target.closest('.pill-info-btn')) {
+                    hideTimer = setTimeout(hide, 250);
+                }
+            });
+
+            // Reposition on scroll/resize
+            window.addEventListener('resize', hide);
+            window.addEventListener('scroll', hide, true);
+        })();
+
+    </script>
+<script src="../js/i18n.js"></script>
+</body>
+</html>
