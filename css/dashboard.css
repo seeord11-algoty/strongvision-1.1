@@ -153,7 +153,7 @@ body.app-body {
   top: 0; z-index: 40;
   height: var(--navbar-height);
   transition: background 0.3s;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* tb-left siempre crece y cede espacio — base segura para todos los breakpoints */
@@ -2737,7 +2737,7 @@ canvas { max-width: 100%; }
   .app-layout, .app-main { overflow-x: hidden; }
 
   /* PROBLEMA 3: topbar no desborda */
-  .app-topbar { overflow: hidden; }
+  .app-topbar { overflow: visible; }
   .tb-left { flex: 1; min-width: 0; overflow: hidden; }
   .tb-right { flex-shrink: 0; }
 
