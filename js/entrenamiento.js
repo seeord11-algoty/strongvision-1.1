@@ -21,9 +21,9 @@
 
     // Rangos válidos según nivel del usuario
     const RANGOS_NIVEL = {
-        principiante: { repsMax: 15, pesoMax: 80,  repsHint: '1 – 15 reps · nivel principiante',        pesoHint: '0 – 80 kg · carga ligera' },
-        intermedio:   { repsMax: 20, pesoMax: 150, repsHint: '1 – 20 reps · nivel intermedio',           pesoHint: '0 – 150 kg · carga moderada-alta' },
-        avanzado:     { repsMax: 30, pesoMax: 300, repsHint: '1 – 30 reps · nivel avanzado',             pesoHint: '0 – 300 kg · carga alta' }
+        principiante: { repsMax: 15, pesoMax: 80,  repsHint: L('1 – 15 reps · nivel principiante', '1 – 15 reps · beginner level'),        pesoHint: L('0 – 80 kg · carga ligera',        '0 – 80 kg · light load') },
+        intermedio:   { repsMax: 20, pesoMax: 150, repsHint: L('1 – 20 reps · nivel intermedio',   '1 – 20 reps · intermediate level'),     pesoHint: L('0 – 150 kg · carga moderada-alta', '0 – 150 kg · moderate-high load') },
+        avanzado:     { repsMax: 30, pesoMax: 300, repsHint: L('1 – 30 reps · nivel avanzado',     '1 – 30 reps · advanced level'),         pesoHint: L('0 – 300 kg · carga alta',         '0 – 300 kg · heavy load') }
     };
 
     function aplicarRangosNivel(nivel) {
@@ -296,8 +296,7 @@
             document.getElementById('metaReps').textContent = ej.repeticiones;
             document.getElementById('metaDescanso').textContent = (ej.descanso_seg || 60) + 's';
             document.getElementById('serieRegistro').style.display = 'block';
-            document.getElementById('serieActual').textContent = serieIdx + 1;
-            document.getElementById('serieTotal').textContent = ej.series;
+            document.getElementById('serieHeader').textContent = L(`Serie ${serieIdx + 1} de ${ej.series}`, `Set ${serieIdx + 1} of ${ej.series}`);
             // Sugerir reps según rango
             const repsSugeridas = parseInt(String(ej.repeticiones).split('-')[0]) || 10;
             document.getElementById('inputReps').value = repsSugeridas;
