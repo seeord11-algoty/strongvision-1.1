@@ -145,6 +145,7 @@ body.app-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
@@ -152,6 +153,20 @@ body.app-body {
   top: 0; z-index: 40;
   height: var(--navbar-height);
   transition: background 0.3s;
+  overflow: hidden;
+}
+
+/* tb-left siempre crece y cede espacio — base segura para todos los breakpoints */
+.tb-left {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* tb-right nunca se encoge ni envuelve */
+.tb-right {
+  flex: 0 0 auto;
+  flex-shrink: 0;
 }
 
 .tb-brand-bar {
@@ -1938,10 +1953,19 @@ body.app-body {
   #sidebarToggle { min-width: 44px !important; min-height: 44px !important; }
   .tb-left h1 { font-size: 1rem; }
   .tb-right { gap: 0.3rem; }
-  /* Botones icon-only: ocultar etiquetas de texto */
+  /* Botones topbar: icon-only, cuadrado, sin texto */
   #themeLabel, .lang-toggle-label { display: none; }
-  .theme-btn { padding: 0.32rem 0.42rem; gap: 0; }
-  /* Hide brand text on very small screens to reduce clutter */
+  .theme-btn {
+    width: 36px; height: 36px;
+    min-width: 36px;
+    padding: 0;
+    gap: 0;
+    border-radius: 8px;
+    justify-content: center;
+  }
+  .notif-btn { width: 36px; height: 36px; min-width: 36px; }
+  .tb-right { gap: 4px; }
+  /* Ocultar textos del topbar secundarios */
   .tb-brand-sep, .tb-app-desc { display: none; }
   .tb-app-name { font-size: 0.82rem; }
   /* Overlay behind open sidebar on mobile */
@@ -2805,6 +2829,16 @@ canvas { max-width: 100%; }
 
   /* Gami-compact: compacto */
   .gami-level { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+}
+
+/* ── 480px → Botones topbar aún más pequeños ── */
+@media (max-width: 480px) {
+  .theme-btn, #i18n-lang-btn {
+    width: 32px; height: 32px; min-width: 32px;
+  }
+  .notif-btn { width: 32px; height: 32px; min-width: 32px; }
+  .tb-right { gap: 3px; }
+  .app-topbar { padding: 0 0.5rem 0 4rem; }
 }
 
 /* ── 360px → Móvil pequeño ── */
