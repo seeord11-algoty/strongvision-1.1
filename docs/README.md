@@ -2,7 +2,7 @@
 
 > Aplicación web fitness que combina **inteligencia artificial heurística** con **filtros clínicos** para generar rutinas de entrenamiento personalizadas, seguras y adaptativas.
 
-**Equipo:** Jhoan Sebastián Ordoñez · Yeison · Verónica
+**Equipo:** Jhoan Sebastián Ordoñez ·
 **Versión:** 1.0.0
 **Stack:** HTML5 + CSS3 + JavaScript Vanilla (sin backend)
 **Cumplimiento:** ISO 25010 · ISO 9001 · CMMI · WCAG AA
