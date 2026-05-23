@@ -1933,8 +1933,9 @@ body.app-body {
     border-radius: 10px !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
   }
-  /* Topbar: compacto en mobile */
-  .app-topbar { padding: 0 1rem 0 3.8rem; height: var(--navbar-height); }
+  /* PROBLEMA 3: topbar compacto con espacio suficiente para el botón hamburguesa */
+  .app-topbar { padding: 0 1rem 0 4.5rem; height: var(--navbar-height); }
+  #sidebarToggle { min-width: 44px !important; min-height: 44px !important; }
   .tb-left h1 { font-size: 1rem; }
   .tb-right { gap: 0.3rem; }
   /* Botones icon-only: ocultar etiquetas de texto */
@@ -2585,9 +2586,12 @@ body.app-body {
 /* ===== UAS MODAL (panel lateral asistente) — override estilos inyectados JS ===== */
 /* Estos overrides usan [data-theme="light"] + clase = mayor especificidad que los estilos inyectados */
 
-/* Panel principal */
+/* Fondo sólido en dark mode: var(--surface) es rgba casi transparente → negro */
+.uas-modal-box { background: #0e1018 !important; }
+
+/* Panel principal — light theme */
 [data-theme="light"] .uas-modal-box {
-  background: #f5f5f5;
+  background: #f5f5f5 !important;
   border-left-color: rgba(0,0,0,0.10);
   box-shadow: -4px 0 24px rgba(0,0,0,0.10);
 }
@@ -2704,6 +2708,10 @@ canvas { max-width: 100%; }
 
 /* ── 768px: ajustes de topbar, tabs, dropdowns, modal ── */
 @media (max-width: 768px) {
+  /* PROBLEMA 2: prevenir scroll horizontal en todas las páginas */
+  html, body { overflow-x: hidden; }
+  .app-layout, .app-main { overflow-x: hidden; }
+
   /* PROBLEMA 3: topbar no desborda */
   .app-topbar { overflow: hidden; }
   .tb-left { flex: 1; min-width: 0; overflow: hidden; }

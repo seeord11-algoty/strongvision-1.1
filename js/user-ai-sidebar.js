@@ -451,8 +451,12 @@
         function abrirModal() {
             ocultarBurbuja();
             const modalMsgs = document.getElementById('uasModalMsgs');
-            const sidebarMsgs = document.getElementById('uasMsgs');
-            if (modalMsgs && sidebarMsgs) modalMsgs.innerHTML = sidebarMsgs.innerHTML;
+            if (modalMsgs && modalMsgs.children.length === 0) {
+                const bienvenida = isEN
+                    ? `Hello, <strong>${nombre}</strong>! 👋 I'm your personal AI assistant. Ask me about technique, nutrition, recovery or your training plan.`
+                    : `¡Hola, <strong>${nombre}</strong>! 👋 Soy tu asistente IA personal. Pregúntame sobre técnica, nutrición, recuperación o tu plan de entrenamiento.`;
+                uasAddModalMsg('uas-bot', bienvenida);
+            }
             if (modalMsgs) modalMsgs.scrollTop = modalMsgs.scrollHeight;
             modal.classList.add('open');
             modal.setAttribute('aria-hidden', 'false');
