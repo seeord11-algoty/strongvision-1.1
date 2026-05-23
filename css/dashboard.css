@@ -2704,6 +2704,18 @@ canvas { max-width: 100%; }
 
 /* ── 768px: ajustes de topbar, tabs, dropdowns, modal ── */
 @media (max-width: 768px) {
+  /* PROBLEMA 3: topbar no desborda */
+  .app-topbar { overflow: hidden; }
+  .tb-left { flex: 1; min-width: 0; overflow: hidden; }
+  .tb-right { flex-shrink: 0; }
+
+  /* PROBLEMA 5: ocultar subtítulo del topbar en móvil */
+  .tb-left p { display: none; }
+
+  /* PROBLEMA 2: botón guardar/finalizar ancho completo */
+  .training-actions { width: 100%; }
+  .training-actions .btn { width: 100% !important; box-sizing: border-box; }
+
   /* Tabs con scroll horizontal */
   .dash-tabs-bar {
     overflow-x: auto;

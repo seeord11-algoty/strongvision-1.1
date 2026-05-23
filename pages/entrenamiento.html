@@ -236,7 +236,7 @@
             </div>
             <h1>¡Sesión completada!</h1>
             <p style="color: var(--color-text-muted); margin-bottom: var(--sp-xl);">Excelente trabajo. Aquí está tu resumen.</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--sp-md); margin-bottom: var(--sp-xl);">
+            <div class="res-stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--sp-md); margin-bottom: var(--sp-xl);">
                 <div class="stat-card">
                     <div class="stat-label">Ejercicios</div>
                     <div class="stat-value"><span id="resEjercicios">0</span><small>/<span id="resTotal">0</span></small></div>
@@ -1274,6 +1274,32 @@
             border-radius: 20px !important;
             border: 1px solid rgba(0,0,0,0.08) !important;
             box-shadow: 0 8px 32px rgba(0,0,0,0.10) !important;
+        }
+
+        /* ── Mobile fixes ── */
+        @media (max-width: 768px) {
+            /* PROBLEMA 1: stats de resumen en 1 columna */
+            .res-stats-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* PROBLEMA 4: cards de días en 1 columna, sin overflow */
+            #diasSeleccion {
+                grid-template-columns: 1fr !important;
+            }
+            .dia-card {
+                padding: 1.25rem 1.25rem 1.1rem;
+            }
+
+            /* Reducir padding de pantallas de entrenamiento */
+            .training-screen {
+                padding: 1.5rem 1rem !important;
+            }
+
+            /* RPE buttons: wrappear si no caben */
+            .form-group > div[style*="display: flex"] {
+                flex-wrap: wrap;
+            }
         }
     </style>
 
