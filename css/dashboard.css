@@ -664,7 +664,7 @@ body.app-body {
   text-decoration: none;
   border: none;
   white-space: nowrap;
-  min-height: 40px;
+  min-height: 44px;
 }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
@@ -709,8 +709,8 @@ body.app-body {
 }
 .btn-danger:hover:not(:disabled) { background: #cc2222; }
 
-.btn-sm { padding: 0.4rem 0.9rem; font-size: 0.8rem; min-height: 32px; }
-.btn-lg { padding: 0.9rem 2rem; font-size: 1rem; }
+.btn-sm { padding: 0.4rem 0.9rem; font-size: 0.8rem; min-height: 36px; }
+.btn-lg { padding: 0.9rem 2rem; font-size: 1rem; min-height: 48px; }
 .btn-block, .btn-full { width: 100%; }
 
 .btn.loading { opacity: 0.7; pointer-events: none; }
@@ -2680,3 +2680,151 @@ body.app-body {
 [data-theme="light"] .checklist li { color: #555555; }
 [data-theme="light"] .checklist li::before { color: #888888; }
 [data-theme="light"] .checklist li.done { color: #111111; }
+
+/* =============================================
+   RESPONSIVE ADICIONAL — Mobile First
+   Breakpoints: 360 | 480 | 768 | 1024 | 1280
+   ============================================= */
+
+/* ── Canvases: responden al contenedor ── */
+canvas { max-width: 100%; }
+
+/* ── Tabla con scroll horizontal en móvil ── */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── 1024px: paneles siempre en columna desde tablet ── */
+@media (max-width: 1024px) {
+  .panels-row { grid-template-columns: 1fr; }
+  .bottom-row { grid-template-columns: 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+/* ── 768px: ajustes de topbar, tabs, dropdowns, modal ── */
+@media (max-width: 768px) {
+  /* Tabs con scroll horizontal */
+  .dash-tabs-bar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+  .dash-tabs-bar::-webkit-scrollbar { display: none; }
+  .dash-tab-btn {
+    flex-shrink: 0;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.82rem;
+  }
+
+  /* Dropdown notificaciones: limitar ancho en móvil */
+  .notif-dropdown {
+    width: min(300px, calc(100vw - 2rem));
+    right: -0.5rem;
+  }
+
+  /* Modal: 95 % de ancho en móvil */
+  .modal-content { max-width: min(480px, 95vw); }
+
+  /* User dropdown: anclar a la derecha */
+  .user-dropdown { right: 0; min-width: 180px; }
+
+  /* Topbar: títulos largos no overflow */
+  .tb-left h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100vw - 12rem);
+  }
+
+  /* Stat-grid 2 columnas en tablet */
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Paneles stack en tablet */
+  .panels-row { grid-template-columns: 1fr; }
+  .bottom-row  { grid-template-columns: 1fr; }
+}
+
+/* ── 480px → Móvil grande ── */
+@media (max-width: 480px) {
+  /* Ejercicios en columna */
+  .ex-grid { grid-template-columns: 1fr; }
+
+  /* Ejercicio row: sin overflow en 3ª columna */
+  .ejercicio-row { grid-template-columns: 28px 1fr auto; gap: 0.45rem; }
+
+  /* Dash hero: título más pequeño */
+  .dash-hero h2 { font-size: var(--fs-xl); }
+  .dash-hero p  { font-size: var(--fs-sm); }
+
+  /* Acciones hero: columna */
+  .dash-hero-actions { flex-direction: column; }
+  .dash-hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Training */
+  .training-screen { padding: 1rem 0.75rem; }
+  .training-meta { gap: 0.75rem; }
+
+  /* Formularios: inputs 100 % */
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Page header */
+  .page-header h1 { font-size: var(--fs-2xl); }
+
+  /* Tab btn más compacto */
+  .dash-tab-btn { padding: 0.65rem 0.75rem; font-size: 0.78rem; }
+
+  /* Botones bloque en móvil */
+  .training-actions .btn { width: 100%; }
+
+  /* Warmup chips: wrap libre */
+  .warmcool-grid { gap: 0.35rem; }
+  .wc-chip { flex: 1 1 auto; min-width: 120px; }
+
+  /* Gami-compact: compacto */
+  .gami-level { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+}
+
+/* ── 360px → Móvil pequeño ── */
+@media (max-width: 360px) {
+  /* Stat-grid: 1 columna para pantallas muy pequeñas */
+  .stat-grid { grid-template-columns: 1fr; }
+
+  /* Page container: menor padding */
+  .page-container { padding: 0.75rem; }
+
+  /* Training */
+  .training-exercise-name { font-size: var(--fs-xl); }
+  .timer-display { font-size: 2.5rem; }
+  .training-meta { gap: 0.5rem; }
+  .training-meta-item .value { font-size: var(--fs-xl); }
+
+  /* Topbar: ocultar nombre de app en pantallas muy chicas */
+  .tb-app-name { display: none; }
+  .tb-brand-bar { gap: 0.25rem; }
+
+  /* Topbar padding con hamburguesa */
+  .app-topbar { padding: 0 0.75rem 0 3.5rem; }
+
+  /* Dashboard hero */
+  .dash-hero { padding: 1rem; }
+  .dash-hero h2 { font-size: var(--fs-lg); }
+
+  /* Notif dropdown: casi full-width */
+  .notif-dropdown { width: calc(100vw - 1rem); right: -0.75rem; }
+
+  /* Modal casi full-width */
+  .modal-content { max-width: calc(100vw - 1rem); border-radius: 12px; }
+
+  /* Sidebar toggle bien posicionado */
+  #sidebarToggle { top: 12px; left: 10px; width: 38px; height: 38px; }
+
+  /* Ejercicio row más compacto */
+  .ejercicio-row { grid-template-columns: 26px 1fr auto; gap: 0.35rem; }
+  .ej-num { width: 26px; height: 26px; font-size: 0.55rem; }
+
+  /* Gami */
+  .logros-grid { grid-template-columns: repeat(auto-fill, minmax(65px, 1fr)); }
+}

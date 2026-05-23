@@ -770,3 +770,65 @@ input[type="radio"]:checked {
 }
 [data-theme="light"] #cookieBanner p { color: #555555; }
 [data-theme="light"] #cookieBanner p a { color: #b8920a; }
+
+/* =============================================
+   RESPONSIVE AUTH — Mobile First
+   Breakpoints: 360 | 480 | 768
+   ============================================= */
+
+/* ── 768px: modal ocupa mayor ancho ── */
+@media (max-width: 768px) {
+  .modal { padding: var(--sp-md); }
+  .modal-content {
+    max-width: min(480px, 95vw);
+    padding: 1.75rem;
+  }
+}
+
+/* ── 480px: modal casi full-width, formularios columna ── */
+@media (max-width: 480px) {
+  .modal { padding: var(--sp-sm); }
+  .modal-content {
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    max-height: 95vh;
+  }
+  .form-row { grid-template-columns: 1fr; gap: var(--sp-sm); }
+
+  /* Cookie banner: stack vertical */
+  #cookieBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-sm);
+    padding: var(--sp-md);
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-actions .btn { flex: 1; }
+
+  /* Checkbox pills: wrap completo */
+  .checkbox-group, .radio-group { gap: var(--sp-xs); }
+  .checkbox-pill span, .radio-pill span { min-height: 40px; }
+
+  /* Pass rules: columna en móvil */
+  .pass-rules { grid-template-columns: 1fr; gap: 0.15rem; }
+
+  /* Legal block */
+  .legal-scroll-area { max-height: 130px; }
+  .legal-tab-btn { padding: 0.45rem 0.5rem; font-size: 0.68rem; }
+}
+
+/* ── 360px: modal borderless casi full ── */
+@media (max-width: 360px) {
+  .modal { padding: 0.375rem; }
+  .modal-content {
+    padding: 1.25rem;
+    border-radius: 10px;
+    max-height: 96vh;
+  }
+  .modal-content h2 { font-size: var(--fs-lg); padding-right: 36px; }
+  .modal-close { top: 0.75rem; right: 0.75rem; width: 30px; height: 30px; font-size: 1.1rem; }
+  .legal-check-row { gap: 0.4rem; }
+  .cookie-actions { flex-direction: column; }
+  .cookie-actions .btn { width: 100%; }
+}
