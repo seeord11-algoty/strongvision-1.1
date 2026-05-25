@@ -2,7 +2,7 @@
 
 > Aplicación web fitness que combina **inteligencia artificial heurística**, **algoritmo genético** y **filtros clínicos** para generar rutinas de entrenamiento personalizadas, seguras y adaptativas.
 
-**Equipo:** Jhoan Sebastián Ordoñez
+**Equipo:** ArquiAlgorit
 **Versión:** 1.1.0
 **Stack:** HTML5 + CSS3 + JavaScript Vanilla (sin backend)
 **Cumplimiento:** ISO 25010 · ISO 9001 · CMMI · WCAG AAA
